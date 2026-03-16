@@ -1,0 +1,70 @@
+aid: amazon-swf
+name: Amazon Simple Workflow Service
+description: >-
+  Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and
+  scale background jobs that have parallel or sequential steps. It is a fully
+  managed state tracker and task coordinator in the cloud that manages intertask
+  dependencies, scheduling, and concurrency for application workflows.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Workflow
+  - Automation
+  - Task Coordination
+  - AWS
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: amazon-swf:amazon-swf-api
+    name: Amazon Simple Workflow Service API
+    description: >-
+      The Amazon SWF API provides programmatic access to manage workflows,
+      activity tasks, decision tasks, and workflow execution history. It enables
+      developers to coordinate distributed application components using
+      asynchronous task processing and state tracking.
+    humanURL: https://aws.amazon.com/swf/
+    baseURL: https://swf.amazonaws.com
+    tags:
+      - Workflow
+      - Task Coordination
+      - AWS
+    properties:
+      - type: Documentation
+        url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+      - type: Reference
+        url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+      - type: Getting Started
+        url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+      - type: Pricing
+        url: https://aws.amazon.com/swf/pricing/
+      - type: FAQ
+        url: https://aws.amazon.com/swf/faqs/
+common:
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/swf/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: Console
+    url: https://console.aws.amazon.com/swf/
+  - type: Terms of Service
+    url: https://aws.amazon.com/service-terms/
+  - type: Privacy Policy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Sign Up
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: Status
+    url: https://health.aws.amazon.com/health/status
+  - type: GitHub Organization
+    url: https://github.com/aws
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
