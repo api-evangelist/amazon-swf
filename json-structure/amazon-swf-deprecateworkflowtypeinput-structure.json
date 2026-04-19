@@ -1,0 +1,19 @@
+{
+  "name": "DeprecateWorkflowTypeInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

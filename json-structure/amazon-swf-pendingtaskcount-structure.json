@@ -1,0 +1,19 @@
+{
+  "name": "PendingTaskCount",
+  "description": "Contains the count of tasks in a task list.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "count",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "truncated",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

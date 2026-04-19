@@ -1,0 +1,25 @@
+{
+  "name": "RecordMarkerFailedEventAttributes",
+  "description": "Provides the details of the <code>RecordMarkerFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "markerName",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

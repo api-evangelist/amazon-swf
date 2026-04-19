@@ -1,0 +1,31 @@
+{
+  "name": "ActivityTaskFailedEventAttributes",
+  "description": "Provides the details of the <code>ActivityTaskFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

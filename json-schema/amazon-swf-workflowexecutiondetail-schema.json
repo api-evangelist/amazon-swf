@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "required": [
+    "executionInfo",
+    "executionConfiguration",
+    "openCounts"
+  ],
+  "properties": {
+    "executionInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionInfo"
+        },
+        {
+          "description": "Information about the workflow execution."
+        }
+      ]
+    },
+    "executionConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionConfiguration"
+        },
+        {
+          "description": "The configuration settings for this workflow execution including timeout values, tasklist etc."
+        }
+      ]
+    },
+    "openCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionOpenCounts"
+        },
+        {
+          "description": "The number of tasks for this workflow execution. This includes open and closed tasks of all types."
+        }
+      ]
+    },
+    "latestActivityTaskTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action."
+        }
+      ]
+    },
+    "latestExecutionContext": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>."
+        }
+      ]
+    }
+  },
+  "description": "Contains details about a workflow execution.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionDetail"
+}

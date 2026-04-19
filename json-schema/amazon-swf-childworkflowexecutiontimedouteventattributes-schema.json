@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "required": [
+    "workflowExecution",
+    "workflowType",
+    "timeoutType",
+    "initiatedEventId",
+    "startedEventId"
+  ],
+  "properties": {
+    "workflowExecution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The child workflow execution that timed out."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The type of the child workflow execution."
+        }
+      ]
+    },
+    "timeoutType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionTimeoutType"
+        },
+        {
+          "description": "The type of the timeout that caused the child workflow execution to time out."
+        }
+      ]
+    },
+    "initiatedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChildWorkflowExecutionTimedOutEventAttributes"
+}

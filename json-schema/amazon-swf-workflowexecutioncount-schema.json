@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "count"
+  ],
+  "properties": {
+    "count": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Count"
+        },
+        {
+          "description": "The number of workflow executions."
+        }
+      ]
+    },
+    "truncated": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Truncated"
+        },
+        {
+          "description": "If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value."
+        }
+      ]
+    }
+  },
+  "description": "Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a> ",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionCount"
+}

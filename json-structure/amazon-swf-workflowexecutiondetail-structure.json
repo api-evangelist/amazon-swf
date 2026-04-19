@@ -1,0 +1,37 @@
+{
+  "name": "WorkflowExecutionDetail",
+  "description": "Contains details about a workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "executionInfo",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "executionConfiguration",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "openCounts",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "latestActivityTaskTimestamp",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "latestExecutionContext",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

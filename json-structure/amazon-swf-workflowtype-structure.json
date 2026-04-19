@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowType",
+  "description": "Represents a workflow type.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "MarkerRecordedEventAttributes",
+  "description": "Provides the details of the <code>MarkerRecorded</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "markerName",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

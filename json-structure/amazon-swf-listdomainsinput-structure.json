@@ -1,0 +1,31 @@
+{
+  "name": "ListDomainsInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "registrationStatus",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "maximumPageSize",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "reverseOrder",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

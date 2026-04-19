@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "workflowExecution",
+    "initiatedEventId"
+  ],
+  "properties": {
+    "workflowExecution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The external workflow execution that the signal was delivered to."
+        }
+      ]
+    },
+    "initiatedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExternalWorkflowExecutionSignaledEventAttributes"
+}

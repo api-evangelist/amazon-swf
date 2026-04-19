@@ -1,0 +1,135 @@
+{
+  "type": "object",
+  "required": [
+    "workflowId",
+    "workflowType",
+    "taskList",
+    "decisionTaskCompletedEventId",
+    "childPolicy"
+  ],
+  "properties": {
+    "workflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowId"
+        },
+        {
+          "description": "The <code>workflowId</code> of the child workflow execution."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The type of the child workflow execution."
+        }
+      ]
+    },
+    "control": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "Data attached to the event that can be used by the decider in subsequent decision tasks. This data isn't sent to the activity."
+        }
+      ]
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The inputs provided to the child workflow execution."
+        }
+      ]
+    },
+    "executionStartToCloseTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSecondsOptional"
+        },
+        {
+          "description": "<p>The maximum duration for the child workflow execution. If the workflow execution isn't closed within this duration, it is timed out and force-terminated.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>"
+        }
+      ]
+    },
+    "taskList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskList"
+        },
+        {
+          "description": "The name of the task list used for the decision tasks of the child workflow execution."
+        }
+      ]
+    },
+    "taskPriority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskPriority"
+        },
+        {
+          "description": "<p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href=\"https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html\">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>"
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events."
+        }
+      ]
+    },
+    "childPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildPolicy"
+        },
+        {
+          "description": "<p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <a>TerminateWorkflowExecution</a> action or due to an expired timeout.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> \u2013 The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> \u2013 A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> \u2013 No action is taken. The child executions continue to run.</p> </li> </ul>"
+        }
+      ]
+    },
+    "taskStartToCloseTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSecondsOptional"
+        },
+        {
+          "description": "<p>The maximum duration allowed for the decision tasks for this workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>"
+        }
+      ]
+    },
+    "tagList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The list of tags to associated with the child workflow execution."
+        }
+      ]
+    },
+    "lambdaRole": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The IAM role to attach to the child workflow execution."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StartChildWorkflowExecutionInitiatedEventAttributes"
+}

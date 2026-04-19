@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "enum": [
+    "TIMER_ID_UNKNOWN",
+    "OPERATION_NOT_PERMITTED"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CancelTimerFailedCause"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "RespondDecisionTaskCompletedInput",
+  "description": "Input data for a TaskCompleted response to a decision task.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisions",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "executionContext",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

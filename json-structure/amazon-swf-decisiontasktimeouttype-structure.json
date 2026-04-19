@@ -1,0 +1,6 @@
+{
+  "name": "DecisionTaskTimeoutType",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

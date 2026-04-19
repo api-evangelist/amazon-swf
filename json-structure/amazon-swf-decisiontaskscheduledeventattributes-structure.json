@@ -1,0 +1,25 @@
+{
+  "name": "DecisionTaskScheduledEventAttributes",
+  "description": "Provides details about the <code>DecisionTaskScheduled</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

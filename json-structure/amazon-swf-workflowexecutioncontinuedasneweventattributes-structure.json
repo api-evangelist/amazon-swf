@@ -1,0 +1,73 @@
+{
+  "name": "WorkflowExecutionContinuedAsNewEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "newExecutionRunId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "executionStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "taskStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "tagList",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "lambdaRole",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

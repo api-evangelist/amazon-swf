@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "required": [
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailureReason"
+        },
+        {
+          "description": "The descriptive reason provided for the failure."
+        }
+      ]
+    },
+    "details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The details of the failure."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>WorkflowExecutionFailed</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionFailedEventAttributes"
+}

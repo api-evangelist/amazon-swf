@@ -1,0 +1,55 @@
+{
+  "name": "ListOpenWorkflowExecutionsInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startTimeFilter",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "typeFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "tagFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "maximumPageSize",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "reverseOrder",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "executionFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

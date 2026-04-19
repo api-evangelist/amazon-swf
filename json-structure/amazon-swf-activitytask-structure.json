@@ -1,0 +1,43 @@
+{
+  "name": "ActivityTask",
+  "description": "Unit of work sent to an activity worker.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowExecution",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

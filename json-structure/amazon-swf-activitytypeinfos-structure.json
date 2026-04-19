@@ -1,0 +1,19 @@
+{
+  "name": "ActivityTypeInfos",
+  "description": "Contains a paginated list of activity type information structures.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "typeInfos",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

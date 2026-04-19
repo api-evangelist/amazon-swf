@@ -1,0 +1,13 @@
+{
+  "name": "CloseStatusFilter",
+  "description": "Used to filter the closed workflow executions in visibility APIs by their close status.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "status",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

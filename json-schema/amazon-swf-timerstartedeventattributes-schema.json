@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "required": [
+    "timerId",
+    "startToFireTimeout",
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "timerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerId"
+        },
+        {
+          "description": "The unique ID of the timer that was started."
+        }
+      ]
+    },
+    "control": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "Data attached to the event that can be used by the decider in subsequent workflow tasks."
+        }
+      ]
+    },
+    "startToFireTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSeconds"
+        },
+        {
+          "description": "<p>The duration of time after which the timer fires.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>"
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>TimerStarted</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimerStartedEventAttributes"
+}

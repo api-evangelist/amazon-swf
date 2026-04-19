@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "activityType"
+  ],
+  "title": "UndeprecateActivityTypeInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain of the deprecated activity type."
+        }
+      ]
+    },
+    "activityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityType"
+        },
+        {
+          "description": "The activity type to undeprecate."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

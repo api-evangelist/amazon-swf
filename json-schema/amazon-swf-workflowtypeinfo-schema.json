@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "required": [
+    "workflowType",
+    "status",
+    "creationDate"
+  ],
+  "properties": {
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The workflow type this information is about."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegistrationStatus"
+        },
+        {
+          "description": "The current status of the workflow type."
+        }
+      ]
+    },
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "The description of the type registered through <a>RegisterWorkflowType</a>."
+        }
+      ]
+    },
+    "creationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date when this type was registered."
+        }
+      ]
+    },
+    "deprecationDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "If the type is in deprecated state, then it is set to the date when the type was deprecated."
+        }
+      ]
+    }
+  },
+  "description": "Contains information about a workflow type.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowTypeInfo"
+}

@@ -1,0 +1,15 @@
+id: amazon-swf-workflow-management
+name: Amazon SWF Workflow Management
+description: Manage workflow types, executions, and monitor workflow history in Amazon SWF.
+tags:
+- AWS
+- Workflow
+- Automation
+consumes:
+- ref: capabilities/shared/amazon-swf-shared.yaml
+  operations:
+  - RegisterWorkflowType
+  - StartWorkflowExecution
+  - ListOpenWorkflowExecutions
+  - GetWorkflowExecutionHistory
+  - TerminateWorkflowExecution

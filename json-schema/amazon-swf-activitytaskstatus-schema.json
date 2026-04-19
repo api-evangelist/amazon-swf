@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "cancelRequested"
+  ],
+  "properties": {
+    "cancelRequested": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Canceled"
+        },
+        {
+          "description": "Set to <code>true</code> if cancellation of the task is requested."
+        }
+      ]
+    }
+  },
+  "description": "Status information about an activity task.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskStatus"
+}

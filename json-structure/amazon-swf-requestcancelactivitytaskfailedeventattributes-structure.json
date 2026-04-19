@@ -1,0 +1,25 @@
+{
+  "name": "RequestCancelActivityTaskFailedEventAttributes",
+  "description": "Provides the details of the <code>RequestCancelActivityTaskFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "activityId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecutionCanceledEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionCanceled</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

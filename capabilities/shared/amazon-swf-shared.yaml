@@ -1,0 +1,249 @@
+id: amazon-swf
+name: Amazon Simple Workflow Service
+description: '<fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across
+  distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies,
+  scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying
+  complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a
+  href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>'
+namespace: amazon-swf
+baseUri: 'http://swf.{region}.amazonaws.com'
+authentication:
+  type: aws-signature-v4
+  description: AWS Signature Version 4
+operations:
+- operationId: CountClosedWorkflowExecutions
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.CountClosedWorkflowExecutions
+  summary: Amazon SWF Count Closed Workflow Executions
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: CountOpenWorkflowExecutions
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.CountOpenWorkflowExecutions
+  summary: Amazon SWF Count Open Workflow Executions
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: CountPendingActivityTasks
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.CountPendingActivityTasks
+  summary: Amazon SWF Count Pending Activity Tasks
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: CountPendingDecisionTasks
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.CountPendingDecisionTasks
+  summary: Amazon SWF Count Pending Decision Tasks
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DeprecateActivityType
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DeprecateActivityType
+  summary: Amazon SWF Deprecate Activity Type
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DeprecateDomain
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DeprecateDomain
+  summary: Amazon SWF Deprecate Domain
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DeprecateWorkflowType
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DeprecateWorkflowType
+  summary: Amazon SWF Deprecate Workflow Type
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DescribeActivityType
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DescribeActivityType
+  summary: Amazon SWF Describe Activity Type
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DescribeDomain
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DescribeDomain
+  summary: Amazon SWF Describe Domain
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DescribeWorkflowExecution
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowExecution
+  summary: Amazon SWF Describe Workflow Execution
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: DescribeWorkflowType
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowType
+  summary: Amazon SWF Describe Workflow Type
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: GetWorkflowExecutionHistory
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory
+  summary: Amazon SWF Get Workflow Execution History
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListActivityTypes
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListActivityTypes
+  summary: Amazon SWF List Activity Types
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListClosedWorkflowExecutions
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions
+  summary: Amazon SWF List Closed Workflow Executions
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListDomains
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListDomains
+  summary: Amazon SWF List Domains
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListOpenWorkflowExecutions
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions
+  summary: Amazon SWF List Open Workflow Executions
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListTagsForResource
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListTagsForResource
+  summary: Amazon SWF List Tags for Resource
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: ListWorkflowTypes
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes
+  summary: Amazon SWF List Workflow Types
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: PollForActivityTask
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.PollForActivityTask
+  summary: Amazon SWF Poll for Activity Task
+  parameters:
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''
+- operationId: PollForDecisionTask
+  method: POST
+  path: /#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask
+  summary: Amazon SWF Poll for Decision Task
+  parameters:
+  - name: maximumPageSize
+    in: query
+    required: false
+    description: Pagination limit
+  - name: nextPageToken
+    in: query
+    required: false
+    description: Pagination token
+  - name: X-Amz-Target
+    in: header
+    required: true
+    description: ''

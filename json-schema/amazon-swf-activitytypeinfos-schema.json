@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "typeInfos"
+  ],
+  "properties": {
+    "typeInfos": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTypeInfoList"
+        },
+        {
+          "description": "List of activity type information."
+        }
+      ]
+    },
+    "nextPageToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageToken"
+        },
+        {
+          "description": "<p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>"
+        }
+      ]
+    }
+  },
+  "description": "Contains a paginated list of activity type information structures.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTypeInfos"
+}

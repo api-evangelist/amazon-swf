@@ -1,0 +1,6 @@
+{
+  "name": "WorkflowExecutionCancelRequestedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

@@ -1,0 +1,6 @@
+{
+  "name": "RequestCancelExternalWorkflowExecutionFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

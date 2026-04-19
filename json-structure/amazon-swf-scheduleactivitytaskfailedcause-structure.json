@@ -1,0 +1,6 @@
+{
+  "name": "ScheduleActivityTaskFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

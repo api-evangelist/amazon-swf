@@ -1,0 +1,19 @@
+{
+  "name": "ActivityTypeDetail",
+  "description": "Detailed information about an activity type.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "typeInfo",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

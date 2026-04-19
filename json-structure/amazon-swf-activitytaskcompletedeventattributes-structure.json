@@ -1,0 +1,25 @@
+{
+  "name": "ActivityTaskCompletedEventAttributes",
+  "description": "Provides the details of the <code>ActivityTaskCompleted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "result",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

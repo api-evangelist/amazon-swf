@@ -1,0 +1,19 @@
+{
+  "name": "ExternalWorkflowExecutionSignaledEventAttributes",
+  "description": "Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowExecution",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "initiatedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

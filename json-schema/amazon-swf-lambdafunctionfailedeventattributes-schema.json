@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "required": [
+    "scheduledEventId",
+    "startedEventId"
+  ],
+  "properties": {
+    "scheduledEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailureReason"
+        },
+        {
+          "description": "The reason provided for the failure."
+        }
+      ]
+    },
+    "details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The details of the failure."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LambdaFunctionFailedEventAttributes"
+}

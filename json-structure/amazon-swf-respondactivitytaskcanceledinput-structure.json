@@ -1,0 +1,19 @@
+{
+  "name": "RespondActivityTaskCanceledInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

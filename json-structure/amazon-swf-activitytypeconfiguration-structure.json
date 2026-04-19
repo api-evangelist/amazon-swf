@@ -1,0 +1,43 @@
+{
+  "name": "ActivityTypeConfiguration",
+  "description": "Configuration settings registered with the activity type.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "defaultTaskStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskHeartbeatTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskList",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskScheduleToStartTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskScheduleToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

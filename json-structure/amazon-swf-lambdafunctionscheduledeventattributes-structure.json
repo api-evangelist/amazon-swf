@@ -1,0 +1,43 @@
+{
+  "name": "LambdaFunctionScheduledEventAttributes",
+  "description": "Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "control",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

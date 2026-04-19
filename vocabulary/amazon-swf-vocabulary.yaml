@@ -1,0 +1,49 @@
+id: amazon-swf-vocabulary
+name: Amazon Simple Workflow Service Vocabulary
+description: Vocabulary and taxonomy for Amazon SWF concepts, operations, and resources.
+version: '1.0'
+provider: Amazon Web Services
+tags:
+  - AWS
+  - Workflow
+  - Task Coordination
+terms:
+  - term: Workflow
+    definition: A sequence of steps or tasks that defines a business process or application flow.
+    category: Core Concept
+  - term: Activity
+    definition: A unit of work performed by an activity worker in a workflow.
+    category: Core Concept
+  - term: Decider
+    definition: A component that makes decisions about what to do next in a workflow based on its history.
+    category: Core Concept
+  - term: Domain
+    definition: A logical container for workflows and activities in Amazon SWF.
+    category: Resource
+  - term: Task List
+    definition: A queue used to route tasks to specific workers in a workflow.
+    category: Resource
+  - term: Workflow Execution
+    definition: A running instance of a workflow type.
+    category: Resource
+  - term: Activity Task
+    definition: A task assigned to an activity worker to perform a unit of work.
+    category: Resource
+  - term: Decision Task
+    definition: A task assigned to a decider to determine the next steps in a workflow.
+    category: Resource
+  - term: Workflow Type
+    definition: A registered template for creating workflow executions.
+    category: Resource
+  - term: Activity Type
+    definition: A registered template for performing activity tasks.
+    category: Resource
+  - term: Run ID
+    definition: A unique identifier for a specific workflow execution instance.
+    category: Identifier
+  - term: Workflow ID
+    definition: A client-supplied identifier for a workflow execution, unique within a domain.
+    category: Identifier
+  - term: Tag
+    definition: A label attached to a workflow execution for filtering and searching.
+    category: Metadata

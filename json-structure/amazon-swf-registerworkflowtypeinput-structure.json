@@ -1,0 +1,67 @@
+{
+  "name": "RegisterWorkflowTypeInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultExecutionStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskList",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultTaskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultChildPolicy",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "defaultLambdaRole",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

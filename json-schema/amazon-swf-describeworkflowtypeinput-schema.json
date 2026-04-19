@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "workflowType"
+  ],
+  "title": "DescribeWorkflowTypeInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain in which this workflow type is registered."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The workflow type to describe."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

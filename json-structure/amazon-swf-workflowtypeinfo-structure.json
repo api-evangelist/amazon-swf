@@ -1,0 +1,37 @@
+{
+  "name": "WorkflowTypeInfo",
+  "description": "Contains information about a workflow type.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "creationDate",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "deprecationDate",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

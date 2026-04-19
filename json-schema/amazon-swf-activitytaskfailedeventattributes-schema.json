@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "required": [
+    "scheduledEventId",
+    "startedEventId"
+  ],
+  "properties": {
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailureReason"
+        },
+        {
+          "description": "The reason provided for the failure."
+        }
+      ]
+    },
+    "details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The details of the failure."
+        }
+      ]
+    },
+    "scheduledEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ActivityTaskFailed</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskFailedEventAttributes"
+}

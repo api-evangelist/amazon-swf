@@ -1,0 +1,25 @@
+{
+  "name": "RespondActivityTaskFailedInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

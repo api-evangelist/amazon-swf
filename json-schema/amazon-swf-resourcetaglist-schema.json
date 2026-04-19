@@ -1,0 +1,8 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ResourceTag"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResourceTagList"
+}

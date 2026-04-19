@@ -1,0 +1,19 @@
+{
+  "name": "ActivityTaskCancelRequestedEventAttributes",
+  "description": "Provides the details of the <code>ActivityTaskCancelRequested</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

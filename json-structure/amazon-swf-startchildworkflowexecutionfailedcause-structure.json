@@ -1,0 +1,6 @@
+{
+  "name": "StartChildWorkflowExecutionFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

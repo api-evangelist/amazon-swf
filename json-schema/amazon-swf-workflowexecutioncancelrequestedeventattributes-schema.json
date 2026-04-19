@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "externalWorkflowExecution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The external workflow execution for which the cancellation was requested."
+        }
+      ]
+    },
+    "externalInitiatedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "cause": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionCancelRequestedCause"
+        },
+        {
+          "description": "If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionCancelRequestedEventAttributes"
+}

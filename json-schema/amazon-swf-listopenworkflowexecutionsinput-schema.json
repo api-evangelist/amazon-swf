@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "startTimeFilter"
+  ],
+  "title": "ListOpenWorkflowExecutionsInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain that contains the workflow executions to list."
+        }
+      ]
+    },
+    "startTimeFilter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionTimeFilter"
+        },
+        {
+          "description": "Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter."
+        }
+      ]
+    },
+    "typeFilter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowTypeFilter"
+        },
+        {
+          "description": "<p>If specified, only executions of the type specified in the filter are returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> </note>"
+        }
+      ]
+    },
+    "tagFilter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagFilter"
+        },
+        {
+          "description": "<p>If specified, only executions that have the matching tag are listed.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> </note>"
+        }
+      ]
+    },
+    "nextPageToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageToken"
+        },
+        {
+          "description": "<p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: \"<code>Specified token has exceeded its maximum lifetime</code>\". </p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>"
+        }
+      ]
+    },
+    "maximumPageSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. "
+        }
+      ]
+    },
+    "reverseOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReverseOrder"
+        },
+        {
+          "description": "When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions."
+        }
+      ]
+    },
+    "executionFilter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionFilter"
+        },
+        {
+          "description": "<p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> </note>"
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

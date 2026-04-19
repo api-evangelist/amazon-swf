@@ -1,0 +1,43 @@
+{
+  "name": "WorkflowExecutionConfiguration",
+  "description": "The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "executionStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "lambdaRole",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

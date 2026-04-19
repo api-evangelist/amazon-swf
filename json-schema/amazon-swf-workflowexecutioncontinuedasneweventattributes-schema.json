@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "required": [
+    "decisionTaskCompletedEventId",
+    "newExecutionRunId",
+    "taskList",
+    "childPolicy",
+    "workflowType"
+  ],
+  "properties": {
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The input provided to the new workflow execution."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "newExecutionRunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunId"
+        },
+        {
+          "description": "The <code>runId</code> of the new workflow execution."
+        }
+      ]
+    },
+    "executionStartToCloseTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSecondsOptional"
+        },
+        {
+          "description": "<p>The total duration allowed for the new workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>"
+        }
+      ]
+    },
+    "taskList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskList"
+        },
+        {
+          "description": "The task list to use for the decisions of the new (continued) workflow execution."
+        }
+      ]
+    },
+    "taskPriority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskPriority"
+        },
+        {
+          "description": "The priority of the task to use for the decisions of the new (continued) workflow execution."
+        }
+      ]
+    },
+    "taskStartToCloseTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSecondsOptional"
+        },
+        {
+          "description": "<p>The maximum duration of decision tasks for the new workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>"
+        }
+      ]
+    },
+    "childPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildPolicy"
+        },
+        {
+          "description": "<p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> \u2013 The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> \u2013 A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> \u2013 No action is taken. The child executions continue to run.</p> </li> </ul>"
+        }
+      ]
+    },
+    "tagList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The list of tags associated with the new workflow execution."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The workflow type of this execution."
+        }
+      ]
+    },
+    "lambdaRole": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The IAM role to attach to the new (continued) workflow execution."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionContinuedAsNewEventAttributes"
+}

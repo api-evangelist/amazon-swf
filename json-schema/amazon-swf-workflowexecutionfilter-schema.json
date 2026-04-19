@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "workflowId"
+  ],
+  "properties": {
+    "workflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowId"
+        },
+        {
+          "description": "The workflowId to pass of match the criteria of this filter."
+        }
+      ]
+    }
+  },
+  "description": "Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionFilter"
+}

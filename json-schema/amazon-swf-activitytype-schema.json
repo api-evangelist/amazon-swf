@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "name",
+    "version"
+  ],
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "<p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>"
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Version"
+        },
+        {
+          "description": "<p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>"
+        }
+      ]
+    }
+  },
+  "description": "Represents an activity type.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityType"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "DomainConfiguration",
+  "description": "Contains the configuration settings of a domain.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowExecutionRetentionPeriodInDays",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "DomainInfos",
+  "description": "Contains a paginated collection of DomainInfo structures.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domainInfos",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

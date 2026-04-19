@@ -1,0 +1,25 @@
+{
+  "name": "StartLambdaFunctionFailedEventAttributes",
+  "description": "Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

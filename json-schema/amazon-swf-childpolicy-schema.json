@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "enum": [
+    "TERMINATE",
+    "REQUEST_CANCEL",
+    "ABANDON"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChildPolicy"
+}

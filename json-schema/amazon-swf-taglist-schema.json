@@ -1,0 +1,9 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Tag"
+  },
+  "maxItems": 5,
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TagList"
+}

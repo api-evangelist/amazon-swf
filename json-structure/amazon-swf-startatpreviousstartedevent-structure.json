@@ -1,0 +1,6 @@
+{
+  "name": "StartAtPreviousStartedEvent",
+  "description": "",
+  "type": "boolean",
+  "properties": []
+}

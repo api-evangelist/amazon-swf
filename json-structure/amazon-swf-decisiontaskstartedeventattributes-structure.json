@@ -1,0 +1,19 @@
+{
+  "name": "DecisionTaskStartedEventAttributes",
+  "description": "Provides the details of the <code>DecisionTaskStarted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "identity",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

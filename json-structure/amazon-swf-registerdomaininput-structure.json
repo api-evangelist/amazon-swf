@@ -1,0 +1,31 @@
+{
+  "name": "RegisterDomainInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionRetentionPeriodInDays",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "tags",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "CancelTimerFailedEventAttributes",
+  "description": "Provides the details of the <code>CancelTimerFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "timerId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

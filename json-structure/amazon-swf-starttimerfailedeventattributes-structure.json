@@ -1,0 +1,25 @@
+{
+  "name": "StartTimerFailedEventAttributes",
+  "description": "Provides the details of the <code>StartTimerFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "timerId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

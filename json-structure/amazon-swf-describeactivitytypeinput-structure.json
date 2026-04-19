@@ -1,0 +1,19 @@
+{
+  "name": "DescribeActivityTypeInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityType",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

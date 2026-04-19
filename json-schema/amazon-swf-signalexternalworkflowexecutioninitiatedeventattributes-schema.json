@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "required": [
+    "workflowId",
+    "signalName",
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "workflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowId"
+        },
+        {
+          "description": "The <code>workflowId</code> of the external workflow execution."
+        }
+      ]
+    },
+    "runId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunIdOptional"
+        },
+        {
+          "description": "The <code>runId</code> of the external workflow execution to send the signal to."
+        }
+      ]
+    },
+    "signalName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SignalName"
+        },
+        {
+          "description": "The name of the signal."
+        }
+      ]
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The input provided to the signal."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "control": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "Data attached to the event that can be used by the decider in subsequent decision tasks."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SignalExternalWorkflowExecutionInitiatedEventAttributes"
+}

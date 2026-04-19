@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "scheduledEventId"
+  ],
+  "properties": {
+    "identity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Identity"
+        },
+        {
+          "description": "Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined."
+        }
+      ]
+    },
+    "scheduledEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ActivityTaskStarted</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskStartedEventAttributes"
+}

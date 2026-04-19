@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "decisionTaskCompletedEventId",
+    "activityId"
+  ],
+  "properties": {
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "activityId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityId"
+        },
+        {
+          "description": "The unique ID of the task."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ActivityTaskCancelRequested</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskCancelRequestedEventAttributes"
+}

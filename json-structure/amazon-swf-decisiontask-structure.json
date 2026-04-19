@@ -1,0 +1,49 @@
+{
+  "name": "DecisionTask",
+  "description": "A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowExecution",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "events",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "previousStartedEventId",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

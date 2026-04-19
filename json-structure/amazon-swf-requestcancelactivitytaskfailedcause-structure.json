@@ -1,0 +1,6 @@
+{
+  "name": "RequestCancelActivityTaskFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

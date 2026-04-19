@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecutionCount",
+  "description": "Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a> ",
+  "type": "object",
+  "properties": [
+    {
+      "name": "count",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "truncated",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

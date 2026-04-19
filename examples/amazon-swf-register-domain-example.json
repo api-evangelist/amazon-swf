@@ -1,0 +1,5 @@
+{
+  "name": "my-workflow-domain",
+  "description": "Domain for my workflow applications",
+  "workflowExecutionRetentionPeriodInDays": "30"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "TagResourceInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "resourceArn",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "tags",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

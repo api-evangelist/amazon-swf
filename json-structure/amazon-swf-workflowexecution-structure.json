@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecution",
+  "description": "Represents a workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "runId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

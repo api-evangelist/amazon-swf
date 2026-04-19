@@ -1,0 +1,19 @@
+{
+  "name": "RespondActivityTaskCompletedInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "taskToken",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "result",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "WorkflowExecutionOpenCounts",
+  "description": "Contains the counts of open tasks, child workflow executions and timers for a workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "openActivityTasks",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "openDecisionTasks",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "openTimers",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "openChildWorkflowExecutions",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "openLambdaFunctions",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

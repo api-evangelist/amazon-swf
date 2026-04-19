@@ -1,0 +1,6 @@
+{
+  "name": "WorkflowExecutionTerminatedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

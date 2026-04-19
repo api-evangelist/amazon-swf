@@ -1,0 +1,19 @@
+{
+  "name": "UntagResourceInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "resourceArn",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "tagKeys",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

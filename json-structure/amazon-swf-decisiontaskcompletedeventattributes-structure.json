@@ -1,0 +1,25 @@
+{
+  "name": "DecisionTaskCompletedEventAttributes",
+  "description": "Provides the details of the <code>DecisionTaskCompleted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "executionContext",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

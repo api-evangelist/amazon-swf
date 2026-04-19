@@ -1,0 +1,6 @@
+{
+  "name": "CancelWorkflowExecutionFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

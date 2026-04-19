@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "required": [
+    "execution",
+    "workflowType",
+    "startTimestamp",
+    "executionStatus"
+  ],
+  "properties": {
+    "execution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The workflow execution this information is about."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The type of the workflow execution."
+        }
+      ]
+    },
+    "startTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the execution was started."
+        }
+      ]
+    },
+    "closeTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the workflow execution was closed. Set only if the execution status is CLOSED."
+        }
+      ]
+    },
+    "executionStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionStatus"
+        },
+        {
+          "description": "The current status of the execution."
+        }
+      ]
+    },
+    "closeStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CloseStatus"
+        },
+        {
+          "description": "<p>If the execution status is closed then this specifies how the execution was closed:</p> <ul> <li> <p> <code>COMPLETED</code> \u2013 the execution was successfully completed.</p> </li> <li> <p> <code>CANCELED</code> \u2013 the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li> <li> <p> <code>TERMINATED</code> \u2013 the execution was force terminated.</p> </li> <li> <p> <code>FAILED</code> \u2013 the execution failed to complete.</p> </li> <li> <p> <code>TIMED_OUT</code> \u2013 the execution did not complete in the alloted time and was automatically timed out.</p> </li> <li> <p> <code>CONTINUED_AS_NEW</code> \u2013 the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li> </ul>"
+        }
+      ]
+    },
+    "parent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "If this workflow execution is a child of another execution then contains the workflow execution that started this execution."
+        }
+      ]
+    },
+    "tagList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags."
+        }
+      ]
+    },
+    "cancelRequested": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Canceled"
+        },
+        {
+          "description": "Set to true if a cancellation is requested for this workflow execution."
+        }
+      ]
+    }
+  },
+  "description": "Contains information about a workflow execution.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionInfo"
+}

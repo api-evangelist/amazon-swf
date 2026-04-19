@@ -1,0 +1,13 @@
+{
+  "name": "ActivityTaskStatus",
+  "description": "Status information about an activity task.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "cancelRequested",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

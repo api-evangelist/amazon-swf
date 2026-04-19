@@ -1,0 +1,13 @@
+{
+  "name": "LambdaFunctionStartedEventAttributes",
+  "description": "Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

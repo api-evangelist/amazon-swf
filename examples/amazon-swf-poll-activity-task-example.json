@@ -1,0 +1,6 @@
+{
+  "domain": "my-workflow-domain",
+  "taskList": {
+    "name": "my-activity-task-list"
+  }
+}

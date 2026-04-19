@@ -1,0 +1,349 @@
+{
+  "name": "HistoryEvent",
+  "description": "<p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> \u2013 A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> \u2013 The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> \u2013 An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> \u2013 An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> \u2013 An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> \u2013 The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> \u2013 The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> \u2013 Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> \u2013 A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> \u2013 A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> \u2013 A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> \u2013 A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> \u2013 A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> \u2013 A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> \u2013 A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> \u2013 The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> \u2013 The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> \u2013 The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> \u2013 A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> \u2013 The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> \u2013 The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> \u2013 Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> \u2013 A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> \u2013 A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> \u2013 A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> \u2013 A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> \u2013 Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> \u2013 Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> \u2013 A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> \u2013 Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> \u2013 The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> \u2013 A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> \u2013 A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> \u2013 Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> \u2013 A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> \u2013 Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> \u2013 A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> \u2013 A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> \u2013 A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> \u2013 A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> \u2013 The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> \u2013 The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> \u2013 The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> \u2013 The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> \u2013 An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> \u2013 The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> \u2013 The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> \u2013 The workflow execution was closed because a time out was exceeded.</p> </li> </ul>",
+  "type": "object",
+  "properties": [
+    {
+      "name": "eventTimestamp",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "eventType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "eventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowExecutionStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionCompletedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "completeWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "failWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionTimedOutEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionCanceledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "cancelWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionContinuedAsNewEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "continueAsNewWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionTerminatedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionCancelRequestedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskScheduledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskTimedOutEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskScheduledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskCompletedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskTimedOutEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskCanceledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "activityTaskCancelRequestedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowExecutionSignaledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "markerRecordedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "recordMarkerFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "timerStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "timerFiredEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "timerCanceledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startChildWorkflowExecutionInitiatedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionCompletedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionTimedOutEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionCanceledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childWorkflowExecutionTerminatedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "signalExternalWorkflowExecutionInitiatedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "externalWorkflowExecutionSignaledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "signalExternalWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "externalWorkflowExecutionCancelRequestedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "requestCancelExternalWorkflowExecutionInitiatedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "requestCancelExternalWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduleActivityTaskFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "requestCancelActivityTaskFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startTimerFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "cancelTimerFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startChildWorkflowExecutionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaFunctionScheduledEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaFunctionStartedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaFunctionCompletedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaFunctionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaFunctionTimedOutEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduleLambdaFunctionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startLambdaFunctionFailedEventAttributes",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

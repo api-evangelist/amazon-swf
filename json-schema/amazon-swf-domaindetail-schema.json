@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "domainInfo",
+    "configuration"
+  ],
+  "properties": {
+    "domainInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainInfo"
+        },
+        {
+          "description": "The basic information about a domain, such as its name, status, and description."
+        }
+      ]
+    },
+    "configuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainConfiguration"
+        },
+        {
+          "description": "The domain configuration. Currently, this includes only the domain's retention period."
+        }
+      ]
+    }
+  },
+  "description": "Contains details of a domain.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DomainDetail"
+}

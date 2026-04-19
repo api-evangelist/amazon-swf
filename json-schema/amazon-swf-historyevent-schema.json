@@ -1,0 +1,583 @@
+{
+  "type": "object",
+  "required": [
+    "eventTimestamp",
+    "eventType",
+    "eventId"
+  ],
+  "properties": {
+    "eventTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time when the event occurred."
+        }
+      ]
+    },
+    "eventType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventType"
+        },
+        {
+          "description": "The type of the history event."
+        }
+      ]
+    },
+    "eventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history."
+        }
+      ]
+    },
+    "workflowExecutionStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionStartedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionCompletedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionCompletedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "completeWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CompleteWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "failWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionTimedOutEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionTimedOutEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionCanceledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionCanceledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "cancelWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CancelWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionContinuedAsNewEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionContinuedAsNewEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "continueAsNewWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContinueAsNewWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionTerminatedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionTerminatedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionCancelRequestedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionCancelRequestedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "decisionTaskScheduledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecisionTaskScheduledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "decisionTaskStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecisionTaskStartedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecisionTaskCompletedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "decisionTaskTimedOutEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecisionTaskTimedOutEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskScheduledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskScheduledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskStartedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskCompletedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskCompletedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskTimedOutEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskTimedOutEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskCanceledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskCanceledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "activityTaskCancelRequestedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityTaskCancelRequestedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "workflowExecutionSignaledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionSignaledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "markerRecordedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MarkerRecordedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "recordMarkerFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecordMarkerFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "timerStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerStartedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "timerFiredEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerFiredEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "timerCanceledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerCanceledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "startChildWorkflowExecutionInitiatedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartChildWorkflowExecutionInitiatedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionStartedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionCompletedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionCompletedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionTimedOutEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionTimedOutEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionCanceledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionCanceledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "childWorkflowExecutionTerminatedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildWorkflowExecutionTerminatedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "signalExternalWorkflowExecutionInitiatedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SignalExternalWorkflowExecutionInitiatedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "externalWorkflowExecutionSignaledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalWorkflowExecutionSignaledEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "signalExternalWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SignalExternalWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "externalWorkflowExecutionCancelRequestedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalWorkflowExecutionCancelRequestedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types. "
+        }
+      ]
+    },
+    "requestCancelExternalWorkflowExecutionInitiatedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestCancelExternalWorkflowExecutionInitiatedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "requestCancelExternalWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestCancelExternalWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "scheduleActivityTaskFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleActivityTaskFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "requestCancelActivityTaskFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestCancelActivityTaskFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "startTimerFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartTimerFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "cancelTimerFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CancelTimerFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "startChildWorkflowExecutionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartChildWorkflowExecutionFailedEventAttributes"
+        },
+        {
+          "description": "If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types."
+        }
+      ]
+    },
+    "lambdaFunctionScheduledEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionScheduledEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "lambdaFunctionStartedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionStartedEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "lambdaFunctionCompletedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionCompletedEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "lambdaFunctionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionFailedEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "lambdaFunctionTimedOutEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionTimedOutEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "scheduleLambdaFunctionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleLambdaFunctionFailedEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types."
+        }
+      ]
+    },
+    "startLambdaFunctionFailedEventAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartLambdaFunctionFailedEventAttributes"
+        },
+        {
+          "description": "Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types."
+        }
+      ]
+    }
+  },
+  "description": "<p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> \u2013 A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> \u2013 The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> \u2013 An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> \u2013 An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> \u2013 An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> \u2013 The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> \u2013 The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> \u2013 Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> \u2013 A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> \u2013 A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> \u2013 A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> \u2013 A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> \u2013 A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> \u2013 A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> \u2013 A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> \u2013 The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> \u2013 The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> \u2013 The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> \u2013 A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> \u2013 The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> \u2013 The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> \u2013 Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> \u2013 A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> \u2013 A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> \u2013 A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> \u2013 A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> \u2013 Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> \u2013 Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> \u2013 A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> \u2013 Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> \u2013 The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> \u2013 A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> \u2013 A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> \u2013 Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> \u2013 A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> \u2013 Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> \u2013 A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> \u2013 A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> \u2013 A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> \u2013 A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> \u2013 The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> \u2013 The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> \u2013 The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> \u2013 The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> \u2013 An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> \u2013 The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> \u2013 The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> \u2013 The workflow execution was closed because a time out was exceeded.</p> </li> </ul>",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HistoryEvent"
+}

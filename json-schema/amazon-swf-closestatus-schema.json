@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "enum": [
+    "COMPLETED",
+    "FAILED",
+    "CANCELED",
+    "TERMINATED",
+    "CONTINUED_AS_NEW",
+    "TIMED_OUT"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CloseStatus"
+}

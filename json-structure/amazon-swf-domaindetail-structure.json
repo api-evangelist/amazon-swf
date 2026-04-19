@@ -1,0 +1,19 @@
+{
+  "name": "DomainDetail",
+  "description": "Contains details of a domain.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domainInfo",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

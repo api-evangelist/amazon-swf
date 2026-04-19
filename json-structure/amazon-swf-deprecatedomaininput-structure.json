@@ -1,0 +1,13 @@
+{
+  "name": "DeprecateDomainInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

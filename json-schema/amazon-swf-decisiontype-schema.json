@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "enum": [
+    "ScheduleActivityTask",
+    "RequestCancelActivityTask",
+    "CompleteWorkflowExecution",
+    "FailWorkflowExecution",
+    "CancelWorkflowExecution",
+    "ContinueAsNewWorkflowExecution",
+    "RecordMarker",
+    "StartTimer",
+    "CancelTimer",
+    "SignalExternalWorkflowExecution",
+    "RequestCancelExternalWorkflowExecution",
+    "StartChildWorkflowExecution",
+    "ScheduleLambdaFunction"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DecisionType"
+}

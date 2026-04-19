@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "required": [
+    "taskToken",
+    "activityId",
+    "startedEventId",
+    "workflowExecution",
+    "activityType"
+  ],
+  "properties": {
+    "taskToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskToken"
+        },
+        {
+          "description": "The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task."
+        }
+      ]
+    },
+    "activityId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityId"
+        },
+        {
+          "description": "The unique ID of the task."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskStarted</code> event recorded in the history."
+        }
+      ]
+    },
+    "workflowExecution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The workflow execution that started this activity task."
+        }
+      ]
+    },
+    "activityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityType"
+        },
+        {
+          "description": "The type of this activity task."
+        }
+      ]
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation."
+        }
+      ]
+    }
+  },
+  "description": "Unit of work sent to an activity worker.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTask"
+}

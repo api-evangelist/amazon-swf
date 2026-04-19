@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "TIMER_ID_ALREADY_IN_USE",
+    "OPEN_TIMERS_LIMIT_EXCEEDED",
+    "TIMER_CREATION_RATE_EXCEEDED",
+    "OPERATION_NOT_PERMITTED"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StartTimerFailedCause"
+}

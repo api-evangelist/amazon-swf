@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "enum": [
+    "CHILD_POLICY_APPLIED"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionCancelRequestedCause"
+}

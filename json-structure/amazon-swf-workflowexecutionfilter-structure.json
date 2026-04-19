@@ -1,0 +1,13 @@
+{
+  "name": "WorkflowExecutionFilter",
+  "description": "Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

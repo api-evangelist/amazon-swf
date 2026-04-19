@@ -1,0 +1,25 @@
+{
+  "name": "LambdaFunctionTimedOutEventAttributes",
+  "description": "Provides details of the <code>LambdaFunctionTimedOut</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "timeoutType",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

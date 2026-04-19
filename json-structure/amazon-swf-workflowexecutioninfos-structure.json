@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecutionInfos",
+  "description": "Contains a paginated list of information about workflow executions.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "executionInfos",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

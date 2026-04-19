@@ -1,0 +1,6 @@
+{
+  "name": "OperationNotPermittedFault",
+  "description": "",
+  "type": "object",
+  "properties": []
+}

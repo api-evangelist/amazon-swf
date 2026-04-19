@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "required": [
+    "scheduledEventId",
+    "startedEventId"
+  ],
+  "properties": {
+    "scheduledEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "timeoutType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionTimeoutType"
+        },
+        {
+          "description": "The type of the timeout that caused this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides details of the <code>LambdaFunctionTimedOut</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LambdaFunctionTimedOutEventAttributes"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/HistoryEvent"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HistoryEventList"
+}

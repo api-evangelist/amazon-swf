@@ -1,0 +1,13 @@
+{
+  "name": "ListTagsForResourceInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "resourceArn",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

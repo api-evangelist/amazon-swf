@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "enum": [
+    "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
+    "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
+    "OPERATION_NOT_PERMITTED"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SignalExternalWorkflowExecutionFailedCause"
+}

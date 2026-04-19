@@ -1,0 +1,14 @@
+{
+  "domain": "my-workflow-domain",
+  "workflowId": "my-workflow-001",
+  "workflowType": {
+    "name": "my-workflow",
+    "version": "1.0"
+  },
+  "taskList": {
+    "name": "my-task-list"
+  },
+  "executionStartToCloseTimeout": "3600",
+  "taskStartToCloseTimeout": "300",
+  "input": "{\"key\": \"value\"}"
+}

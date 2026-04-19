@@ -1,0 +1,13 @@
+{
+  "name": "Run",
+  "description": "Specifies the <code>runId</code> of a workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "runId",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

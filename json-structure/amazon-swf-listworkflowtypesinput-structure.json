@@ -1,0 +1,43 @@
+{
+  "name": "ListWorkflowTypesInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "registrationStatus",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "nextPageToken",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "maximumPageSize",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "reverseOrder",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

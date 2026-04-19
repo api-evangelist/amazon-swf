@@ -1,0 +1,25 @@
+{
+  "name": "LambdaFunctionCompletedEventAttributes",
+  "description": "Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "result",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

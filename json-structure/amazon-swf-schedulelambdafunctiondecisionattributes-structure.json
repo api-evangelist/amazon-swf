@@ -1,0 +1,37 @@
+{
+  "name": "ScheduleLambdaFunctionDecisionAttributes",
+  "description": "Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "control",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "required": [
+    "openActivityTasks",
+    "openDecisionTasks",
+    "openTimers",
+    "openChildWorkflowExecutions"
+  ],
+  "properties": {
+    "openActivityTasks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Count"
+        },
+        {
+          "description": "The count of activity tasks whose status is <code>OPEN</code>."
+        }
+      ]
+    },
+    "openDecisionTasks": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OpenDecisionTasksCount"
+        },
+        {
+          "description": "The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task."
+        }
+      ]
+    },
+    "openTimers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Count"
+        },
+        {
+          "description": "The count of timers started by this workflow execution that have not fired yet."
+        }
+      ]
+    },
+    "openChildWorkflowExecutions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Count"
+        },
+        {
+          "description": "The count of child workflow executions whose status is <code>OPEN</code>."
+        }
+      ]
+    },
+    "openLambdaFunctions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Count"
+        },
+        {
+          "description": "The count of Lambda tasks whose status is <code>OPEN</code>."
+        }
+      ]
+    }
+  },
+  "description": "Contains the counts of open tasks, child workflow executions and timers for a workflow execution.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionOpenCounts"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "StartChildWorkflowExecutionFailedEventAttributes",
+  "description": "Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "initiatedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "control",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

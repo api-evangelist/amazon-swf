@@ -1,0 +1,31 @@
+{
+  "name": "WorkflowExecutionTerminatedEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionTerminated</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

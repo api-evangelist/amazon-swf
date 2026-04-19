@@ -1,0 +1,19 @@
+{
+  "name": "FailWorkflowExecutionFailedEventAttributes",
+  "description": "Provides the details of the <code>FailWorkflowExecutionFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

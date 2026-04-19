@@ -1,0 +1,49 @@
+{
+  "name": "CountClosedWorkflowExecutionsInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startTimeFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "closeTimeFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "executionFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "typeFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "tagFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "closeStatusFilter",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

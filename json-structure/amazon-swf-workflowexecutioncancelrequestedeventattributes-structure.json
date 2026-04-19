@@ -1,0 +1,25 @@
+{
+  "name": "WorkflowExecutionCancelRequestedEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "externalWorkflowExecution",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "externalInitiatedEventId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

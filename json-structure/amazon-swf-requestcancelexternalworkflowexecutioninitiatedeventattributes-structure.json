@@ -1,0 +1,31 @@
+{
+  "name": "RequestCancelExternalWorkflowExecutionInitiatedEventAttributes",
+  "description": "Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "runId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "control",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

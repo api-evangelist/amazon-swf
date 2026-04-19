@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "swf": "https://aws.amazon.com/swf/vocab#",
+    "Workflow": "swf:Workflow",
+    "ActivityTask": "swf:ActivityTask",
+    "DecisionTask": "swf:DecisionTask",
+    "WorkflowExecution": "swf:WorkflowExecution",
+    "Domain": "swf:Domain",
+    "ActivityType": "swf:ActivityType",
+    "WorkflowType": "swf:WorkflowType",
+    "taskList": "swf:taskList",
+    "executionStatus": "swf:executionStatus",
+    "closeStatus": "swf:closeStatus",
+    "tagList": "swf:tagList",
+    "runId": "swf:runId",
+    "workflowId": "swf:workflowId"
+  }
+}

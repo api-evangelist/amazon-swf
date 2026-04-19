@@ -1,0 +1,6 @@
+{
+  "name": "SignalExternalWorkflowExecutionFailedCause",
+  "description": "",
+  "type": "string",
+  "properties": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecutionCompletedEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionCompleted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "result",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

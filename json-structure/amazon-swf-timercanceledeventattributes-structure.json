@@ -1,0 +1,25 @@
+{
+  "name": "TimerCanceledEventAttributes",
+  "description": " Provides the details of the <code>TimerCanceled</code> event. ",
+  "type": "object",
+  "properties": [
+    {
+      "name": "timerId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

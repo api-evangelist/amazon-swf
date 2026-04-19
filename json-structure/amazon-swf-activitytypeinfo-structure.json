@@ -1,0 +1,37 @@
+{
+  "name": "ActivityTypeInfo",
+  "description": "Detailed information about an activity type.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "activityType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "creationDate",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "deprecationDate",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

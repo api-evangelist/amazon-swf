@@ -1,0 +1,6 @@
+{
+  "name": "LimitExceededFault",
+  "description": "",
+  "type": "object",
+  "properties": []
+}

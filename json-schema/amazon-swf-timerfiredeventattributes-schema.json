@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "timerId",
+    "startedEventId"
+  ],
+  "properties": {
+    "timerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerId"
+        },
+        {
+          "description": "The unique ID of the timer that fired."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>TimerFired</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimerFiredEventAttributes"
+}

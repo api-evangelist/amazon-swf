@@ -1,0 +1,37 @@
+{
+  "name": "ChildWorkflowExecutionCanceledEventAttributes",
+  "description": "Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "workflowExecution",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "initiatedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

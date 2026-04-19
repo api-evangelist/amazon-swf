@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": " Name of the workflow type."
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionOptional"
+        },
+        {
+          "description": "Version of the workflow type."
+        }
+      ]
+    }
+  },
+  "description": "Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowTypeFilter"
+}

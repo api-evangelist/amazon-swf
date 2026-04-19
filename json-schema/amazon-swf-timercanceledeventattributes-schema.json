@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "timerId",
+    "startedEventId",
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "timerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimerId"
+        },
+        {
+          "description": "The unique ID of the timer that was canceled."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": " Provides the details of the <code>TimerCanceled</code> event. ",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimerCanceledEventAttributes"
+}

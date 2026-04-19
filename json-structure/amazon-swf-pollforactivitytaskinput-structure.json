@@ -1,0 +1,25 @@
+{
+  "name": "PollForActivityTaskInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "identity",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

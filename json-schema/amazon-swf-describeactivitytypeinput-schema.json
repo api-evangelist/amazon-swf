@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "activityType"
+  ],
+  "title": "DescribeActivityTypeInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain in which the activity type is registered."
+        }
+      ]
+    },
+    "activityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActivityType"
+        },
+        {
+          "description": "The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

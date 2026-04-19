@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "key"
+  ],
+  "properties": {
+    "key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceTagKey"
+        },
+        {
+          "description": "The key of a tag."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceTagValue"
+        },
+        {
+          "description": "The value of a tag."
+        }
+      ]
+    }
+  },
+  "description": "<p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResourceTag"
+}

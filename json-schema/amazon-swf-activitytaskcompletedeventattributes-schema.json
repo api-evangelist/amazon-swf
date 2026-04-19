@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "required": [
+    "scheduledEventId",
+    "startedEventId"
+  ],
+  "properties": {
+    "result": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "The results of the activity task."
+        }
+      ]
+    },
+    "scheduledEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "startedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ActivityTaskCompleted</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskCompletedEventAttributes"
+}

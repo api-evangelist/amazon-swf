@@ -1,0 +1,6 @@
+{
+  "name": "TypeAlreadyExistsFault",
+  "description": "",
+  "type": "object",
+  "properties": []
+}

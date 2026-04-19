@@ -1,0 +1,13 @@
+{
+  "name": "TaskList",
+  "description": "Represents a task list.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

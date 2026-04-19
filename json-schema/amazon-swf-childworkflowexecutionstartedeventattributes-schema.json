@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "workflowExecution",
+    "workflowType",
+    "initiatedEventId"
+  ],
+  "properties": {
+    "workflowExecution": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecution"
+        },
+        {
+          "description": "The child workflow execution that was started."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The type of the child workflow execution."
+        }
+      ]
+    },
+    "initiatedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChildWorkflowExecutionStartedEventAttributes"
+}

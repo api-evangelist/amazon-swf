@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "required": [
+    "timeoutType",
+    "childPolicy"
+  ],
+  "properties": {
+    "timeoutType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowExecutionTimeoutType"
+        },
+        {
+          "description": "The type of timeout that caused this event."
+        }
+      ]
+    },
+    "childPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChildPolicy"
+        },
+        {
+          "description": "<p>The policy used for the child workflow executions of this workflow execution.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> \u2013 The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> \u2013 A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> \u2013 No action is taken. The child executions continue to run.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>WorkflowExecutionTimedOut</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionTimedOutEventAttributes"
+}

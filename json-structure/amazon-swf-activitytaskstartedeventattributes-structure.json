@@ -1,0 +1,19 @@
+{
+  "name": "ActivityTaskStartedEventAttributes",
+  "description": "Provides the details of the <code>ActivityTaskStarted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "identity",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduledEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

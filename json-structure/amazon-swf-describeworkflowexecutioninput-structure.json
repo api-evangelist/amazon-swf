@@ -1,0 +1,19 @@
+{
+  "name": "DescribeWorkflowExecutionInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "execution",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

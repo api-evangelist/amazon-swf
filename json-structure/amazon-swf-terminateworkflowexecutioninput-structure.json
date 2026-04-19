@@ -1,0 +1,43 @@
+{
+  "name": "TerminateWorkflowExecutionInput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "domain",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "runId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "details",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

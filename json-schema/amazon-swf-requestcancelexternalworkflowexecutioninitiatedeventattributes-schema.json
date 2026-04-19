@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "required": [
+    "workflowId",
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "workflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowId"
+        },
+        {
+          "description": "The <code>workflowId</code> of the external workflow execution to be canceled."
+        }
+      ]
+    },
+    "runId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunIdOptional"
+        },
+        {
+          "description": "The <code>runId</code> of the external workflow execution to be canceled."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event."
+        }
+      ]
+    },
+    "control": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "Data attached to the event that can be used by the decider in subsequent workflow tasks."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RequestCancelExternalWorkflowExecutionInitiatedEventAttributes"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "WorkflowExecutionStartedEventAttributes",
+  "description": "Provides details of <code>WorkflowExecutionStarted</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "executionStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "taskStartToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "tagList",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "continuedExecutionRunId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "parentWorkflowExecution",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "parentInitiatedEventId",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "lambdaRole",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

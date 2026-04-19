@@ -1,0 +1,31 @@
+{
+  "name": "ScheduleLambdaFunctionFailedEventAttributes",
+  "description": "Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

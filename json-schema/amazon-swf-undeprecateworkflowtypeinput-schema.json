@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "workflowType"
+  ],
+  "title": "UndeprecateWorkflowTypeInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain of the deprecated workflow type."
+        }
+      ]
+    },
+    "workflowType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowType"
+        },
+        {
+          "description": "The name of the domain of the deprecated workflow type."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

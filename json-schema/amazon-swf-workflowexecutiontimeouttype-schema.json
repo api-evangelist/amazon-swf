@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "enum": [
+    "START_TO_CLOSE"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorkflowExecutionTimeoutType"
+}

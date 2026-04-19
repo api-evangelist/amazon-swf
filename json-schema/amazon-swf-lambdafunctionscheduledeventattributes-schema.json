@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "decisionTaskCompletedEventId"
+  ],
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FunctionId"
+        },
+        {
+          "description": "The unique ID of the Lambda task."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FunctionName"
+        },
+        {
+          "description": "The name of the Lambda function."
+        }
+      ]
+    },
+    "control": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Data"
+        },
+        {
+          "description": "Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task."
+        }
+      ]
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FunctionInput"
+        },
+        {
+          "description": "The input provided to the Lambda task."
+        }
+      ]
+    },
+    "startToCloseTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSecondsOptional"
+        },
+        {
+          "description": "The maximum amount of time a worker can take to process the Lambda task."
+        }
+      ]
+    },
+    "decisionTaskCompletedEventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventId"
+        },
+        {
+          "description": "The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event."
+        }
+      ]
+    }
+  },
+  "description": "Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LambdaFunctionScheduledEventAttributes"
+}

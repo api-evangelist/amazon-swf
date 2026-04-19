@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "resourceArn",
+    "tagKeys"
+  ],
+  "title": "UntagResourceInput",
+  "properties": {
+    "resourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the Amazon SWF domain."
+        }
+      ]
+    },
+    "tagKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceTagKeyList"
+        },
+        {
+          "description": "The list of tags to remove from the Amazon SWF domain."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

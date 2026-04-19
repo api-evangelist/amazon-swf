@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "START_TO_CLOSE",
+    "SCHEDULE_TO_START",
+    "SCHEDULE_TO_CLOSE",
+    "HEARTBEAT"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivityTaskTimeoutType"
+}

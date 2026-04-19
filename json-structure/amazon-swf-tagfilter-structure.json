@@ -1,0 +1,13 @@
+{
+  "name": "TagFilter",
+  "description": "Used to filter the workflow executions in visibility APIs based on a tag.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "tag",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

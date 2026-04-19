@@ -1,0 +1,73 @@
+{
+  "name": "ActivityTaskScheduledEventAttributes",
+  "description": "Provides the details of the <code>ActivityTaskScheduled</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "activityType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "input",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "control",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduleToStartTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "scheduleToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "startToCloseTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "taskList",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "taskPriority",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "heartbeatTimeout",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

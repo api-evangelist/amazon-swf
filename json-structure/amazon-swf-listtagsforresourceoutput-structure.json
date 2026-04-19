@@ -1,0 +1,13 @@
+{
+  "name": "ListTagsForResourceOutput",
+  "description": "",
+  "type": "object",
+  "properties": [
+    {
+      "name": "tags",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

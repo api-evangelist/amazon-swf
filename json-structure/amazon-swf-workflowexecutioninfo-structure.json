@@ -1,0 +1,61 @@
+{
+  "name": "WorkflowExecutionInfo",
+  "description": "Contains information about a workflow execution.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "execution",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "workflowType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "startTimestamp",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "closeTimestamp",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "executionStatus",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "closeStatus",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "parent",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "tagList",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "cancelRequested",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

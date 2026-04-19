@@ -1,0 +1,19 @@
+{
+  "name": "WorkflowExecutionTimedOutEventAttributes",
+  "description": "Provides the details of the <code>WorkflowExecutionTimedOut</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "timeoutType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "childPolicy",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

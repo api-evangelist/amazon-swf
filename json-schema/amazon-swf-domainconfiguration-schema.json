@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "workflowExecutionRetentionPeriodInDays"
+  ],
+  "properties": {
+    "workflowExecutionRetentionPeriodInDays": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInDays"
+        },
+        {
+          "description": "The retention period for workflow executions in this domain."
+        }
+      ]
+    }
+  },
+  "description": "Contains the configuration settings of a domain.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DomainConfiguration"
+}

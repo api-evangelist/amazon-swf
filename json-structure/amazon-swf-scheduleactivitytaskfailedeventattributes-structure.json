@@ -1,0 +1,31 @@
+{
+  "name": "ScheduleActivityTaskFailedEventAttributes",
+  "description": "Provides the details of the <code>ScheduleActivityTaskFailed</code> event.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "activityType",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "activityId",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "cause",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "decisionTaskCompletedEventId",
+      "type": "string",
+      "description": "",
+      "required": true
+    }
+  ]
+}

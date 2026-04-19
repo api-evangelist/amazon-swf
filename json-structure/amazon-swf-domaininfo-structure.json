@@ -1,0 +1,31 @@
+{
+  "name": "DomainInfo",
+  "description": "Contains general information about a domain.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "",
+      "required": false
+    },
+    {
+      "name": "arn",
+      "type": "string",
+      "description": "",
+      "required": false
+    }
+  ]
+}

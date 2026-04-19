@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "required": [
+    "domain",
+    "workflowId"
+  ],
+  "title": "RequestCancelWorkflowExecutionInput",
+  "properties": {
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DomainName"
+        },
+        {
+          "description": "The name of the domain containing the workflow execution to cancel."
+        }
+      ]
+    },
+    "workflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowId"
+        },
+        {
+          "description": "The workflowId of the workflow execution to cancel."
+        }
+      ]
+    },
+    "runId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunIdOptional"
+        },
+        {
+          "description": "The runId of the workflow execution to cancel."
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
