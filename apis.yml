@@ -95,6 +95,17 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml
 - type: NaftikoCapability
   url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/capabilities/amazon-swf-workflow-management.yaml
+- type: Integrations
+  url: https://aws.amazon.com/partners/
+integrations:
+  - name: Partner Programs
+  - name: Resources
+  - name: Success Stories
+  - name: Work with an AWS Partner
+  - name: AWS Marketplace
+  - name: AWS Partner Central
+  - name: Partner Paths
+  - name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
