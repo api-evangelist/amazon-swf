@@ -1,9 +1,7 @@
 aid: amazon-swf
 name: Amazon Simple Workflow Service
-description: >-
-  Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and
-  scale background jobs that have parallel or sequential steps. It is a fully
-  managed state tracker and task coordinator in the cloud that manages intertask
+description: Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and scale background jobs that have
+  parallel or sequential steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask
   dependencies, scheduling, and concurrency for application workflows.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -12,19 +10,16 @@ tags:
 - AWS
 - Task Coordination
 - Workflow
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-swf:amazon-swf-api
   name: Amazon Simple Workflow Service API
-  description: >-
-    The Amazon SWF API provides programmatic access to manage workflows,
-    activity tasks, decision tasks, and workflow execution history. It enables
-    developers to coordinate distributed application components using
-    asynchronous task processing and state tracking.
+  description: The Amazon SWF API provides programmatic access to manage workflows, activity tasks, decision tasks, and workflow
+    execution history. It enables developers to coordinate distributed application components using asynchronous task processing
+    and state tracking.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
   tags:
@@ -44,6 +39,8 @@ apis:
     url: https://aws.amazon.com/swf/faqs/
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/openapi/amazon-swf-openapi-original.yml
+  - type: NaftikoCapability
+    url: capabilities/amazon-swf.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -93,19 +90,17 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/rules/amazon-swf-spectral-rules.yml
 - type: Vocabulary
   url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml
-- type: NaftikoCapability
-  url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/capabilities/amazon-swf-workflow-management.yaml
 - type: Integrations
   url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

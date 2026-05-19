@@ -1,0 +1,1900 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Simple Workflow Service
+  description: 'Amazon Simple Workflow Service. 37 operations. Lead operation: Amazon SWF Count Closed Workflow Executions.
+    Self-contained Naftiko capability covering one Amazon Swf business surface.'
+  tags:
+  - Amazon Swf
+  - Amazon Simple Workflow Service
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_SWF_API_KEY: AMAZON_SWF_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-swf
+    baseUri: http://swf.{region}.amazonaws.com
+    description: Amazon Simple Workflow Service business capability. Self-contained, no shared references.
+    resources:
+    - name: '#X-Amz-Target=SimpleWorkflowService.CountClosedWorkflowExecutions'
+      path: /#X-Amz-Target=SimpleWorkflowService.CountClosedWorkflowExecutions
+      operations:
+      - name: countclosedworkflowexecutions
+        method: POST
+        description: Amazon SWF Count Closed Workflow Executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.CountOpenWorkflowExecutions'
+      path: /#X-Amz-Target=SimpleWorkflowService.CountOpenWorkflowExecutions
+      operations:
+      - name: countopenworkflowexecutions
+        method: POST
+        description: Amazon SWF Count Open Workflow Executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.CountPendingActivityTasks'
+      path: /#X-Amz-Target=SimpleWorkflowService.CountPendingActivityTasks
+      operations:
+      - name: countpendingactivitytasks
+        method: POST
+        description: Amazon SWF Count Pending Activity Tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.CountPendingDecisionTasks'
+      path: /#X-Amz-Target=SimpleWorkflowService.CountPendingDecisionTasks
+      operations:
+      - name: countpendingdecisiontasks
+        method: POST
+        description: Amazon SWF Count Pending Decision Tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DeprecateActivityType'
+      path: /#X-Amz-Target=SimpleWorkflowService.DeprecateActivityType
+      operations:
+      - name: deprecateactivitytype
+        method: POST
+        description: Amazon SWF Deprecate Activity Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DeprecateDomain'
+      path: /#X-Amz-Target=SimpleWorkflowService.DeprecateDomain
+      operations:
+      - name: deprecatedomain
+        method: POST
+        description: Amazon SWF Deprecate Domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DeprecateWorkflowType'
+      path: /#X-Amz-Target=SimpleWorkflowService.DeprecateWorkflowType
+      operations:
+      - name: deprecateworkflowtype
+        method: POST
+        description: Amazon SWF Deprecate Workflow Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DescribeActivityType'
+      path: /#X-Amz-Target=SimpleWorkflowService.DescribeActivityType
+      operations:
+      - name: describeactivitytype
+        method: POST
+        description: Amazon SWF Describe Activity Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DescribeDomain'
+      path: /#X-Amz-Target=SimpleWorkflowService.DescribeDomain
+      operations:
+      - name: describedomain
+        method: POST
+        description: Amazon SWF Describe Domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowExecution'
+      path: /#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowExecution
+      operations:
+      - name: describeworkflowexecution
+        method: POST
+        description: Amazon SWF Describe Workflow Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowType'
+      path: /#X-Amz-Target=SimpleWorkflowService.DescribeWorkflowType
+      operations:
+      - name: describeworkflowtype
+        method: POST
+        description: Amazon SWF Describe Workflow Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory'
+      path: /#X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory
+      operations:
+      - name: getworkflowexecutionhistory
+        method: POST
+        description: Amazon SWF Get Workflow Execution History
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListActivityTypes'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListActivityTypes
+      operations:
+      - name: listactivitytypes
+        method: POST
+        description: Amazon SWF List Activity Types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions
+      operations:
+      - name: listclosedworkflowexecutions
+        method: POST
+        description: Amazon SWF List Closed Workflow Executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListDomains'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListDomains
+      operations:
+      - name: listdomains
+        method: POST
+        description: Amazon SWF List Domains
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions
+      operations:
+      - name: listopenworkflowexecutions
+        method: POST
+        description: Amazon SWF List Open Workflow Executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListTagsForResource'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListTagsForResource
+      operations:
+      - name: listtagsforresource
+        method: POST
+        description: Amazon SWF List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes'
+      path: /#X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes
+      operations:
+      - name: listworkflowtypes
+        method: POST
+        description: Amazon SWF List Workflow Types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.PollForActivityTask'
+      path: /#X-Amz-Target=SimpleWorkflowService.PollForActivityTask
+      operations:
+      - name: pollforactivitytask
+        method: POST
+        description: Amazon SWF Poll for Activity Task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask'
+      path: /#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask
+      operations:
+      - name: pollfordecisiontask
+        method: POST
+        description: Amazon SWF Poll for Decision Task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maximumPageSize
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextPageToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RecordActivityTaskHeartbeat'
+      path: /#X-Amz-Target=SimpleWorkflowService.RecordActivityTaskHeartbeat
+      operations:
+      - name: recordactivitytaskheartbeat
+        method: POST
+        description: Amazon SWF Record Activity Task Heartbeat
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RegisterActivityType'
+      path: /#X-Amz-Target=SimpleWorkflowService.RegisterActivityType
+      operations:
+      - name: registeractivitytype
+        method: POST
+        description: Amazon SWF Register Activity Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RegisterDomain'
+      path: /#X-Amz-Target=SimpleWorkflowService.RegisterDomain
+      operations:
+      - name: registerdomain
+        method: POST
+        description: Amazon SWF Register Domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RegisterWorkflowType'
+      path: /#X-Amz-Target=SimpleWorkflowService.RegisterWorkflowType
+      operations:
+      - name: registerworkflowtype
+        method: POST
+        description: Amazon SWF Register Workflow Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RequestCancelWorkflowExecution'
+      path: /#X-Amz-Target=SimpleWorkflowService.RequestCancelWorkflowExecution
+      operations:
+      - name: requestcancelworkflowexecution
+        method: POST
+        description: Amazon SWF Request Cancel Workflow Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCanceled'
+      path: /#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCanceled
+      operations:
+      - name: respondactivitytaskcanceled
+        method: POST
+        description: Amazon SWF Respond Activity Task Canceled
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCompleted'
+      path: /#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCompleted
+      operations:
+      - name: respondactivitytaskcompleted
+        method: POST
+        description: Amazon SWF Respond Activity Task Completed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskFailed'
+      path: /#X-Amz-Target=SimpleWorkflowService.RespondActivityTaskFailed
+      operations:
+      - name: respondactivitytaskfailed
+        method: POST
+        description: Amazon SWF Respond Activity Task Failed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.RespondDecisionTaskCompleted'
+      path: /#X-Amz-Target=SimpleWorkflowService.RespondDecisionTaskCompleted
+      operations:
+      - name: responddecisiontaskcompleted
+        method: POST
+        description: Amazon SWF Respond Decision Task Completed
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.SignalWorkflowExecution'
+      path: /#X-Amz-Target=SimpleWorkflowService.SignalWorkflowExecution
+      operations:
+      - name: signalworkflowexecution
+        method: POST
+        description: Amazon SWF Signal Workflow Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.StartWorkflowExecution'
+      path: /#X-Amz-Target=SimpleWorkflowService.StartWorkflowExecution
+      operations:
+      - name: startworkflowexecution
+        method: POST
+        description: Amazon SWF Start Workflow Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.TagResource'
+      path: /#X-Amz-Target=SimpleWorkflowService.TagResource
+      operations:
+      - name: tagresource
+        method: POST
+        description: Amazon SWF Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.TerminateWorkflowExecution'
+      path: /#X-Amz-Target=SimpleWorkflowService.TerminateWorkflowExecution
+      operations:
+      - name: terminateworkflowexecution
+        method: POST
+        description: Amazon SWF Terminate Workflow Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.UndeprecateActivityType'
+      path: /#X-Amz-Target=SimpleWorkflowService.UndeprecateActivityType
+      operations:
+      - name: undeprecateactivitytype
+        method: POST
+        description: Amazon SWF Undeprecate Activity Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.UndeprecateDomain'
+      path: /#X-Amz-Target=SimpleWorkflowService.UndeprecateDomain
+      operations:
+      - name: undeprecatedomain
+        method: POST
+        description: Amazon SWF Undeprecate Domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.UndeprecateWorkflowType'
+      path: /#X-Amz-Target=SimpleWorkflowService.UndeprecateWorkflowType
+      operations:
+      - name: undeprecateworkflowtype
+        method: POST
+        description: Amazon SWF Undeprecate Workflow Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=SimpleWorkflowService.UntagResource'
+      path: /#X-Amz-Target=SimpleWorkflowService.UntagResource
+      operations:
+      - name: untagresource
+        method: POST
+        description: Amazon SWF Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_SWF_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-swf-rest
+    port: 8080
+    description: REST adapter for Amazon Simple Workflow Service. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/x-amz-target-simpleworkflowservice-countclosedworkflowexecutions
+      name: x-amz-target-simpleworkflowservice-countclosedworkflowexecutions
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.CountClosedWorkflowExecutions.'
+      operations:
+      - method: POST
+        name: countclosedworkflowexecutions
+        description: Amazon SWF Count Closed Workflow Executions
+        call: amazon-swf.countclosedworkflowexecutions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-countopenworkflowexecutions
+      name: x-amz-target-simpleworkflowservice-countopenworkflowexecutions
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.CountOpenWorkflowExecutions.'
+      operations:
+      - method: POST
+        name: countopenworkflowexecutions
+        description: Amazon SWF Count Open Workflow Executions
+        call: amazon-swf.countopenworkflowexecutions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-countpendingactivitytasks
+      name: x-amz-target-simpleworkflowservice-countpendingactivitytasks
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.CountPendingActivityTasks.'
+      operations:
+      - method: POST
+        name: countpendingactivitytasks
+        description: Amazon SWF Count Pending Activity Tasks
+        call: amazon-swf.countpendingactivitytasks
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-countpendingdecisiontasks
+      name: x-amz-target-simpleworkflowservice-countpendingdecisiontasks
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.CountPendingDecisionTasks.'
+      operations:
+      - method: POST
+        name: countpendingdecisiontasks
+        description: Amazon SWF Count Pending Decision Tasks
+        call: amazon-swf.countpendingdecisiontasks
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-deprecateactivitytype
+      name: x-amz-target-simpleworkflowservice-deprecateactivitytype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DeprecateActivityType.'
+      operations:
+      - method: POST
+        name: deprecateactivitytype
+        description: Amazon SWF Deprecate Activity Type
+        call: amazon-swf.deprecateactivitytype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-deprecatedomain
+      name: x-amz-target-simpleworkflowservice-deprecatedomain
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DeprecateDomain.'
+      operations:
+      - method: POST
+        name: deprecatedomain
+        description: Amazon SWF Deprecate Domain
+        call: amazon-swf.deprecatedomain
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-deprecateworkflowtype
+      name: x-amz-target-simpleworkflowservice-deprecateworkflowtype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DeprecateWorkflowType.'
+      operations:
+      - method: POST
+        name: deprecateworkflowtype
+        description: Amazon SWF Deprecate Workflow Type
+        call: amazon-swf.deprecateworkflowtype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-describeactivitytype
+      name: x-amz-target-simpleworkflowservice-describeactivitytype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DescribeActivityType.'
+      operations:
+      - method: POST
+        name: describeactivitytype
+        description: Amazon SWF Describe Activity Type
+        call: amazon-swf.describeactivitytype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-describedomain
+      name: x-amz-target-simpleworkflowservice-describedomain
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DescribeDomain.'
+      operations:
+      - method: POST
+        name: describedomain
+        description: Amazon SWF Describe Domain
+        call: amazon-swf.describedomain
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-describeworkflowexecution
+      name: x-amz-target-simpleworkflowservice-describeworkflowexecution
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DescribeWorkflowExecution.'
+      operations:
+      - method: POST
+        name: describeworkflowexecution
+        description: Amazon SWF Describe Workflow Execution
+        call: amazon-swf.describeworkflowexecution
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-describeworkflowtype
+      name: x-amz-target-simpleworkflowservice-describeworkflowtype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.DescribeWorkflowType.'
+      operations:
+      - method: POST
+        name: describeworkflowtype
+        description: Amazon SWF Describe Workflow Type
+        call: amazon-swf.describeworkflowtype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-getworkflowexecutionhistory
+      name: x-amz-target-simpleworkflowservice-getworkflowexecutionhistory
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory.'
+      operations:
+      - method: POST
+        name: getworkflowexecutionhistory
+        description: Amazon SWF Get Workflow Execution History
+        call: amazon-swf.getworkflowexecutionhistory
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listactivitytypes
+      name: x-amz-target-simpleworkflowservice-listactivitytypes
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListActivityTypes.'
+      operations:
+      - method: POST
+        name: listactivitytypes
+        description: Amazon SWF List Activity Types
+        call: amazon-swf.listactivitytypes
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listclosedworkflowexecutions
+      name: x-amz-target-simpleworkflowservice-listclosedworkflowexecutions
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions.'
+      operations:
+      - method: POST
+        name: listclosedworkflowexecutions
+        description: Amazon SWF List Closed Workflow Executions
+        call: amazon-swf.listclosedworkflowexecutions
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listdomains
+      name: x-amz-target-simpleworkflowservice-listdomains
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListDomains.'
+      operations:
+      - method: POST
+        name: listdomains
+        description: Amazon SWF List Domains
+        call: amazon-swf.listdomains
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listopenworkflowexecutions
+      name: x-amz-target-simpleworkflowservice-listopenworkflowexecutions
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions.'
+      operations:
+      - method: POST
+        name: listopenworkflowexecutions
+        description: Amazon SWF List Open Workflow Executions
+        call: amazon-swf.listopenworkflowexecutions
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listtagsforresource
+      name: x-amz-target-simpleworkflowservice-listtagsforresource
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListTagsForResource.'
+      operations:
+      - method: POST
+        name: listtagsforresource
+        description: Amazon SWF List Tags for Resource
+        call: amazon-swf.listtagsforresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-listworkflowtypes
+      name: x-amz-target-simpleworkflowservice-listworkflowtypes
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes.'
+      operations:
+      - method: POST
+        name: listworkflowtypes
+        description: Amazon SWF List Workflow Types
+        call: amazon-swf.listworkflowtypes
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-pollforactivitytask
+      name: x-amz-target-simpleworkflowservice-pollforactivitytask
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.PollForActivityTask.'
+      operations:
+      - method: POST
+        name: pollforactivitytask
+        description: Amazon SWF Poll for Activity Task
+        call: amazon-swf.pollforactivitytask
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-pollfordecisiontask
+      name: x-amz-target-simpleworkflowservice-pollfordecisiontask
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.PollForDecisionTask.'
+      operations:
+      - method: POST
+        name: pollfordecisiontask
+        description: Amazon SWF Poll for Decision Task
+        call: amazon-swf.pollfordecisiontask
+        with:
+          maximumPageSize: rest.maximumPageSize
+          nextPageToken: rest.nextPageToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat
+      name: x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RecordActivityTaskHeartbeat.'
+      operations:
+      - method: POST
+        name: recordactivitytaskheartbeat
+        description: Amazon SWF Record Activity Task Heartbeat
+        call: amazon-swf.recordactivitytaskheartbeat
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-registeractivitytype
+      name: x-amz-target-simpleworkflowservice-registeractivitytype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RegisterActivityType.'
+      operations:
+      - method: POST
+        name: registeractivitytype
+        description: Amazon SWF Register Activity Type
+        call: amazon-swf.registeractivitytype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-registerdomain
+      name: x-amz-target-simpleworkflowservice-registerdomain
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RegisterDomain.'
+      operations:
+      - method: POST
+        name: registerdomain
+        description: Amazon SWF Register Domain
+        call: amazon-swf.registerdomain
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-registerworkflowtype
+      name: x-amz-target-simpleworkflowservice-registerworkflowtype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RegisterWorkflowType.'
+      operations:
+      - method: POST
+        name: registerworkflowtype
+        description: Amazon SWF Register Workflow Type
+        call: amazon-swf.registerworkflowtype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-requestcancelworkflowexecution
+      name: x-amz-target-simpleworkflowservice-requestcancelworkflowexecution
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RequestCancelWorkflowExecution.'
+      operations:
+      - method: POST
+        name: requestcancelworkflowexecution
+        description: Amazon SWF Request Cancel Workflow Execution
+        call: amazon-swf.requestcancelworkflowexecution
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-respondactivitytaskcanceled
+      name: x-amz-target-simpleworkflowservice-respondactivitytaskcanceled
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCanceled.'
+      operations:
+      - method: POST
+        name: respondactivitytaskcanceled
+        description: Amazon SWF Respond Activity Task Canceled
+        call: amazon-swf.respondactivitytaskcanceled
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-respondactivitytaskcompleted
+      name: x-amz-target-simpleworkflowservice-respondactivitytaskcompleted
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RespondActivityTaskCompleted.'
+      operations:
+      - method: POST
+        name: respondactivitytaskcompleted
+        description: Amazon SWF Respond Activity Task Completed
+        call: amazon-swf.respondactivitytaskcompleted
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-respondactivitytaskfailed
+      name: x-amz-target-simpleworkflowservice-respondactivitytaskfailed
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RespondActivityTaskFailed.'
+      operations:
+      - method: POST
+        name: respondactivitytaskfailed
+        description: Amazon SWF Respond Activity Task Failed
+        call: amazon-swf.respondactivitytaskfailed
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-responddecisiontaskcompleted
+      name: x-amz-target-simpleworkflowservice-responddecisiontaskcompleted
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.RespondDecisionTaskCompleted.'
+      operations:
+      - method: POST
+        name: responddecisiontaskcompleted
+        description: Amazon SWF Respond Decision Task Completed
+        call: amazon-swf.responddecisiontaskcompleted
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-signalworkflowexecution
+      name: x-amz-target-simpleworkflowservice-signalworkflowexecution
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.SignalWorkflowExecution.'
+      operations:
+      - method: POST
+        name: signalworkflowexecution
+        description: Amazon SWF Signal Workflow Execution
+        call: amazon-swf.signalworkflowexecution
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-startworkflowexecution
+      name: x-amz-target-simpleworkflowservice-startworkflowexecution
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.StartWorkflowExecution.'
+      operations:
+      - method: POST
+        name: startworkflowexecution
+        description: Amazon SWF Start Workflow Execution
+        call: amazon-swf.startworkflowexecution
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-tagresource
+      name: x-amz-target-simpleworkflowservice-tagresource
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.TagResource.'
+      operations:
+      - method: POST
+        name: tagresource
+        description: Amazon SWF Tag Resource
+        call: amazon-swf.tagresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-terminateworkflowexecution
+      name: x-amz-target-simpleworkflowservice-terminateworkflowexecution
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.TerminateWorkflowExecution.'
+      operations:
+      - method: POST
+        name: terminateworkflowexecution
+        description: Amazon SWF Terminate Workflow Execution
+        call: amazon-swf.terminateworkflowexecution
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-undeprecateactivitytype
+      name: x-amz-target-simpleworkflowservice-undeprecateactivitytype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.UndeprecateActivityType.'
+      operations:
+      - method: POST
+        name: undeprecateactivitytype
+        description: Amazon SWF Undeprecate Activity Type
+        call: amazon-swf.undeprecateactivitytype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-undeprecatedomain
+      name: x-amz-target-simpleworkflowservice-undeprecatedomain
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.UndeprecateDomain.'
+      operations:
+      - method: POST
+        name: undeprecatedomain
+        description: Amazon SWF Undeprecate Domain
+        call: amazon-swf.undeprecatedomain
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-undeprecateworkflowtype
+      name: x-amz-target-simpleworkflowservice-undeprecateworkflowtype
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.UndeprecateWorkflowType.'
+      operations:
+      - method: POST
+        name: undeprecateworkflowtype
+        description: Amazon SWF Undeprecate Workflow Type
+        call: amazon-swf.undeprecateworkflowtype
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-simpleworkflowservice-untagresource
+      name: x-amz-target-simpleworkflowservice-untagresource
+      description: 'REST surface for #X-Amz-Target=SimpleWorkflowService.UntagResource.'
+      operations:
+      - method: POST
+        name: untagresource
+        description: Amazon SWF Untag Resource
+        call: amazon-swf.untagresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-swf-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Simple Workflow Service. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-swf-count-closed-workflow
+      description: Amazon SWF Count Closed Workflow Executions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.countclosedworkflowexecutions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-count-open-workflow
+      description: Amazon SWF Count Open Workflow Executions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.countopenworkflowexecutions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-count-pending-activity
+      description: Amazon SWF Count Pending Activity Tasks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.countpendingactivitytasks
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-count-pending-decision
+      description: Amazon SWF Count Pending Decision Tasks
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.countpendingdecisiontasks
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-deprecate-activity-type
+      description: Amazon SWF Deprecate Activity Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.deprecateactivitytype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-deprecate-domain
+      description: Amazon SWF Deprecate Domain
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.deprecatedomain
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-deprecate-workflow-type
+      description: Amazon SWF Deprecate Workflow Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.deprecateworkflowtype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-describe-activity-type
+      description: Amazon SWF Describe Activity Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.describeactivitytype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-describe-domain
+      description: Amazon SWF Describe Domain
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.describedomain
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-describe-workflow-execution
+      description: Amazon SWF Describe Workflow Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.describeworkflowexecution
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-describe-workflow-type
+      description: Amazon SWF Describe Workflow Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.describeworkflowtype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-get-workflow-execution
+      description: Amazon SWF Get Workflow Execution History
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.getworkflowexecutionhistory
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-activity-types
+      description: Amazon SWF List Activity Types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listactivitytypes
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-closed-workflow
+      description: Amazon SWF List Closed Workflow Executions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listclosedworkflowexecutions
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-domains
+      description: Amazon SWF List Domains
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listdomains
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-open-workflow
+      description: Amazon SWF List Open Workflow Executions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listopenworkflowexecutions
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-tags-resource
+      description: Amazon SWF List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listtagsforresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-list-workflow-types
+      description: Amazon SWF List Workflow Types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-swf.listworkflowtypes
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-poll-activity-task
+      description: Amazon SWF Poll for Activity Task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.pollforactivitytask
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-poll-decision-task
+      description: Amazon SWF Poll for Decision Task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.pollfordecisiontask
+      with:
+        maximumPageSize: tools.maximumPageSize
+        nextPageToken: tools.nextPageToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-record-activity-task
+      description: Amazon SWF Record Activity Task Heartbeat
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.recordactivitytaskheartbeat
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-register-activity-type
+      description: Amazon SWF Register Activity Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.registeractivitytype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-register-domain
+      description: Amazon SWF Register Domain
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.registerdomain
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-register-workflow-type
+      description: Amazon SWF Register Workflow Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.registerworkflowtype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-request-cancel-workflow
+      description: Amazon SWF Request Cancel Workflow Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.requestcancelworkflowexecution
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-respond-activity-task
+      description: Amazon SWF Respond Activity Task Canceled
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.respondactivitytaskcanceled
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-respond-activity-task-2
+      description: Amazon SWF Respond Activity Task Completed
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.respondactivitytaskcompleted
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-respond-activity-task-3
+      description: Amazon SWF Respond Activity Task Failed
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.respondactivitytaskfailed
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-respond-decision-task
+      description: Amazon SWF Respond Decision Task Completed
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.responddecisiontaskcompleted
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-signal-workflow-execution
+      description: Amazon SWF Signal Workflow Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.signalworkflowexecution
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-start-workflow-execution
+      description: Amazon SWF Start Workflow Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.startworkflowexecution
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-tag-resource
+      description: Amazon SWF Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.tagresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-terminate-workflow-execution
+      description: Amazon SWF Terminate Workflow Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.terminateworkflowexecution
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-undeprecate-activity-type
+      description: Amazon SWF Undeprecate Activity Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.undeprecateactivitytype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-undeprecate-domain
+      description: Amazon SWF Undeprecate Domain
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.undeprecatedomain
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-undeprecate-workflow-type
+      description: Amazon SWF Undeprecate Workflow Type
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.undeprecateworkflowtype
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-swf-untag-resource
+      description: Amazon SWF Untag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-swf.untagresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
