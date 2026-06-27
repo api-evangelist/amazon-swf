@@ -39,7 +39,7 @@ apis:
     url: https://aws.amazon.com/swf/faqs/
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/openapi/amazon-swf-openapi-original.yml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-swf.yaml
 common:
 - type: Portal
@@ -56,7 +56,7 @@ common:
   url: https://aws.amazon.com/privacy/
 - type: Support
   url: https://aws.amazon.com/premiumsupport/
-- type: SignUp
+- type: Signup
   url: https://signin.aws.amazon.com/signup?request_type=register
 - type: Login
   url: https://aws.amazon.com/console/
