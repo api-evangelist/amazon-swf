@@ -42,6 +42,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-swf.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-swf-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-swf-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-swf-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-swf-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/
 - type: Website
