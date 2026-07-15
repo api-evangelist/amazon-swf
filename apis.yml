@@ -42,6 +42,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-swf.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-swf-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-swf-trust-center.yml
 - type: VulnerabilityDisclosure
