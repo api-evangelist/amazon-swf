@@ -1,0 +1,2141 @@
+openapi: 3.0.0
+info:
+  version: '2012-01-25'
+  x-release: v4
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory API'
+  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: swf
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://swf.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon SWF multi-region endpoint
+- url: https://swf.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon SWF multi-region endpoint
+- url: http://swf.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon SWF endpoint for China (Beijing) and China (Ningxia)
+- url: https://swf.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon SWF endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory'
+paths:
+  /#X-Amz-Target=SimpleWorkflowService.GetWorkflowExecutionHistory:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetWorkflowExecutionHistory
+      description: <p>Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p> </note> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/History'
+        '480':
+          description: UnknownResourceFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnknownResourceFault'
+        '481':
+          description: OperationNotPermittedFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationNotPermittedFault'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetWorkflowExecutionHistoryInput'
+      parameters:
+      - name: maximumPageSize
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: token123
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - SimpleWorkflowService.GetWorkflowExecutionHistory
+        example: SimpleWorkflowService.GetWorkflowExecutionHistory
+      summary: Amazon SWF Get Workflow Execution History
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory'
+components:
+  schemas:
+    ExternalWorkflowExecutionSignaledEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - initiatedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The external workflow execution that the signal was delivered to.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    FailWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNHANDLED_DECISION
+      - OPERATION_NOT_PERMITTED
+    ActivityType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
+      description: Represents an activity type.
+    RecordMarkerFailedEventAttributes:
+      type: object
+      required:
+      - markerName
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        markerName:
+          allOf:
+          - $ref: '#/components/schemas/MarkerName'
+          - description: The marker's name.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/RecordMarkerFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarkerFailed</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>RecordMarkerFailed</code> event.
+    ChildPolicy:
+      type: string
+      enum:
+      - TERMINATE
+      - REQUEST_CANCEL
+      - ABANDON
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    EventId:
+      type: integer
+    WorkflowRunIdOptional:
+      type: string
+      maxLength: 64
+    WorkflowExecutionSignaledEventAttributes:
+      type: object
+      required:
+      - signalName
+      properties:
+        signalName:
+          allOf:
+          - $ref: '#/components/schemas/SignalName'
+          - description: The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process the signal.
+        externalWorkflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.
+        externalInitiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.
+      description: Provides the details of the <code>WorkflowExecutionSignaled</code> event.
+    DecisionTaskCompletedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        executionContext:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: User defined context for the workflow execution.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>DecisionTaskCompleted</code> event.
+    HistoryEvent:
+      type: object
+      required:
+      - eventTimestamp
+      - eventType
+      - eventId
+      properties:
+        eventTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when the event occurred.
+        eventType:
+          allOf:
+          - $ref: '#/components/schemas/EventType'
+          - description: The type of the history event.
+        eventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.
+        workflowExecutionStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionStartedEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionCompletedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionCompletedEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        completeWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/CompleteWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        failWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/FailWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionTimedOutEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionTimedOutEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionCanceledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionCanceledEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        cancelWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/CancelWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionContinuedAsNewEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionContinuedAsNewEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        continueAsNewWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ContinueAsNewWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionTerminatedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionTerminatedEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionCancelRequestedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionCancelRequestedEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        decisionTaskScheduledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/DecisionTaskScheduledEventAttributes'
+          - description: If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        decisionTaskStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/DecisionTaskStartedEventAttributes'
+          - description: If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        decisionTaskCompletedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/DecisionTaskCompletedEventAttributes'
+          - description: If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        decisionTaskTimedOutEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/DecisionTaskTimedOutEventAttributes'
+          - description: If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskScheduledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskScheduledEventAttributes'
+          - description: If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskStartedEventAttributes'
+          - description: If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskCompletedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskCompletedEventAttributes'
+          - description: If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskFailedEventAttributes'
+          - description: If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskTimedOutEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskTimedOutEventAttributes'
+          - description: If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskCanceledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskCanceledEventAttributes'
+          - description: If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        activityTaskCancelRequestedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskCancelRequestedEventAttributes'
+          - description: If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        workflowExecutionSignaledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionSignaledEventAttributes'
+          - description: If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        markerRecordedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/MarkerRecordedEventAttributes'
+          - description: If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        recordMarkerFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/RecordMarkerFailedEventAttributes'
+          - description: If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        timerStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/TimerStartedEventAttributes'
+          - description: If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        timerFiredEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/TimerFiredEventAttributes'
+          - description: If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        timerCanceledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/TimerCanceledEventAttributes'
+          - description: If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        startChildWorkflowExecutionInitiatedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/StartChildWorkflowExecutionInitiatedEventAttributes'
+          - description: If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionStartedEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionCompletedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionCompletedEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionTimedOutEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionTimedOutEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionCanceledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionCanceledEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        childWorkflowExecutionTerminatedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ChildWorkflowExecutionTerminatedEventAttributes'
+          - description: If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        signalExternalWorkflowExecutionInitiatedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/SignalExternalWorkflowExecutionInitiatedEventAttributes'
+          - description: If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        externalWorkflowExecutionSignaledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ExternalWorkflowExecutionSignaledEventAttributes'
+          - description: If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        signalExternalWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/SignalExternalWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        externalWorkflowExecutionCancelRequestedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ExternalWorkflowExecutionCancelRequestedEventAttributes'
+          - description: 'If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn''t set for other event types. '
+        requestCancelExternalWorkflowExecutionInitiatedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/RequestCancelExternalWorkflowExecutionInitiatedEventAttributes'
+          - description: If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        requestCancelExternalWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/RequestCancelExternalWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        scheduleActivityTaskFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleActivityTaskFailedEventAttributes'
+          - description: If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        requestCancelActivityTaskFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/RequestCancelActivityTaskFailedEventAttributes'
+          - description: If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        startTimerFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/StartTimerFailedEventAttributes'
+          - description: If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        cancelTimerFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/CancelTimerFailedEventAttributes'
+          - description: If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        startChildWorkflowExecutionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/StartChildWorkflowExecutionFailedEventAttributes'
+          - description: If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.
+        lambdaFunctionScheduledEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionScheduledEventAttributes'
+          - description: Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+        lambdaFunctionStartedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionStartedEventAttributes'
+          - description: Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+        lambdaFunctionCompletedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionCompletedEventAttributes'
+          - description: Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+        lambdaFunctionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionFailedEventAttributes'
+          - description: Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+        lambdaFunctionTimedOutEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionTimedOutEventAttributes'
+          - description: Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
+        scheduleLambdaFunctionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleLambdaFunctionFailedEventAttributes'
+          - description: Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+        startLambdaFunctionFailedEventAttributes:
+          allOf:
+          - $ref: '#/components/schemas/StartLambdaFunctionFailedEventAttributes'
+          - description: Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+      description: <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> – The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> – The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> – The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li> </ul>
+    StartLambdaFunctionFailedEventAttributes:
+      type: object
+      properties:
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/StartLambdaFunctionFailedCause'
+          - description: <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        message:
+          allOf:
+          - $ref: '#/components/schemas/CauseMessage'
+          - description: A description that can help diagnose the cause of the fault.
+      description: Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+    HistoryEventList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HistoryEvent'
+    ChildWorkflowExecutionTimedOutEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - timeoutType
+      - initiatedEventId
+      - startedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that timed out.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        timeoutType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionTimeoutType'
+          - description: The type of the timeout that caused the child workflow execution to time out.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.
+    ActivityTaskTimedOutEventAttributes:
+      type: object
+      required:
+      - timeoutType
+      - scheduledEventId
+      - startedEventId
+      properties:
+        timeoutType:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTaskTimeoutType'
+          - description: The type of the timeout that caused this event.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/LimitedData'
+          - description: Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.
+      description: Provides the details of the <code>ActivityTaskTimedOut</code> event.
+    TimerStartedEventAttributes:
+      type: object
+      required:
+      - timerId
+      - startToFireTimeout
+      - decisionTaskCompletedEventId
+      properties:
+        timerId:
+          allOf:
+          - $ref: '#/components/schemas/TimerId'
+          - description: The unique ID of the timer that was started.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that can be used by the decider in subsequent workflow tasks.
+        startToFireTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSeconds'
+          - description: <p>The duration of time after which the timer fires.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>TimerStarted</code> event.
+    ActivityTaskCanceledEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Details of the cancellation.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        latestCancelRequestedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ActivityTaskCanceled</code> event.
+    ActivityTaskCancelRequestedEventAttributes:
+      type: object
+      required:
+      - decisionTaskCompletedEventId
+      - activityId
+      properties:
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        activityId:
+          allOf:
+          - $ref: '#/components/schemas/ActivityId'
+          - description: The unique ID of the task.
+      description: Provides the details of the <code>ActivityTaskCancelRequested</code> event.
+    DecisionTaskScheduledEventAttributes:
+      type: object
+      required:
+      - taskList
+      properties:
+        taskList:
+          allOf:
+          - $ref: '#/components/schemas/TaskList'
+          - description: The name of the task list in which the decision task was scheduled.
+        taskPriority:
+          allOf:
+          - $ref: '#/components/schemas/TaskPriority'
+          - description: <p> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        startToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+      description: Provides details about the <code>DecisionTaskScheduled</code> event.
+    EventType:
+      type: string
+      enum:
+      - WorkflowExecutionStarted
+      - WorkflowExecutionCancelRequested
+      - WorkflowExecutionCompleted
+      - CompleteWorkflowExecutionFailed
+      - WorkflowExecutionFailed
+      - FailWorkflowExecutionFailed
+      - WorkflowExecutionTimedOut
+      - WorkflowExecutionCanceled
+      - CancelWorkflowExecutionFailed
+      - WorkflowExecutionContinuedAsNew
+      - ContinueAsNewWorkflowExecutionFailed
+      - WorkflowExecutionTerminated
+      - DecisionTaskScheduled
+      - DecisionTaskStarted
+      - DecisionTaskCompleted
+      - DecisionTaskTimedOut
+      - ActivityTaskScheduled
+      - ScheduleActivityTaskFailed
+      - ActivityTaskStarted
+      - ActivityTaskCompleted
+      - ActivityTaskFailed
+      - ActivityTaskTimedOut
+      - ActivityTaskCanceled
+      - ActivityTaskCancelRequested
+      - RequestCancelActivityTaskFailed
+      - WorkflowExecutionSignaled
+      - MarkerRecorded
+      - RecordMarkerFailed
+      - TimerStarted
+      - StartTimerFailed
+      - TimerFired
+      - TimerCanceled
+      - CancelTimerFailed
+      - StartChildWorkflowExecutionInitiated
+      - StartChildWorkflowExecutionFailed
+      - ChildWorkflowExecutionStarted
+      - ChildWorkflowExecutionCompleted
+      - ChildWorkflowExecutionFailed
+      - ChildWorkflowExecutionTimedOut
+      - ChildWorkflowExecutionCanceled
+      - ChildWorkflowExecutionTerminated
+      - SignalExternalWorkflowExecutionInitiated
+      - SignalExternalWorkflowExecutionFailed
+      - ExternalWorkflowExecutionSignaled
+      - RequestCancelExternalWorkflowExecutionInitiated
+      - RequestCancelExternalWorkflowExecutionFailed
+      - ExternalWorkflowExecutionCancelRequested
+      - LambdaFunctionScheduled
+      - LambdaFunctionStarted
+      - LambdaFunctionCompleted
+      - LambdaFunctionFailed
+      - LambdaFunctionTimedOut
+      - ScheduleLambdaFunctionFailed
+      - StartLambdaFunctionFailed
+    LambdaFunctionTimedOutEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        timeoutType:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionTimeoutType'
+          - description: The type of the timeout that caused this event.
+      description: Provides details of the <code>LambdaFunctionTimedOut</code> event.
+    StartChildWorkflowExecutionInitiatedEventAttributes:
+      type: object
+      required:
+      - workflowId
+      - workflowType
+      - taskList
+      - decisionTaskCompletedEventId
+      - childPolicy
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the child workflow execution.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that can be used by the decider in subsequent decision tasks. This data isn't sent to the activity.
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The inputs provided to the child workflow execution.
+        executionStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration for the child workflow execution. If the workflow execution isn't closed within this duration, it is timed out and force-terminated.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        taskList:
+          allOf:
+          - $ref: '#/components/schemas/TaskList'
+          - description: The name of the task list used for the decision tasks of the child workflow execution.
+        taskPriority:
+          allOf:
+          - $ref: '#/components/schemas/TaskPriority'
+          - description: <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.
+        childPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ChildPolicy'
+          - description: <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <a>TerminateWorkflowExecution</a> action or due to an expired timeout.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> </ul>
+        taskStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration allowed for the decision tasks for this workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        tagList:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags to associated with the child workflow execution.
+        lambdaRole:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The IAM role to attach to the child workflow execution.
+      description: Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.
+    CancelWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNHANDLED_DECISION
+      - OPERATION_NOT_PERMITTED
+    FunctionInput:
+      type: string
+      minLength: 0
+      maxLength: 32768
+    StartLambdaFunctionFailedCause:
+      type: string
+      enum:
+      - ASSUME_ROLE_FAILED
+    SignalExternalWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION
+      - SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED
+      - OPERATION_NOT_PERMITTED
+    ScheduleActivityTaskFailedEventAttributes:
+      type: object
+      required:
+      - activityType
+      - activityId
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        activityType:
+          allOf:
+          - $ref: '#/components/schemas/ActivityType'
+          - description: The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.
+        activityId:
+          allOf:
+          - $ref: '#/components/schemas/ActivityId'
+          - description: The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleActivityTaskFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ScheduleActivityTaskFailed</code> event.
+    WorkflowExecutionStartedEventAttributes:
+      type: object
+      required:
+      - childPolicy
+      - taskList
+      - workflowType
+      properties:
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The input provided to the workflow execution.
+        executionStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration for this workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        taskStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration of decision tasks for this workflow type.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        childPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ChildPolicy'
+          - description: <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> </ul>
+        taskList:
+          allOf:
+          - $ref: '#/components/schemas/TaskList'
+          - description: The name of the task list for scheduling the decision tasks for this workflow execution.
+        taskPriority:
+          allOf:
+          - $ref: '#/components/schemas/TaskPriority'
+          - description: The priority of the decision tasks in the workflow execution.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The workflow type of this execution.
+        tagList:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags associated with this workflow execution. An execution can have up to 5 tags.
+        continuedExecutionRunId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunIdOptional'
+          - description: If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code> decision, then it contains the <code>runId</code> of the previous workflow execution that was closed and continued as this execution.
+        parentWorkflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The source workflow execution that started this workflow execution. The member isn't set if the workflow execution was not started by a workflow.
+        parentInitiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this workflow execution. The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        lambdaRole:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The IAM role attached to the workflow execution.
+      description: Provides details of <code>WorkflowExecutionStarted</code> event.
+    RequestCancelExternalWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION
+      - REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED
+      - OPERATION_NOT_PERMITTED
+    ReverseOrder:
+      type: boolean
+    WorkflowExecutionCompletedEventAttributes:
+      type: object
+      required:
+      - decisionTaskCompletedEventId
+      properties:
+        result:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The result produced by the workflow execution upon successful completion.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>WorkflowExecutionCompleted</code> event.
+    ActivityTaskScheduledEventAttributes:
+      type: object
+      required:
+      - activityType
+      - activityId
+      - taskList
+      - decisionTaskCompletedEventId
+      properties:
+        activityType:
+          allOf:
+          - $ref: '#/components/schemas/ActivityType'
+          - description: The type of the activity task.
+        activityId:
+          allOf:
+          - $ref: '#/components/schemas/ActivityId'
+          - description: The unique ID of the activity task.
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The input provided to the activity task.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.
+        scheduleToStartTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: The maximum amount of time the activity task can wait to be assigned to a worker.
+        scheduleToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: The maximum amount of time for this activity task.
+        startToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: The maximum amount of time a worker may take to process the activity task.
+        taskList:
+          allOf:
+          - $ref: '#/components/schemas/TaskList'
+          - description: The task list in which the activity task has been scheduled.
+        taskPriority:
+          allOf:
+          - $ref: '#/components/schemas/TaskPriority'
+          - description: <p> The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was assigned when the activity type was registered.</p> <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        heartbeatTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: The maximum time before which the worker processing this task must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
+      description: Provides the details of the <code>ActivityTaskScheduled</code> event.
+    OperationNotPermittedFault: {}
+    History:
+      type: object
+      required:
+      - events
+      properties:
+        events:
+          allOf:
+          - $ref: '#/components/schemas/HistoryEventList'
+          - description: The list of history events.
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+      description: Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.
+    FailWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/FailWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>FailWorkflowExecutionFailed</code> event.
+    TaskPriority:
+      type: string
+    DecisionTaskStartedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      properties:
+        identity:
+          allOf:
+          - $ref: '#/components/schemas/Identity'
+          - description: Identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>DecisionTaskStarted</code> event.
+    RequestCancelExternalWorkflowExecutionInitiatedEventAttributes:
+      type: object
+      required:
+      - workflowId
+      - decisionTaskCompletedEventId
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the external workflow execution to be canceled.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunIdOptional'
+          - description: The <code>runId</code> of the external workflow execution to be canceled.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that can be used by the decider in subsequent workflow tasks.
+      description: Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
+    FailureReason:
+      type: string
+      maxLength: 256
+    ActivityTaskFailedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/FailureReason'
+          - description: The reason provided for the failure.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the failure.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ActivityTaskFailed</code> event.
+    ActivityTaskTimeoutType:
+      type: string
+      enum:
+      - START_TO_CLOSE
+      - SCHEDULE_TO_START
+      - SCHEDULE_TO_CLOSE
+      - HEARTBEAT
+    CancelWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/CancelWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>CancelWorkflowExecutionFailed</code> event.
+    LambdaFunctionCompletedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        result:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The results of the Lambda task.
+      description: Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+    TimerCanceledEventAttributes:
+      type: object
+      required:
+      - timerId
+      - startedEventId
+      - decisionTaskCompletedEventId
+      properties:
+        timerId:
+          allOf:
+          - $ref: '#/components/schemas/TimerId'
+          - description: The unique ID of the timer that was canceled.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: ' Provides the details of the <code>TimerCanceled</code> event. '
+    CauseMessage:
+      type: string
+      maxLength: 1728
+    DecisionTaskTimedOutEventAttributes:
+      type: object
+      required:
+      - timeoutType
+      - scheduledEventId
+      - startedEventId
+      properties:
+        timeoutType:
+          allOf:
+          - $ref: '#/components/schemas/DecisionTaskTimeoutType'
+          - description: The type of timeout that expired before the decision task could be completed.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>DecisionTaskTimedOut</code> event.
+    TimerFiredEventAttributes:
+      type: object
+      required:
+      - timerId
+      - startedEventId
+      properties:
+        timerId:
+          allOf:
+          - $ref: '#/components/schemas/TimerId'
+          - description: The unique ID of the timer that fired.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>TimerFired</code> event.
+    ChildWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - initiatedEventId
+      - startedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that failed.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/FailureReason'
+          - description: The reason for the failure (if provided).
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the failure (if provided).
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ChildWorkflowExecutionFailed</code> event.
+    WorkflowType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+      description: Represents a workflow type.
+    ExternalWorkflowExecutionCancelRequestedEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - initiatedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The external workflow execution to which the cancellation request was delivered.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.
+    Timestamp:
+      type: string
+      format: date-time
+    DurationInSeconds:
+      type: string
+      minLength: 1
+      maxLength: 8
+    ScheduleLambdaFunctionFailedEventAttributes:
+      type: object
+      required:
+      - id
+      - name
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/FunctionId'
+          - description: 'The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. '
+        name:
+          allOf:
+          - $ref: '#/components/schemas/FunctionName'
+          - description: The name of the Lambda function.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleLambdaFunctionFailedCause'
+          - description: <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+      description: Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+    LambdaFunctionFailedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/FailureReason'
+          - description: The reason provided for the failure.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the failure.
+      description: Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+    WorkflowExecutionCancelRequestedCause:
+      type: string
+      enum:
+      - CHILD_POLICY_APPLIED
+    WorkflowExecutionContinuedAsNewEventAttributes:
+      type: object
+      required:
+      - decisionTaskCompletedEventId
+      - newExecutionRunId
+      - taskList
+      - childPolicy
+      - workflowType
+      properties:
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The input provided to the new workflow execution.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        newExecutionRunId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunId'
+          - description: The <code>runId</code> of the new workflow execution.
+        executionStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The total duration allowed for the new workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        taskList:
+          allOf:
+          - $ref: '#/components/schemas/TaskList'
+          - description: The task list to use for the decisions of the new (continued) workflow execution.
+        taskPriority:
+          allOf:
+          - $ref: '#/components/schemas/TaskPriority'
+          - description: The priority of the task to use for the decisions of the new (continued) workflow execution.
+        taskStartToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: <p>The maximum duration of decision tasks for the new workflow execution.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        childPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ChildPolicy'
+          - description: <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> </ul>
+        tagList:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags associated with the new workflow execution.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The workflow type of this execution.
+        lambdaRole:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The IAM role to attach to the new (continued) workflow execution.
+      description: Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.
+    WorkflowExecutionTimedOutEventAttributes:
+      type: object
+      required:
+      - timeoutType
+      - childPolicy
+      properties:
+        timeoutType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionTimeoutType'
+          - description: The type of timeout that caused this event.
+        childPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ChildPolicy'
+          - description: <p>The policy used for the child workflow executions of this workflow execution.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> </ul>
+      description: Provides the details of the <code>WorkflowExecutionTimedOut</code> event.
+    LambdaFunctionScheduledEventAttributes:
+      type: object
+      required:
+      - id
+      - name
+      - decisionTaskCompletedEventId
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/FunctionId'
+          - description: The unique ID of the Lambda task.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/FunctionName'
+          - description: The name of the Lambda function.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.
+        input:
+          allOf:
+          - $ref: '#/components/schemas/FunctionInput'
+          - description: The input provided to the Lambda task.
+        startToCloseTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSecondsOptional'
+          - description: The maximum amount of time a worker can take to process the Lambda task.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+      description: Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+    ChildWorkflowExecutionStartedEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - initiatedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that was started.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.
+    Tag:
+      type: string
+      minLength: 0
+      maxLength: 256
+    TerminateReason:
+      type: string
+      maxLength: 256
+    ChildWorkflowExecutionCanceledEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - initiatedEventId
+      - startedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that was canceled.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Details of the cancellation (if provided).
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.
+    StartChildWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - WORKFLOW_TYPE_DOES_NOT_EXIST
+      - WORKFLOW_TYPE_DEPRECATED
+      - OPEN_CHILDREN_LIMIT_EXCEEDED
+      - OPEN_WORKFLOWS_LIMIT_EXCEEDED
+      - CHILD_CREATION_RATE_EXCEEDED
+      - WORKFLOW_ALREADY_RUNNING
+      - DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_TASK_LIST_UNDEFINED
+      - DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_CHILD_POLICY_UNDEFINED
+      - OPERATION_NOT_PERMITTED
+    SignalExternalWorkflowExecutionInitiatedEventAttributes:
+      type: object
+      required:
+      - workflowId
+      - signalName
+      - decisionTaskCompletedEventId
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the external workflow execution.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunIdOptional'
+          - description: The <code>runId</code> of the external workflow execution to send the signal to.
+        signalName:
+          allOf:
+          - $ref: '#/components/schemas/SignalName'
+          - description: The name of the signal.
+        input:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The input provided to the signal.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: Data attached to the event that can be used by the decider in subsequent decision tasks.
+      description: Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      maxItems: 5
+    CancelTimerFailedCause:
+      type: string
+      enum:
+      - TIMER_ID_UNKNOWN
+      - OPERATION_NOT_PERMITTED
+    WorkflowRunId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    LambdaFunctionStartedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      properties:
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.
+      description: Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+    WorkflowExecutionTerminatedEventAttributes:
+      type: object
+      required:
+      - childPolicy
+      properties:
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/TerminateReason'
+          - description: The reason provided for the termination.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details provided for the termination.
+        childPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ChildPolicy'
+          - description: <p>The policy used for the child workflow executions of this workflow execution.</p> <p>The supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> </ul>
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionTerminatedCause'
+          - description: If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.
+      description: Provides the details of the <code>WorkflowExecutionTerminated</code> event.
+    RequestCancelActivityTaskFailedCause:
+      type: string
+      enum:
+      - ACTIVITY_ID_UNKNOWN
+      - OPERATION_NOT_PERMITTED
+    MarkerRecordedEventAttributes:
+      type: object
+      required:
+      - markerName
+      - decisionTaskCompletedEventId
+      properties:
+        markerName:
+          allOf:
+          - $ref: '#/components/schemas/MarkerName'
+          - description: The name of the marker.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the marker.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>MarkerRecorded</code> event.
+    StartTimerFailedEventAttributes:
+      type: object
+      required:
+      - timerId
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        timerId:
+          allOf:
+          - $ref: '#/components/schemas/TimerId'
+          - description: The timerId provided in the <code>StartTimer</code> decision that failed.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/StartTimerFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>StartTimerFailed</code> event.
+    FunctionId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ScheduleLambdaFunctionFailedCause:
+      type: string
+      enum:
+      - ID_ALREADY_IN_USE
+      - OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED
+      - LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED
+      - LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION
+    ChildWorkflowExecutionCompletedEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - initiatedEventId
+      - startedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that was completed.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        result:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The result of the child workflow execution.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.
+    SignalName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 256
+    Data:
+      type: string
+      maxLength: 32768
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
+    SignalExternalWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - workflowId
+      - cause
+      - initiatedEventId
+      - decisionTaskCompletedEventId
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the external workflow execution that the signal was being delivered to.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunIdOptional'
+          - description: The <code>runId</code> of the external workflow execution that the signal was being delivered to.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/SignalExternalWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.
+      description: Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event.
+    DurationInSecondsOptional:
+      type: string
+      maxLength: 8
+    CompleteWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNHANDLED_DECISION
+      - OPERATION_NOT_PERMITTED
+    LambdaFunctionTimeoutType:
+      type: string
+      enum:
+      - START_TO_CLOSE
+    WorkflowExecutionCanceledEventAttributes:
+      type: object
+      required:
+      - decisionTaskCompletedEventId
+      properties:
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the cancellation.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>WorkflowExecutionCanceled</code> event.
+    RecordMarkerFailedCause:
+      type: string
+      enum:
+      - OPERATION_NOT_PERMITTED
+    GetWorkflowExecutionHistoryInput:
+      type: object
+      required:
+      - domain
+      - execution
+      title: GetWorkflowExecutionHistoryInput
+      properties:
+        domain:
+          allOf:
+          - $ref: '#/components/schemas/DomainName'
+          - description: The name of the domain containing the workflow execution.
+        execution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: Specifies the workflow execution for which to return the history.
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: '<p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>'
+        maximumPageSize:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: 'The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. '
+        reverseOrder:
+          allOf:
+          - $ref: '#/components/schemas/ReverseOrder'
+          - description: When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.
+    UnknownResourceFault: {}
+    MarkerName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ContinueAsNewWorkflowExecutionFailedCause:
+      type: string
+      enum:
+      - UNHANDLED_DECISION
+      - WORKFLOW_TYPE_DEPRECATED
+      - WORKFLOW_TYPE_DOES_NOT_EXIST
+      - DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_TASK_LIST_UNDEFINED
+      - DEFAULT_CHILD_POLICY_UNDEFINED
+      - CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED
+      - OPERATION_NOT_PERMITTED
+    StartTimerFailedCause:
+      type: string
+      enum:
+      - TIMER_ID_ALREADY_IN_USE
+      - OPEN_TIMERS_LIMIT_EXCEEDED
+      - TIMER_CREATION_RATE_EXCEEDED
+      - OPERATION_NOT_PERMITTED
+    WorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - decisionTaskCompletedEventId
+      properties:
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/FailureReason'
+          - description: The descriptive reason provided for the failure.
+        details:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The details of the failure.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>WorkflowExecutionFailed</code> event.
+    PageToken:
+      type: string
+      maxLength: 2048
+    FunctionName:
+      type: string
+      minLength: 1
+      maxLength: 64
+    WorkflowExecutionTerminatedCause:
+      type: string
+      enum:
+      - CHILD_POLICY_APPLIED
+      - EVENT_LIMIT_EXCEEDED
+      - OPERATOR_INITIATED
+    LimitedData:
+      type: string
+      maxLength: 2048
+    RequestCancelActivityTaskFailedEventAttributes:
+      type: object
+      required:
+      - activityId
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        activityId:
+          allOf:
+          - $ref: '#/components/schemas/ActivityId'
+          - description: The activityId provided in the <code>RequestCancelActivityTask</code> decision that failed.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/RequestCancelActivityTaskFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>RequestCancelActivityTaskFailed</code> event.
+    ActivityTaskStartedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      properties:
+        identity:
+          allOf:
+          - $ref: '#/components/schemas/Identity'
+          - description: Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ActivityTaskStarted</code> event.
+    Arn:
+      type: string
+      minLength: 1
+      maxLength: 1600
+    ActivityId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ChildWorkflowExecutionTerminatedEventAttributes:
+      type: object
+      required:
+      - workflowExecution
+      - workflowType
+      - initiatedEventId
+      - startedEventId
+      properties:
+        workflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The child workflow execution that was terminated.
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The type of the child workflow execution.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event.
+    TaskList:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the task list.
+      description: Represents a task list.
+    DecisionTaskTimeoutType:
+      type: string
+      enum:
+      - START_TO_CLOSE
+    ContinueAsNewWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/ContinueAsNewWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.
+    PageSize:
+      type: integer
+      minimum: 0
+      maximum: 1000
+    StartChildWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - workflowType
+      - cause
+      - workflowId
+      - initiatedEventId
+      - decisionTaskCompletedEventId
+      properties:
+        workflowType:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowType'
+          - description: The workflow type provided in the <code>StartChildWorkflowExecution</code> <a>Decision</a> that failed.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/StartChildWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the child workflow execution.
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: <p>When the <code>cause</code> is <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is the ID of the <code>StartChildWorkflowExecutionInitiated</code> event that corresponds to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start the workflow execution. You can use this information to diagnose problems by tracing back the chain of events leading up to this event.</p> <p>When the <code>cause</code> isn't <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is set to <code>0</code> because the <code>StartChildWorkflowExecutionInitiated</code> event doesn't exist.</p>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the child workflow execution.
+      description: Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.
+    WorkflowExecutionTimeoutType:
+      type: string
+      enum:
+      - START_TO_CLOSE
+    CompleteWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/CompleteWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event.
+    WorkflowExecutionCancelRequestedEventAttributes:
+      type: object
+      properties:
+        externalWorkflowExecution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The external workflow execution for which the cancellation was requested.
+        externalInitiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionCancelRequestedCause'
+          - description: If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.
+      description: Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.
+    ActivityTaskCompletedEventAttributes:
+      type: object
+      required:
+      - scheduledEventId
+      - startedEventId
+      properties:
+        result:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The results of the activity task.
+        scheduledEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        startedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>ActivityTaskCompleted</code> event.
+    TimerId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    WorkflowExecution:
+      type: object
+      required:
+      - workflowId
+      - runId
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The user defined identifier associated with the workflow execution.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunId'
+          - description: A system-generated unique identifier for the workflow execution.
+      description: Represents a workflow execution.
+    CancelTimerFailedEventAttributes:
+      type: object
+      required:
+      - timerId
+      - cause
+      - decisionTaskCompletedEventId
+      properties:
+        timerId:
+          allOf:
+          - $ref: '#/components/schemas/TimerId'
+          - description: The timerId provided in the <code>CancelTimer</code> decision that failed.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/CancelTimerFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+      description: Provides the details of the <code>CancelTimerFailed</code> event.
+    Identity:
+      type: string
+      maxLength: 256
+    ScheduleActivityTaskFailedCause:
+      type: string
+      enum:
+      - ACTIVITY_TYPE_DEPRECATED
+      - ACTIVITY_TYPE_DOES_NOT_EXIST
+      - ACTIVITY_ID_ALREADY_IN_USE
+      - OPEN_ACTIVITIES_LIMIT_EXCEEDED
+      - ACTIVITY_CREATION_RATE_EXCEEDED
+      - DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_TASK_LIST_UNDEFINED
+      - DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED
+      - DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED
+      - DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED
+      - OPERATION_NOT_PERMITTED
+    RequestCancelExternalWorkflowExecutionFailedEventAttributes:
+      type: object
+      required:
+      - workflowId
+      - cause
+      - initiatedEventId
+      - decisionTaskCompletedEventId
+      properties:
+        workflowId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The <code>workflowId</code> of the external workflow to which the cancel request was to be delivered.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunIdOptional'
+          - description: The <code>runId</code> of the external workflow execution.
+        cause:
+          allOf:
+          - $ref: '#/components/schemas/RequestCancelExternalWorkflowExecutionFailedCause'
+          - description: <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p> <note> <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+        initiatedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        decisionTaskCompletedEventId:
+          allOf:
+          - $ref: '#/components/schemas/EventId'
+          - description: The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+        control:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the workflow execution.
+      description: Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/swf/
+x-hasEquivalentPaths: true

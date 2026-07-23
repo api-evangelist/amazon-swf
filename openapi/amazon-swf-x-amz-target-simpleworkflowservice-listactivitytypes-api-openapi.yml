@@ -1,0 +1,364 @@
+openapi: 3.0.0
+info:
+  version: '2012-01-25'
+  x-release: v4
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListActivityTypes API'
+  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: swf
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://swf.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon SWF multi-region endpoint
+- url: https://swf.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon SWF multi-region endpoint
+- url: http://swf.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon SWF endpoint for China (Beijing) and China (Ningxia)
+- url: https://swf.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon SWF endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=SimpleWorkflowService.ListActivityTypes'
+paths:
+  /#X-Amz-Target=SimpleWorkflowService.ListActivityTypes:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListActivityTypes
+      description: <p>Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityTypeInfos'
+        '480':
+          description: OperationNotPermittedFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationNotPermittedFault'
+        '481':
+          description: UnknownResourceFault
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnknownResourceFault'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListActivityTypesInput'
+      parameters:
+      - name: maximumPageSize
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+        example: example
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+        example: token123
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - SimpleWorkflowService.ListActivityTypes
+        example: SimpleWorkflowService.ListActivityTypes
+      summary: Amazon SWF List Activity Types
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=SimpleWorkflowService.ListActivityTypes'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    UnknownResourceFault: {}
+    ReverseOrder:
+      type: boolean
+    ActivityType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
+      description: Represents an activity type.
+    Description:
+      type: string
+      maxLength: 1024
+    ActivityTypeInfo:
+      type: object
+      required:
+      - activityType
+      - status
+      - creationDate
+      properties:
+        activityType:
+          allOf:
+          - $ref: '#/components/schemas/ActivityType'
+          - description: The <a>ActivityType</a> type structure representing the activity type.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/RegistrationStatus'
+          - description: The current status of the activity type.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The description of the activity type provided in <a>RegisterActivityType</a>.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time this activity type was created through <a>RegisterActivityType</a>.
+        deprecationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
+      description: Detailed information about an activity type.
+    PageToken:
+      type: string
+      maxLength: 2048
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    OperationNotPermittedFault: {}
+    ActivityTypeInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ActivityTypeInfo'
+    PageSize:
+      type: integer
+      minimum: 0
+      maximum: 1000
+    RegistrationStatus:
+      type: string
+      enum:
+      - REGISTERED
+      - DEPRECATED
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 256
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Timestamp:
+      type: string
+      format: date-time
+    ListActivityTypesInput:
+      type: object
+      required:
+      - domain
+      - registrationStatus
+      title: ListActivityTypesInput
+      properties:
+        domain:
+          allOf:
+          - $ref: '#/components/schemas/DomainName'
+          - description: The name of the domain in which the activity types have been registered.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: If specified, only lists the activity types that have this name.
+        registrationStatus:
+          allOf:
+          - $ref: '#/components/schemas/RegistrationStatus'
+          - description: Specifies the registration status of the activity types to list.
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: '<p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>'
+        maximumPageSize:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: 'The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. '
+        reverseOrder:
+          allOf:
+          - $ref: '#/components/schemas/ReverseOrder'
+          - description: When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.
+    ActivityTypeInfos:
+      type: object
+      required:
+      - typeInfos
+      properties:
+        typeInfos:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTypeInfoList'
+          - description: List of activity type information.
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+      description: Contains a paginated list of activity type information structures.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/swf/
+x-hasEquivalentPaths: true
