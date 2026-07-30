@@ -4,7 +4,20 @@ description: Amazon Simple Workflow Service (Amazon SWF) helps developers build,
   parallel or sequential steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask
   dependencies, scheduling, and concurrency for application workflows.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-swf.png
 tags:
 - Automation
 - AWS
@@ -15,18 +28,21 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-swf:amazon-swf-api
-  name: Amazon Simple Workflow Service API
-  description: The Amazon SWF API provides programmatic access to manage workflows, activity tasks, decision tasks, and workflow
-    execution history. It enables developers to coordinate distributed application components using asynchronous task processing
-    and state tracking.
+- aid: >-
+    amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.countclosedworkflowexecutions.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
   tags:
-  - AWS
-  - Task Coordination
-  - Workflow
+  - '#X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions'
   properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
   - type: APIReference
@@ -37,11 +53,934 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.countopenworkflowexecutions.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions'
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/openapi/amazon-swf-openapi-original.yml
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountPendingActivityTasks API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.CountPendingActivityTasks API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.countpendingactivitytasks.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.CountPendingActivityTasks'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.countpendingdecisiontasks.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateActivityType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DeprecateActivityType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.deprecateactivitytype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DeprecateActivityType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateDomain API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DeprecateDomain API from Amazon Simple Workflow Service —
+    1 operation(s) for #x amz target=simpleworkflowservice.deprecatedomain.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DeprecateDomain'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateWorkflowType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DeprecateWorkflowType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.deprecateworkflowtype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DeprecateWorkflowType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeActivityType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DescribeActivityType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.describeactivitytype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DescribeActivityType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeDomain API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DescribeDomain API from Amazon Simple Workflow Service — 1
+    operation(s) for #x amz target=simpleworkflowservice.describedomain.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DescribeDomain'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.describeworkflowexecution.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.describeworkflowtype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.DescribeWorkflowType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.getworkflowexecutionhistory.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListActivityTypes API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListActivityTypes API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.listactivitytypes.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListActivityTypes'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: >-
+    amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.listclosedworkflowexecutions.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListDomains API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListDomains API from Amazon Simple Workflow Service — 1 operation(s)
+    for #x amz target=simpleworkflowservice.listdomains.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListDomains'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.listopenworkflowexecutions.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListTagsForResource API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListTagsForResource API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.listtagsforresource.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListTagsForResource'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListWorkflowTypes API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.ListWorkflowTypes API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.listworkflowtypes.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.ListWorkflowTypes'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.PollForActivityTask API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.PollForActivityTask API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.pollforactivitytask.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.PollForActivityTask'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.PollForDecisionTask API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.PollForDecisionTask API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.pollfordecisiontask.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.PollForDecisionTask'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.recordactivitytaskheartbeat.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterActivityType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RegisterActivityType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.registeractivitytype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RegisterActivityType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterDomain API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RegisterDomain API from Amazon Simple Workflow Service — 1
+    operation(s) for #x amz target=simpleworkflowservice.registerdomain.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RegisterDomain'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterWorkflowType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RegisterWorkflowType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.registerworkflowtype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RegisterWorkflowType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: >-
+    amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution
+    API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.requestcancelworkflowexecution.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcanceled-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondActivityTaskCanceled API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RespondActivityTaskCanceled API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskcanceled.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskCanceled'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcanceled-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: >-
+    amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcompleted-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskcompleted.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcompleted-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskfailed-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondActivityTaskFailed API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RespondActivityTaskFailed API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskfailed.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskFailed'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskfailed-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: >-
+    amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-responddecisiontaskcompleted-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondDecisionTaskCompleted API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.RespondDecisionTaskCompleted API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.responddecisiontaskcompleted.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.RespondDecisionTaskCompleted'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-responddecisiontaskcompleted-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-signalworkflowexecution-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.SignalWorkflowExecution API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.SignalWorkflowExecution API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.signalworkflowexecution.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.SignalWorkflowExecution'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-signalworkflowexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-startworkflowexecution-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.startworkflowexecution.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.StartWorkflowExecution'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-startworkflowexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-tagresource-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.TagResource API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.TagResource API from Amazon Simple Workflow Service — 1 operation(s)
+    for #x amz target=simpleworkflowservice.tagresource.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.TagResource'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-tagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-terminateworkflowexecution-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.TerminateWorkflowExecution API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.TerminateWorkflowExecution API from Amazon Simple Workflow
+    Service — 1 operation(s) for #x amz target=simpleworkflowservice.terminateworkflowexecution.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.TerminateWorkflowExecution'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-terminateworkflowexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecateactivitytype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateActivityType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.UndeprecateActivityType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.undeprecateactivitytype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.UndeprecateActivityType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecateactivitytype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecatedomain-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateDomain API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.UndeprecateDomain API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.undeprecatedomain.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.UndeprecateDomain'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecatedomain-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecateworkflowtype-api
+  name: >-
+    Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateWorkflowType API
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.UndeprecateWorkflowType API from Amazon Simple Workflow Service
+    — 1 operation(s) for #x amz target=simpleworkflowservice.undeprecateworkflowtype.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.UndeprecateWorkflowType'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecateworkflowtype-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-swf.yaml
+- aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api
+  name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UntagResource API'
+  description: >-
+    The #X Amz Target=SimpleWorkflowService.UntagResource API from Amazon Simple Workflow Service — 1
+    operation(s) for #x amz target=simpleworkflowservice.untagresource.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - '#X Amz Target=SimpleWorkflowService.UntagResource'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
   - type: X-NaftikoCapability
     url: capabilities/amazon-swf.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-simple-workflow-service/overview
 - type: AgenticAccess
   url: agentic-access/amazon-swf-agentic-access.yml
 - type: TrustCenter
