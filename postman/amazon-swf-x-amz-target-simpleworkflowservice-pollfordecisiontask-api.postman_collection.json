@@ -1,0 +1,546 @@
+{
+  "info": {
+    "_postman_id": "8bbe9d6a-03f3-4084-b95d-6cdb3a8472d0",
+    "name": "Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.PollForDecisionTask API",
+    "description": "<fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href=\"https://docs.aws.amazon.com/amazonswf/latest/developerguide/\">Amazon SWF Developer Guide</a> </i>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:49:11.000Z",
+    "updatedAt": "2026-07-28T10:49:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8bbe9d6a-03f3-4084-b95d-6cdb3a8472d0"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+      "item": [
+        {
+          "name": "Amazon SWF Poll for Decision Task",
+          "id": "c7c245be-8515-4d06-b8f4-8e23badf90a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "SimpleWorkflowService.PollForDecisionTask"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?maximumPageSize=<string>&nextPageToken=<string>#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "maximumPageSize",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "nextPageToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask"
+            },
+            "description": "<p>Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p> <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p> <important> <p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p> </important> <important> <p>Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code> returned by the initial call. Note that you do <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code> again.</p> </important> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href=\"https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "649d5646-2be6-4e67-acd7-a38a7ea99814",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?maximumPageSize=<string>&nextPageToken=<string>#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maximumPageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextPageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"taskToken\": \"<string>\",\n  \"startedEventId\": \"<integer>\",\n  \"workflowExecution\": {\n    \"workflowId\": \"<string>\",\n    \"runId\": \"<string>\"\n  },\n  \"workflowType\": {\n    \"name\": \"<string>\",\n    \"version\": \"<string>\"\n  },\n  \"events\": [\n    {\n      \"eventTimestamp\": \"<dateTime>\",\n      \"eventType\": \"WorkflowExecutionContinuedAsNew\",\n      \"eventId\": \"<integer>\",\n      \"workflowExecutionStartedEventAttributes\": {\n        \"childPolicy\": \"REQUEST_CANCEL\",\n        \"taskList\": {\n          \"name\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"input\": \"<string>\",\n        \"executionStartToCloseTimeout\": \"<string>\",\n        \"taskStartToCloseTimeout\": \"<string>\",\n        \"taskPriority\": \"<string>\",\n        \"tagList\": [\n          \"<string>\"\n        ],\n        \"continuedExecutionRunId\": \"<string>\",\n        \"parentWorkflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"parentInitiatedEventId\": \"<integer>\",\n        \"lambdaRole\": \"<string>\"\n      },\n      \"workflowExecutionCompletedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"result\": \"<string>\"\n      },\n      \"completeWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"workflowExecutionFailedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"reason\": \"<string>\",\n        \"details\": \"<string>\"\n      },\n      \"failWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": \"UNHANDLED_DECISION\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"workflowExecutionTimedOutEventAttributes\": {\n        \"timeoutType\": \"START_TO_CLOSE\",\n        \"childPolicy\": \"TERMINATE\"\n      },\n      \"workflowExecutionCanceledEventAttributes\": {\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"details\": \"<string>\"\n      },\n      \"cancelWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"workflowExecutionContinuedAsNewEventAttributes\": {\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"newExecutionRunId\": \"<string>\",\n        \"taskList\": {\n          \"name\": \"<string>\"\n        },\n        \"childPolicy\": \"REQUEST_CANCEL\",\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"input\": \"<string>\",\n        \"executionStartToCloseTimeout\": \"<string>\",\n        \"taskPriority\": \"<string>\",\n        \"taskStartToCloseTimeout\": \"<string>\",\n        \"tagList\": [\n          \"<string>\"\n        ],\n        \"lambdaRole\": \"<string>\"\n      },\n      \"continueAsNewWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"workflowExecutionTerminatedEventAttributes\": {\n        \"childPolicy\": \"REQUEST_CANCEL\",\n        \"reason\": \"<string>\",\n        \"details\": \"<string>\",\n        \"cause\": \"CHILD_POLICY_APPLIED\"\n      },\n      \"workflowExecutionCancelRequestedEventAttributes\": {\n        \"externalWorkflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"externalInitiatedEventId\": \"<integer>\",\n        \"cause\": \"CHILD_POLICY_APPLIED\"\n      },\n      \"decisionTaskScheduledEventAttributes\": {\n        \"taskList\": {\n          \"name\": \"<string>\"\n        },\n        \"taskPriority\": \"<string>\",\n        \"startToCloseTimeout\": \"<string>\"\n      },\n      \"decisionTaskStartedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"identity\": \"<string>\"\n      },\n      \"decisionTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"executionContext\": \"<string>\"\n      },\n      \"decisionTaskTimedOutEventAttributes\": {\n        \"timeoutType\": \"START_TO_CLOSE\",\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\"\n      },\n      \"activityTaskScheduledEventAttributes\": {\n        \"activityType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"activityId\": \"<string>\",\n        \"taskList\": {\n          \"name\": \"<string>\"\n        },\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"input\": \"<string>\",\n        \"control\": \"<string>\",\n        \"scheduleToStartTimeout\": \"<string>\",\n        \"scheduleToCloseTimeout\": \"<string>\",\n        \"startToCloseTimeout\": \"<string>\",\n        \"taskPriority\": \"<string>\",\n        \"heartbeatTimeout\": \"<string>\"\n      },\n      \"activityTaskStartedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"identity\": \"<string>\"\n      },\n      \"activityTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"result\": \"<string>\"\n      },\n      \"activityTaskFailedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"reason\": \"<string>\",\n        \"details\": \"<string>\"\n      },\n      \"activityTaskTimedOutEventAttributes\": {\n        \"timeoutType\": \"START_TO_CLOSE\",\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"details\": \"<string>\"\n      },\n      \"activityTaskCanceledEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"details\": \"<string>\",\n        \"latestCancelRequestedEventId\": \"<integer>\"\n      },\n      \"activityTaskCancelRequestedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"activityId\": \"<string>\"\n      },\n      \"workflowExecutionSignaledEventAttributes\": {\n        \"signalName\": \"<string>\",\n        \"input\": \"<string>\",\n        \"externalWorkflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"externalInitiatedEventId\": \"<integer>\"\n      },\n      \"markerRecordedEventAttributes\": {\n        \"markerName\": \"<string>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"details\": \"<string>\"\n      },\n      \"recordMarkerFailedEventAttributes\": {\n        \"markerName\": \"<string>\",\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"timerStartedEventAttributes\": {\n        \"timerId\": \"<string>\",\n        \"startToFireTimeout\": \"<string>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"control\": \"<string>\"\n      },\n      \"timerFiredEventAttributes\": {\n        \"timerId\": \"<string>\",\n        \"startedEventId\": \"<integer>\"\n      },\n      \"timerCanceledEventAttributes\": {\n        \"timerId\": \"<string>\",\n        \"startedEventId\": \"<integer>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"startChildWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": \"<string>\",\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"taskList\": {\n          \"name\": \"<string>\"\n        },\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"childPolicy\": \"ABANDON\",\n        \"control\": \"<string>\",\n        \"input\": \"<string>\",\n        \"executionStartToCloseTimeout\": \"<string>\",\n        \"taskPriority\": \"<string>\",\n        \"taskStartToCloseTimeout\": \"<string>\",\n        \"tagList\": [\n          \"<string>\"\n        ],\n        \"lambdaRole\": \"<string>\"\n      },\n      \"childWorkflowExecutionStartedEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\"\n      },\n      \"childWorkflowExecutionCompletedEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"result\": \"<string>\"\n      },\n      \"childWorkflowExecutionFailedEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"reason\": \"<string>\",\n        \"details\": \"<string>\"\n      },\n      \"childWorkflowExecutionTimedOutEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"timeoutType\": \"START_TO_CLOSE\",\n        \"initiatedEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\"\n      },\n      \"childWorkflowExecutionCanceledEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"details\": \"<string>\"\n      },\n      \"childWorkflowExecutionTerminatedEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\"\n      },\n      \"signalExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": \"<string>\",\n        \"signalName\": \"<string>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"runId\": \"<string>\",\n        \"input\": \"<string>\",\n        \"control\": \"<string>\"\n      },\n      \"externalWorkflowExecutionSignaledEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\"\n      },\n      \"signalExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": \"<string>\",\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"initiatedEventId\": \"<integer>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"runId\": \"<string>\",\n        \"control\": \"<string>\"\n      },\n      \"externalWorkflowExecutionCancelRequestedEventAttributes\": {\n        \"workflowExecution\": {\n          \"workflowId\": \"<string>\",\n          \"runId\": \"<string>\"\n        },\n        \"initiatedEventId\": \"<integer>\"\n      },\n      \"requestCancelExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": \"<string>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"runId\": \"<string>\",\n        \"control\": \"<string>\"\n      },\n      \"requestCancelExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": \"<string>\",\n        \"cause\": \"UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION\",\n        \"initiatedEventId\": \"<integer>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"runId\": \"<string>\",\n        \"control\": \"<string>\"\n      },\n      \"scheduleActivityTaskFailedEventAttributes\": {\n        \"activityType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"activityId\": \"<string>\",\n        \"cause\": \"DEFAULT_TASK_LIST_UNDEFINED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"requestCancelActivityTaskFailedEventAttributes\": {\n        \"activityId\": \"<string>\",\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"startTimerFailedEventAttributes\": {\n        \"timerId\": \"<string>\",\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"cancelTimerFailedEventAttributes\": {\n        \"timerId\": \"<string>\",\n        \"cause\": \"OPERATION_NOT_PERMITTED\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"startChildWorkflowExecutionFailedEventAttributes\": {\n        \"workflowType\": {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\"\n        },\n        \"cause\": \"WORKFLOW_TYPE_DOES_NOT_EXIST\",\n        \"workflowId\": \"<string>\",\n        \"initiatedEventId\": \"<integer>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"control\": \"<string>\"\n      },\n      \"lambdaFunctionScheduledEventAttributes\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"decisionTaskCompletedEventId\": \"<integer>\",\n        \"control\": \"<string>\",\n        \"input\": \"<string>\",\n        \"startToCloseTimeout\": \"<string>\"\n      },\n      \"lambdaFunctionStartedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\"\n      },\n      \"lambdaFunctionCompletedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"result\": \"<string>\"\n      },\n      \"lambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"reason\": \"<string>\",\n        \"details\": \"<string>\"\n      },\n      \"lambdaFunctionTimedOutEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"startedEventId\": \"<integer>\",\n        \"timeoutType\": \"START_TO_CLOSE\"\n      },\n      \"scheduleLambdaFunctionFailedEventAttributes\": {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"cause\": \"LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION\",\n        \"decisionTaskCompletedEventId\": \"<integer>\"\n      },\n      \"startLambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": \"<integer>\",\n        \"cause\": \"ASSUME_ROLE_FAILED\",\n        \"message\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"previousStartedEventId\": \"<integer>\"\n}",
+              "createdAt": "2026-07-28T10:49:12.000Z",
+              "updatedAt": "2026-07-28T10:49:12.000Z",
+              "uid": "35240-649d5646-2be6-4e67-acd7-a38a7ea99814"
+            },
+            {
+              "id": "4275b1f5-0b16-4395-9d94-3c34771a0cad",
+              "name": "UnknownResourceFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?maximumPageSize=<string>&nextPageToken=<string>#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maximumPageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextPageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:49:12.000Z",
+              "updatedAt": "2026-07-28T10:49:12.000Z",
+              "uid": "35240-4275b1f5-0b16-4395-9d94-3c34771a0cad"
+            },
+            {
+              "id": "440262d2-5c67-4267-960e-345cbc2e1200",
+              "name": "OperationNotPermittedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?maximumPageSize=<string>&nextPageToken=<string>#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maximumPageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextPageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:49:12.000Z",
+              "updatedAt": "2026-07-28T10:49:12.000Z",
+              "uid": "35240-440262d2-5c67-4267-960e-345cbc2e1200"
+            },
+            {
+              "id": "24463f8e-9f4b-42c0-b689-3c75e5269283",
+              "name": "LimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?maximumPageSize=<string>&nextPageToken=<string>#X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maximumPageSize",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextPageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:49:12.000Z",
+              "updatedAt": "2026-07-28T10:49:12.000Z",
+              "uid": "35240-24463f8e-9f4b-42c0-b689-3c75e5269283"
+            }
+          ],
+          "createdAt": "2026-07-28T10:49:12.000Z",
+          "updatedAt": "2026-07-28T10:49:12.000Z",
+          "uid": "35240-c7c245be-8515-4d06-b8f4-8e23badf90a3"
+        }
+      ],
+      "id": "dbbabaf5-f8c7-4ddd-a750-c927fb5d9aeb",
+      "createdAt": "2026-07-28T10:49:12.000Z",
+      "updatedAt": "2026-07-28T10:49:12.000Z",
+      "uid": "35240-dbbabaf5-f8c7-4ddd-a750-c927fb5d9aeb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://swf.{{region}}.amazonaws.com"
+    }
+  ]
+}
