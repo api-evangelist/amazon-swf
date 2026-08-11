@@ -53,8 +53,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions API
@@ -79,8 +77,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountPendingActivityTasks API
@@ -105,8 +101,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks API
@@ -131,8 +125,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateActivityType API
@@ -157,8 +149,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateDomain API'
   description: >-
@@ -181,8 +171,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DeprecateWorkflowType API
@@ -207,8 +195,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeActivityType API
@@ -233,8 +219,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeDomain API'
   description: >-
@@ -257,8 +241,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution API
@@ -283,8 +265,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API
@@ -309,8 +289,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory API
@@ -335,8 +313,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListActivityTypes API'
   description: >-
@@ -359,8 +335,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: >-
     amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api
   name: >-
@@ -386,8 +360,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListDomains API'
   description: >-
@@ -410,8 +382,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions API
@@ -436,8 +406,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListTagsForResource API
@@ -462,8 +430,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.ListWorkflowTypes API'
   description: >-
@@ -486,8 +452,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.PollForActivityTask API
@@ -512,8 +476,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.PollForDecisionTask API
@@ -538,8 +500,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat API
@@ -564,8 +524,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterActivityType API
@@ -590,8 +548,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterDomain API'
   description: >-
@@ -614,8 +570,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RegisterWorkflowType API
@@ -640,8 +594,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: >-
     amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api
   name: >-
@@ -668,8 +620,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcanceled-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondActivityTaskCanceled API
@@ -694,8 +644,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: >-
     amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcompleted-api
   name: >-
@@ -721,8 +669,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskfailed-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.RespondActivityTaskFailed API
@@ -747,8 +693,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: >-
     amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-responddecisiontaskcompleted-api
   name: >-
@@ -774,8 +718,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-signalworkflowexecution-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.SignalWorkflowExecution API
@@ -800,8 +742,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-startworkflowexecution-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API
@@ -826,8 +766,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-tagresource-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.TagResource API'
   description: >-
@@ -850,8 +788,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-terminateworkflowexecution-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.TerminateWorkflowExecution API
@@ -876,8 +812,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecateactivitytype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateActivityType API
@@ -902,8 +836,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecatedomain-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateDomain API'
   description: >-
@@ -926,8 +858,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-undeprecateworkflowtype-api
   name: >-
     Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UndeprecateWorkflowType API
@@ -952,8 +882,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 - aid: amazon-swf:amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api
   name: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.UntagResource API'
   description: >-
@@ -976,8 +904,6 @@ apis:
     url: https://aws.amazon.com/swf/pricing/
   - type: FAQ
     url: https://aws.amazon.com/swf/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-swf.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-simple-workflow-service/overview
