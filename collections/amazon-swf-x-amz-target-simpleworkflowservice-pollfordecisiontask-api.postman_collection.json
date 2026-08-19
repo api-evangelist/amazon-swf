@@ -1,0 +1,636 @@
+{
+  "item": [
+    {
+      "id": "78e563cf-52a5-4e6e-8b99-30a5934d1730",
+      "name": "#X Amz Target=SimpleWorkflowService.PollForDecisionTask",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95588f17-bdae-47f1-a929-ed6bc99a0128",
+          "name": "Amazon SWF Poll for Decision Task",
+          "request": {
+            "name": "Amazon SWF Poll for Decision Task",
+            "description": {
+              "content": "<p>Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p> <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p> <important> <p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p> </important> <important> <p>Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code> returned by the initial call. Note that you do <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code> again.</p> </important> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href=\"https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html\">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maximumPageSize",
+                  "value": "<string>",
+                  "description": "Pagination limit"
+                },
+                {
+                  "disabled": false,
+                  "key": "nextPageToken",
+                  "value": "<string>",
+                  "description": "Pagination token"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "33f00c93-af8f-4c1b-876e-d79339731e57",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maximumPageSize",
+                      "value": "example"
+                    },
+                    {
+                      "key": "nextPageToken",
+                      "value": "token123"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"taskToken\": \"string\",\n  \"startedEventId\": 5639,\n  \"workflowExecution\": {\n    \"workflowId\": \"string\",\n    \"runId\": \"string\"\n  },\n  \"workflowType\": {\n    \"name\": \"<string>\",\n    \"version\": \"string\"\n  },\n  \"events\": [\n    {\n      \"eventTimestamp\": \"1962-01-02T23:49:15.440Z\",\n      \"eventType\": \"WorkflowExecutionStarted\",\n      \"eventId\": 6953,\n      \"workflowExecutionStartedEventAttributes\": {\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"continuedExecutionRunId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCompletedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"completeWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionFailedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"failWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCanceledEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cancelWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionContinuedAsNewEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"newExecutionRunId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"continueAsNewWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionTerminatedEventAttributes\": {\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCancelRequestedEventAttributes\": {\n        \"externalWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskScheduledEventAttributes\": {\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"identity\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionContext\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskScheduledEventAttributes\": {\n        \"activityType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduleToStartTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduleToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"heartbeatTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"identity\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCanceledEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"latestCancelRequestedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCancelRequestedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionSignaledEventAttributes\": {\n        \"signalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"markerRecordedEventAttributes\": {\n        \"markerName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"recordMarkerFailedEventAttributes\": {\n        \"markerName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerStartedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToFireTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerFiredEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerCanceledEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startChildWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionStartedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionCompletedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionFailedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionTimedOutEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionCanceledEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionTerminatedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"signalExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"signalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"externalWorkflowExecutionSignaledEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"signalExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"externalWorkflowExecutionCancelRequestedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scheduleActivityTaskFailedEventAttributes\": {\n        \"activityType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelActivityTaskFailedEventAttributes\": {\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startTimerFailedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cancelTimerFailedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startChildWorkflowExecutionFailedEventAttributes\": {\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionScheduledEventAttributes\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionTimedOutEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scheduleLambdaFunctionFailedEventAttributes\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startLambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    {\n      \"eventTimestamp\": \"1959-10-12T03:08:54.578Z\",\n      \"eventType\": \"ChildWorkflowExecutionTerminated\",\n      \"eventId\": 2318,\n      \"workflowExecutionStartedEventAttributes\": {\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"continuedExecutionRunId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCompletedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"completeWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionFailedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"failWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCanceledEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cancelWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionContinuedAsNewEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"newExecutionRunId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"continueAsNewWorkflowExecutionFailedEventAttributes\": {\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionTerminatedEventAttributes\": {\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionCancelRequestedEventAttributes\": {\n        \"externalWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskScheduledEventAttributes\": {\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"identity\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionContext\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"decisionTaskTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskScheduledEventAttributes\": {\n        \"activityType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduleToStartTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduleToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"heartbeatTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"identity\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskTimedOutEventAttributes\": {\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCanceledEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"latestCancelRequestedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"activityTaskCancelRequestedEventAttributes\": {\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"workflowExecutionSignaledEventAttributes\": {\n        \"signalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalWorkflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"externalInitiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"markerRecordedEventAttributes\": {\n        \"markerName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"recordMarkerFailedEventAttributes\": {\n        \"markerName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerStartedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToFireTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerFiredEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"timerCanceledEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startChildWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"childPolicy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"executionStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskPriority\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"taskStartToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagList\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaRole\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionStartedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionCompletedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionFailedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionTimedOutEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionCanceledEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"childWorkflowExecutionTerminatedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"signalExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"signalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"externalWorkflowExecutionSignaledEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"signalExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"externalWorkflowExecutionCancelRequestedEventAttributes\": {\n        \"workflowExecution\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelExternalWorkflowExecutionInitiatedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelExternalWorkflowExecutionFailedEventAttributes\": {\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"runId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scheduleActivityTaskFailedEventAttributes\": {\n        \"activityType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"requestCancelActivityTaskFailedEventAttributes\": {\n        \"activityId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startTimerFailedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cancelTimerFailedEventAttributes\": {\n        \"timerId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startChildWorkflowExecutionFailedEventAttributes\": {\n        \"workflowType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workflowId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"initiatedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionScheduledEventAttributes\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"control\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"input\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startToCloseTimeout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionStartedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionCompletedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"result\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"lambdaFunctionTimedOutEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"timeoutType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scheduleLambdaFunctionFailedEventAttributes\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"decisionTaskCompletedEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"startLambdaFunctionFailedEventAttributes\": {\n        \"scheduledEventId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"cause\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"message\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"previousStartedEventId\": 2545\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b784675d-fe84-4398-b780-3b86a6fa7244",
+              "name": "UnknownResourceFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maximumPageSize",
+                      "value": "example"
+                    },
+                    {
+                      "key": "nextPageToken",
+                      "value": "token123"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "488a0d99-39a8-41f1-a7e6-2157daf18532",
+              "name": "OperationNotPermittedFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maximumPageSize",
+                      "value": "example"
+                    },
+                    {
+                      "key": "nextPageToken",
+                      "value": "token123"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7233f444-a7b9-45dd-bd8d-012cb70da55f",
+              "name": "LimitExceededFault",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=SimpleWorkflowService.PollForDecisionTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maximumPageSize",
+                      "value": "example"
+                    },
+                    {
+                      "key": "nextPageToken",
+                      "value": "token123"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "SimpleWorkflowService.PollForDecisionTask"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"domain\": \"<string>\",\n  \"taskList\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"maximumPageSize\": \"<integer>\",\n  \"reverseOrder\": \"<boolean>\",\n  \"startAtPreviousStartedEvent\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://swf.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "eef60fd7-3f8b-4cbd-9b81-0c4ceb480299",
+    "name": "Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.PollForDecisionTask API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href=\"https://docs.aws.amazon.com/amazonswf/latest/developerguide/\">Amazon SWF Developer Guide</a> </i>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
