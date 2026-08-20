@@ -22,6 +22,11 @@ tags:
 - Automation
 - AWS
 - Task Coordination
+- Workflows
+tags_raw:
+- Automation
+- AWS
+- Task Coordination
 - Workflow
 url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -37,7 +42,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.countclosedworkflowexecutions.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions'
   properties:
   - type: OpenAPI
@@ -61,7 +67,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.countopenworkflowexecutions.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions'
   properties:
   - type: OpenAPI
@@ -85,7 +92,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.countpendingactivitytasks.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.CountPendingActivityTasks'
   properties:
   - type: OpenAPI
@@ -109,7 +117,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.countpendingdecisiontasks.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks'
   properties:
   - type: OpenAPI
@@ -249,7 +258,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.describeworkflowexecution.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution'
   properties:
   - type: OpenAPI
@@ -297,7 +307,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.getworkflowexecutionhistory.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory'
   properties:
   - type: OpenAPI
@@ -344,7 +355,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.listclosedworkflowexecutions.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions'
   properties:
   - type: OpenAPI
@@ -390,7 +402,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.listopenworkflowexecutions.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions'
   properties:
   - type: OpenAPI
@@ -508,7 +521,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.recordactivitytaskheartbeat.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat'
   properties:
   - type: OpenAPI
@@ -604,7 +618,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.requestcancelworkflowexecution.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution'
   properties:
   - type: OpenAPI
@@ -628,7 +643,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskcanceled.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskCanceled'
   properties:
   - type: OpenAPI
@@ -653,7 +669,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskcompleted.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted'
   properties:
   - type: OpenAPI
@@ -677,7 +694,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.respondactivitytaskfailed.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskFailed'
   properties:
   - type: OpenAPI
@@ -702,7 +720,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.responddecisiontaskcompleted.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.RespondDecisionTaskCompleted'
   properties:
   - type: OpenAPI
@@ -796,7 +815,8 @@ apis:
     Service — 1 operation(s) for #x amz target=simpleworkflowservice.terminateworkflowexecution.
   humanURL: https://aws.amazon.com/swf/
   baseURL: https://swf.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - '#X Amz Target=SimpleWorkflowService.TerminateWorkflowExecution'
   properties:
   - type: OpenAPI
