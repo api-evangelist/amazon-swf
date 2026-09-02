@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListActivityTypes API'
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListActivityTypes #X Amz Target=SimpleWorkflowService.ListActivityTypes API'
   description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -180,71 +180,10 @@ paths:
       tags:
       - '#X Amz Target=SimpleWorkflowService.ListActivityTypes'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UnknownResourceFault: {}
-    ReverseOrder:
-      type: boolean
-    ActivityType:
-      type: object
-      required:
-      - name
-      - version
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
-      description: Represents an activity type.
-    Description:
+    PageToken:
       type: string
-      maxLength: 1024
+      maxLength: 2048
     ActivityTypeInfo:
       type: object
       required:
@@ -273,38 +212,41 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
       description: Detailed information about an activity type.
-    PageToken:
+    OperationNotPermittedFault: {}
+    Description:
       type: string
-      maxLength: 2048
+      maxLength: 1024
     DomainName:
       type: string
       minLength: 1
       maxLength: 256
-    OperationNotPermittedFault: {}
-    ActivityTypeInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ActivityTypeInfo'
-    PageSize:
-      type: integer
-      minimum: 0
-      maximum: 1000
     RegistrationStatus:
       type: string
       enum:
       - REGISTERED
       - DEPRECATED
+    ActivityType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
+      description: Represents an activity type.
+    UnknownResourceFault: {}
+    ReverseOrder:
+      type: boolean
     Name:
       type: string
       minLength: 1
       maxLength: 256
-    Version:
-      type: string
-      minLength: 1
-      maxLength: 64
-    Timestamp:
-      type: string
-      format: date-time
     ListActivityTypesInput:
       type: object
       required:
@@ -336,6 +278,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/ReverseOrder'
           - description: When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.
+    Timestamp:
+      type: string
+      format: date-time
     ActivityTypeInfos:
       type: object
       required:
@@ -350,6 +295,61 @@ components:
           - $ref: '#/components/schemas/PageToken'
           - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
       description: Contains a paginated list of activity type information structures.
+    ActivityTypeInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ActivityTypeInfo'
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
+    PageSize:
+      type: integer
+      minimum: 0
+      maximum: 1000
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

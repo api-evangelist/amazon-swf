@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API'
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.StartWorkflowExecution #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API'
   description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -190,59 +190,12 @@ paths:
       tags:
       - '#X Amz Target=SimpleWorkflowService.StartWorkflowExecution'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    WorkflowId:
+    Arn:
       type: string
       minLength: 1
-      maxLength: 256
-    UnknownResourceFault: {}
-    Tag:
-      type: string
-      minLength: 0
-      maxLength: 256
+      maxLength: 1600
+    OperationNotPermittedFault: {}
     ChildPolicy:
       type: string
       enum:
@@ -253,31 +206,43 @@ components:
       type: string
       minLength: 1
       maxLength: 256
-    OperationNotPermittedFault: {}
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      maxItems: 5
-    TypeDeprecatedFault: {}
-    Arn:
+    WorkflowExecutionAlreadyStartedFault: {}
+    Tag:
       type: string
-      minLength: 1
-      maxLength: 1600
-    WorkflowRunId:
-      type: string
-      minLength: 1
-      maxLength: 64
-    TaskList:
+      minLength: 0
+      maxLength: 256
+    WorkflowType:
       type: object
       required:
       - name
+      - version
       properties:
         name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: The name of the task list.
-      description: Represents a task list.
+          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+      description: Represents a workflow type.
+    UnknownResourceFault: {}
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    LimitExceededFault: {}
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 256
+    WorkflowRunId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    DurationInSecondsOptional:
+      type: string
+      maxLength: 8
     StartWorkflowExecutionInput:
       type: object
       required:
@@ -330,16 +295,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: <p>The IAM role to attach to this workflow execution.</p> <note> <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
-    WorkflowExecutionAlreadyStartedFault: {}
-    TaskPriority:
-      type: string
-    Name:
-      type: string
-      minLength: 1
-      maxLength: 256
     Data:
       type: string
       maxLength: 32768
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      maxItems: 5
+    TaskPriority:
+      type: string
+    TaskList:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the task list.
+      description: Represents a task list.
     Run:
       type: object
       properties:
@@ -352,26 +327,51 @@ components:
       type: string
       minLength: 1
       maxLength: 64
-    DurationInSecondsOptional:
-      type: string
-      maxLength: 8
-    WorkflowType:
-      type: object
-      required:
-      - name
-      - version
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-      description: Represents a workflow type.
-    LimitExceededFault: {}
     DefaultUndefinedFault: {}
+    TypeDeprecatedFault: {}
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

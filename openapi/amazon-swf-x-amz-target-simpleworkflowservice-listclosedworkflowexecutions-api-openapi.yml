@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions API'
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions API'
   description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -180,67 +180,44 @@ paths:
       tags:
       - '#X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    WorkflowId:
+    PageToken:
+      type: string
+      maxLength: 2048
+    OperationNotPermittedFault: {}
+    ExecutionTimeFilter:
+      type: object
+      required:
+      - oldestDate
+      properties:
+        oldestDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Specifies the oldest start or close date and time to return.
+        latestDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Specifies the latest start or close date and time to return.
+      description: 'Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> '
+    ExecutionStatus:
+      type: string
+      enum:
+      - OPEN
+      - CLOSED
+    DomainName:
       type: string
       minLength: 1
       maxLength: 256
-    UnknownResourceFault: {}
-    TagFilter:
+    CloseStatusFilter:
       type: object
       required:
-      - tag
+      - status
       properties:
-        tag:
+        status:
           allOf:
-          - $ref: '#/components/schemas/Tag'
-          - description: '<p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>'
-      description: Used to filter the workflow executions in visibility APIs based on a tag.
-    ReverseOrder:
-      type: boolean
+          - $ref: '#/components/schemas/CloseStatus'
+          - description: ' The close status that must match the close status of an execution for it to meet the criteria of this filter.'
+      description: Used to filter the closed workflow executions in visibility APIs by their close status.
     Tag:
       type: string
       minLength: 0
@@ -290,76 +267,42 @@ components:
           - $ref: '#/components/schemas/Canceled'
           - description: Set to true if a cancellation is requested for this workflow execution.
       description: Contains information about a workflow execution.
-    ExecutionStatus:
-      type: string
-      enum:
-      - OPEN
-      - CLOSED
-    PageToken:
-      type: string
-      maxLength: 2048
-    WorkflowTypeFilter:
+    WorkflowType:
       type: object
       required:
       - name
+      - version
       properties:
         name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: ' Name of the workflow type.'
+          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
         version:
           allOf:
-          - $ref: '#/components/schemas/VersionOptional'
-          - description: Version of the workflow type.
-      description: Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.
-    DomainName:
+          - $ref: '#/components/schemas/Version'
+          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+      description: Represents a workflow type.
+    UnknownResourceFault: {}
+    VersionOptional:
       type: string
-      minLength: 1
-      maxLength: 256
-    CloseStatusFilter:
-      type: object
-      required:
-      - status
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/CloseStatus'
-          - description: ' The close status that must match the close status of an execution for it to meet the criteria of this filter.'
-      description: Used to filter the closed workflow executions in visibility APIs by their close status.
-    OperationNotPermittedFault: {}
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      maxItems: 5
-    WorkflowExecutionInfos:
-      type: object
-      required:
-      - executionInfos
-      properties:
-        executionInfos:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowExecutionInfoList'
-          - description: The list of workflow information structures.
-        nextPageToken:
-          allOf:
-          - $ref: '#/components/schemas/PageToken'
-          - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-      description: Contains a paginated list of information about workflow executions.
-    WorkflowRunId:
-      type: string
-      minLength: 1
       maxLength: 64
-    WorkflowExecutionFilter:
+    ReverseOrder:
+      type: boolean
+    WorkflowExecution:
       type: object
       required:
       - workflowId
+      - runId
       properties:
         workflowId:
           allOf:
           - $ref: '#/components/schemas/WorkflowId'
-          - description: The workflowId to pass of match the criteria of this filter.
-      description: Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.
+          - description: The user defined identifier associated with the workflow execution.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunId'
+          - description: A system-generated unique identifier for the workflow execution.
+      description: Represents a workflow execution.
     ListClosedWorkflowExecutionsInput:
       type: object
       required:
@@ -406,60 +349,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ReverseOrder'
           - description: When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.
-    PageSize:
-      type: integer
-      minimum: 0
-      maximum: 1000
-    Canceled:
-      type: boolean
-    VersionOptional:
-      type: string
-      maxLength: 64
-    Name:
-      type: string
-      minLength: 1
-      maxLength: 256
-    Version:
-      type: string
-      minLength: 1
-      maxLength: 64
-    WorkflowExecution:
-      type: object
-      required:
-      - workflowId
-      - runId
-      properties:
-        workflowId:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowId'
-          - description: The user defined identifier associated with the workflow execution.
-        runId:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowRunId'
-          - description: A system-generated unique identifier for the workflow execution.
-      description: Represents a workflow execution.
-    WorkflowType:
-      type: object
-      required:
-      - name
-      - version
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-      description: Represents a workflow type.
-    WorkflowExecutionInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/WorkflowExecutionInfo'
-    Timestamp:
-      type: string
-      format: date-time
     CloseStatus:
       type: string
       enum:
@@ -469,20 +358,131 @@ components:
       - TERMINATED
       - CONTINUED_AS_NEW
       - TIMED_OUT
-    ExecutionTimeFilter:
+    WorkflowExecutionFilter:
       type: object
       required:
-      - oldestDate
+      - workflowId
       properties:
-        oldestDate:
+        workflowId:
           allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Specifies the oldest start or close date and time to return.
-        latestDate:
+          - $ref: '#/components/schemas/WorkflowId'
+          - description: The workflowId to pass of match the criteria of this filter.
+      description: Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 256
+    WorkflowRunId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Canceled:
+      type: boolean
+    WorkflowExecutionInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/WorkflowExecutionInfo'
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      maxItems: 5
+    Timestamp:
+      type: string
+      format: date-time
+    WorkflowExecutionInfos:
+      type: object
+      required:
+      - executionInfos
+      properties:
+        executionInfos:
           allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Specifies the latest start or close date and time to return.
-      description: 'Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> '
+          - $ref: '#/components/schemas/WorkflowExecutionInfoList'
+          - description: The list of workflow information structures.
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+      description: Contains a paginated list of information about workflow executions.
+    WorkflowTypeFilter:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: ' Name of the workflow type.'
+        version:
+          allOf:
+          - $ref: '#/components/schemas/VersionOptional'
+          - description: Version of the workflow type.
+      description: Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
+    PageSize:
+      type: integer
+      minimum: 0
+      maximum: 1000
+    TagFilter:
+      type: object
+      required:
+      - tag
+      properties:
+        tag:
+          allOf:
+          - $ref: '#/components/schemas/Tag'
+          - description: '<p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>'
+      description: Used to filter the workflow executions in visibility APIs based on a tag.
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

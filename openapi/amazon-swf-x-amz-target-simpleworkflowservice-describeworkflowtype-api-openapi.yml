@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API'
+  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeWorkflowType #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API'
   description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -166,51 +166,12 @@ paths:
       tags:
       - '#X Amz Target=SimpleWorkflowService.DescribeWorkflowType'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UnknownResourceFault: {}
+    Arn:
+      type: string
+      minLength: 1
+      maxLength: 1600
+    OperationNotPermittedFault: {}
     Description:
       type: string
       maxLength: 1024
@@ -224,36 +185,27 @@ components:
       type: string
       minLength: 1
       maxLength: 256
-    OperationNotPermittedFault: {}
-    WorkflowTypeDetail:
-      type: object
-      required:
-      - typeInfo
-      - configuration
-      properties:
-        typeInfo:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowTypeInfo'
-          - description: <p>General information about the workflow type.</p> <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> <li> <p> <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> </ul>
-        configuration:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowTypeConfiguration'
-          - description: 'Configuration settings of the workflow type registered through <a>RegisterWorkflowType</a> '
-      description: Contains details about a workflow type.
-    Arn:
-      type: string
-      minLength: 1
-      maxLength: 1600
-    TaskList:
+    WorkflowType:
       type: object
       required:
       - name
+      - version
       properties:
         name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: The name of the task list.
-      description: Represents a task list.
+          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+      description: Represents a workflow type.
+    RegistrationStatus:
+      type: string
+      enum:
+      - REGISTERED
+      - DEPRECATED
+    UnknownResourceFault: {}
     WorkflowTypeConfiguration:
       type: object
       properties:
@@ -297,13 +249,13 @@ components:
           allOf:
           - $ref: '#/components/schemas/WorkflowType'
           - description: The workflow type to describe.
-    TaskPriority:
+    Name:
       type: string
-    RegistrationStatus:
+      minLength: 1
+      maxLength: 256
+    DurationInSecondsOptional:
       type: string
-      enum:
-      - REGISTERED
-      - DEPRECATED
+      maxLength: 8
     WorkflowTypeInfo:
       type: object
       required:
@@ -332,35 +284,83 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: If the type is in deprecated state, then it is set to the date when the type was deprecated.
       description: Contains information about a workflow type.
-    Name:
+    TaskPriority:
       type: string
-      minLength: 1
-      maxLength: 256
-    Version:
+    Timestamp:
       type: string
-      minLength: 1
-      maxLength: 64
-    DurationInSecondsOptional:
-      type: string
-      maxLength: 8
-    WorkflowType:
+      format: date-time
+    WorkflowTypeDetail:
+      type: object
+      required:
+      - typeInfo
+      - configuration
+      properties:
+        typeInfo:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowTypeInfo'
+          - description: <p>General information about the workflow type.</p> <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li> <li> <p> <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateWorkflowType</a>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li> </ul>
+        configuration:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowTypeConfiguration'
+          - description: 'Configuration settings of the workflow type registered through <a>RegisterWorkflowType</a> '
+      description: Contains details about a workflow type.
+    TaskList:
       type: object
       required:
       - name
-      - version
       properties:
         name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-      description: Represents a workflow type.
-    Timestamp:
+          - description: The name of the task list.
+      description: Represents a task list.
+    Version:
       type: string
-      format: date-time
+      minLength: 1
+      maxLength: 64
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
