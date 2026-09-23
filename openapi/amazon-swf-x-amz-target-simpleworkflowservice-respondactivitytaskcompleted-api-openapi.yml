@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted #X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,31 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: RespondActivityTaskCompleted
-      description: <p>Used by workers to tell the service that the <a>ActivityTask</a> identified by the <code>taskToken</code> completed successfully with a <code>result</code> (if provided). The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.</p> <important> <p>If the requested task doesn't complete successfully, use <a>RespondActivityTaskFailed</a> instead. If the worker finds that the task is canceled through the <code>canceled</code> flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean up and then call <a>RespondActivityTaskCanceled</a>.</p> </important> <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      description: 'Used by workers to tell the service that the ActivityTask identified by the taskToken completed successfully with a result (if provided). The result appears in the ActivityTaskCompleted event in the workflow history.
+
+
+        If the requested task doesn''t complete successfully, use RespondActivityTaskFailed instead. If the worker finds that the task is canceled through the canceled flag returned by RecordActivityTaskHeartbeat, it should cancel the task, clean up and then call RespondActivityTaskCanceled.
+
+
+        A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has timed out.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        You cannot use an IAM policy to constrain this action''s parameters.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -163,8 +190,15 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.RespondActivityTaskCompleted'
 components:
   schemas:
-    OperationNotPermittedFault: {}
     UnknownResourceFault: {}
+    Data:
+      type: string
+      maxLength: 32768
+    TaskToken:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    OperationNotPermittedFault: {}
     RespondActivityTaskCompletedInput:
       type: object
       required:
@@ -179,22 +213,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/Data'
           - description: The result of the activity task. It is a free form string that is implementation specific.
-    TaskToken:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    Data:
-      type: string
-      maxLength: 32768
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -205,14 +232,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -223,8 +250,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

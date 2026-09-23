@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.TagResource #X Amz Target=SimpleWorkflowService.TagResource API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: TagResource
-      description: <p>Add a tag to a Amazon SWF domain.</p> <note> <p>Amazon SWF supports a maximum of 50 tags per resource.</p> </note>
+      description: 'Add a tag to a Amazon SWF domain.
+
+
+        Amazon SWF supports a maximum of 50 tags per resource.'
       responses:
         '200':
           description: Success
@@ -175,12 +181,12 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.TagResource'
 components:
   schemas:
-    Arn:
-      type: string
-      minLength: 1
-      maxLength: 1600
-    OperationNotPermittedFault: {}
     UnknownResourceFault: {}
+    TooManyTagsFault: {}
+    ResourceTagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceTag'
     ResourceTag:
       type: object
       required:
@@ -196,10 +202,14 @@ components:
           - description: The value of a tag.
       description: '<p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>'
     LimitExceededFault: {}
-    ResourceTagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceTag'
+    OperationNotPermittedFault: {}
+    ResourceTagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ResourceTagValue:
+      type: string
+      maxLength: 256
     TagResourceInput:
       type: object
       required:
@@ -215,23 +225,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceTagList'
           - description: '<p>The list of tags to add to a domain. </p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>'
-    ResourceTagKey:
+    Arn:
       type: string
       minLength: 1
-      maxLength: 128
-    TooManyTagsFault: {}
-    ResourceTagValue:
-      type: string
-      maxLength: 256
+      maxLength: 1600
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -242,14 +248,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -260,8 +266,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

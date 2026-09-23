@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution #X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,31 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: RequestCancelWorkflowExecution
-      description: <p>Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> <note> <p>If the runId isn't specified, the <code>WorkflowExecutionCancelRequested</code> event is recorded in the history of the current open workflow execution with the specified workflowId in the domain.</p> </note> <note> <p>Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of <a>TerminateWorkflowExecution</a> when possible.</p> </note> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      description: 'Records a WorkflowExecutionCancelRequested event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.
+
+
+        If the runId isn''t specified, the WorkflowExecutionCancelRequested event is recorded in the history of the current open workflow execution with the specified workflowId in the domain.
+
+
+        Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of TerminateWorkflowExecution when possible.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        You cannot use an IAM policy to constrain this action''s parameters.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -163,19 +190,7 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution'
 components:
   schemas:
-    OperationNotPermittedFault: {}
-    WorkflowId:
-      type: string
-      minLength: 1
-      maxLength: 256
     UnknownResourceFault: {}
-    DomainName:
-      type: string
-      minLength: 1
-      maxLength: 256
-    WorkflowRunIdOptional:
-      type: string
-      maxLength: 64
     RequestCancelWorkflowExecutionInput:
       type: object
       required:
@@ -195,15 +210,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/WorkflowRunIdOptional'
           - description: The runId of the workflow execution to cancel.
+    OperationNotPermittedFault: {}
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    WorkflowRunIdOptional:
+      type: string
+      maxLength: 64
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -214,14 +241,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -232,8 +259,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.StartWorkflowExecution #X Amz Target=SimpleWorkflowService.StartWorkflowExecution API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,52 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: StartWorkflowExecution
-      description: '<p>Starts an execution of the workflow type in the specified domain using the provided <code>workflowId</code> and input data.</p> <p>This action returns the newly started workflow execution.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action''s access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.</p> </li> <li> <p> <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.</p> </li> <li> <p> <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.</p> </li> <li> <p> <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.</p> </li> <li> <p> <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.</p> </li> <li> <p> <code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>'
+      description: 'Starts an execution of the workflow type in the specified domain using the provided workflowId and input data.
+
+
+        This action returns the newly started workflow execution.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        Constrain the following parameters by using a Condition element with the appropriate keys.
+
+
+        tagList.member.0: The key is swf:tagList.member.0.
+
+
+        tagList.member.1: The key is swf:tagList.member.1.
+
+
+        tagList.member.2: The key is swf:tagList.member.2.
+
+
+        tagList.member.3: The key is swf:tagList.member.3.
+
+
+        tagList.member.4: The key is swf:tagList.member.4.
+
+
+        taskList: String constraint. The key is swf:taskList.name.
+
+
+        workflowType.name: String constraint. The key is swf:workflowType.name.
+
+
+        workflowType.version: String constraint. The key is swf:workflowType.version.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -191,26 +239,28 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.StartWorkflowExecution'
 components:
   schemas:
+    UnknownResourceFault: {}
+    LimitExceededFault: {}
+    OperationNotPermittedFault: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      maxItems: 5
+    TaskPriority:
+      type: string
     Arn:
       type: string
       minLength: 1
       maxLength: 1600
-    OperationNotPermittedFault: {}
-    ChildPolicy:
-      type: string
-      enum:
-      - TERMINATE
-      - REQUEST_CANCEL
-      - ABANDON
-    DomainName:
-      type: string
-      minLength: 1
-      maxLength: 256
-    WorkflowExecutionAlreadyStartedFault: {}
-    Tag:
-      type: string
-      minLength: 0
-      maxLength: 256
+    Run:
+      type: object
+      properties:
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowRunId'
+          - description: The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.
+      description: Specifies the <code>runId</code> of a workflow execution.
     WorkflowType:
       type: object
       required:
@@ -226,23 +276,55 @@ components:
           - $ref: '#/components/schemas/Version'
           - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
       description: Represents a workflow type.
-    UnknownResourceFault: {}
-    WorkflowId:
+    ChildPolicy:
       type: string
-      minLength: 1
-      maxLength: 256
-    LimitExceededFault: {}
+      enum:
+      - TERMINATE
+      - REQUEST_CANCEL
+      - ABANDON
     Name:
       type: string
       minLength: 1
       maxLength: 256
+    TaskList:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the task list.
+      description: Represents a task list.
+    WorkflowExecutionAlreadyStartedFault: {}
+    Data:
+      type: string
+      maxLength: 32768
+    DefaultUndefinedFault: {}
     WorkflowRunId:
       type: string
       minLength: 1
       maxLength: 64
+    Tag:
+      type: string
+      minLength: 0
+      maxLength: 256
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
     DurationInSecondsOptional:
       type: string
       maxLength: 8
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    TypeDeprecatedFault: {}
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
     StartWorkflowExecutionInput:
       type: object
       required:
@@ -295,41 +377,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: <p>The IAM role to attach to this workflow execution.</p> <note> <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
-    Data:
-      type: string
-      maxLength: 32768
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      maxItems: 5
-    TaskPriority:
-      type: string
-    TaskList:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the task list.
-      description: Represents a task list.
-    Run:
-      type: object
-      properties:
-        runId:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowRunId'
-          - description: The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.
-      description: Specifies the <code>runId</code> of a workflow execution.
-    Version:
-      type: string
-      minLength: 1
-      maxLength: 64
-    DefaultUndefinedFault: {}
-    TypeDeprecatedFault: {}
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -342,14 +402,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -360,14 +414,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

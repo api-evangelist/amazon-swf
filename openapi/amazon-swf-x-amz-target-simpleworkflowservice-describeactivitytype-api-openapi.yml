@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeActivityType #X Amz Target=SimpleWorkflowService.DescribeActivityType API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,31 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DescribeActivityType
-      description: '<p>Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action''s access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>'
+      description: 'Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        Constrain the following parameters by using a Condition element with the appropriate keys.
+
+
+        activityType.name: String constraint. The key is swf:activityType.name.
+
+
+        activityType.version: String constraint. The key is swf:activityType.version.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -167,85 +194,10 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.DescribeActivityType'
 components:
   schemas:
-    ActivityTypeInfo:
-      type: object
-      required:
-      - activityType
-      - status
-      - creationDate
-      properties:
-        activityType:
-          allOf:
-          - $ref: '#/components/schemas/ActivityType'
-          - description: The <a>ActivityType</a> type structure representing the activity type.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/RegistrationStatus'
-          - description: The current status of the activity type.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/Description'
-          - description: The description of the activity type provided in <a>RegisterActivityType</a>.
-        creationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date and time this activity type was created through <a>RegisterActivityType</a>.
-        deprecationDate:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
-      description: Detailed information about an activity type.
-    OperationNotPermittedFault: {}
-    Description:
-      type: string
-      maxLength: 1024
-    DomainName:
-      type: string
-      minLength: 1
-      maxLength: 256
-    RegistrationStatus:
-      type: string
-      enum:
-      - REGISTERED
-      - DEPRECATED
-    ActivityType:
-      type: object
-      required:
-      - name
-      - version
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
-      description: Represents an activity type.
     UnknownResourceFault: {}
-    ActivityTypeDetail:
-      type: object
-      required:
-      - typeInfo
-      - configuration
-      properties:
-        typeInfo:
-          allOf:
-          - $ref: '#/components/schemas/ActivityTypeInfo'
-          - description: <p>General information about the activity type.</p> <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> <li> <p> <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> </ul>
-        configuration:
-          allOf:
-          - $ref: '#/components/schemas/ActivityTypeConfiguration'
-          - description: The configuration settings registered with the activity type.
-      description: Detailed information about an activity type.
-    Name:
+    OperationNotPermittedFault: {}
+    TaskPriority:
       type: string
-      minLength: 1
-      maxLength: 256
-    DurationInSecondsOptional:
-      type: string
-      maxLength: 8
     ActivityTypeConfiguration:
       type: object
       properties:
@@ -274,11 +226,61 @@ components:
           - $ref: '#/components/schemas/DurationInSecondsOptional'
           - description: <p> The default maximum duration, specified when registering the activity type, for tasks of this activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
       description: Configuration settings registered with the activity type.
-    Timestamp:
+    ActivityType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p>The name of this activity.</p> <note> <p>The combination of activity type name and version must be unique within a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p>The version of this activity.</p> <note> <p>The combination of activity type name and version must be unique with in a domain.</p> </note>
+      description: Represents an activity type.
+    Description:
       type: string
-      format: date-time
-    TaskPriority:
+      maxLength: 1024
+    RegistrationStatus:
       type: string
+      enum:
+      - REGISTERED
+      - DEPRECATED
+    ActivityTypeInfo:
+      type: object
+      required:
+      - activityType
+      - status
+      - creationDate
+      properties:
+        activityType:
+          allOf:
+          - $ref: '#/components/schemas/ActivityType'
+          - description: The <a>ActivityType</a> type structure representing the activity type.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/RegistrationStatus'
+          - description: The current status of the activity type.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/Description'
+          - description: The description of the activity type provided in <a>RegisterActivityType</a>.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time this activity type was created through <a>RegisterActivityType</a>.
+        deprecationDate:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
+      description: Detailed information about an activity type.
+    Name:
+      type: string
+      minLength: 1
+      maxLength: 256
     TaskList:
       type: object
       required:
@@ -289,10 +291,6 @@ components:
           - $ref: '#/components/schemas/Name'
           - description: The name of the task list.
       description: Represents a task list.
-    Version:
-      type: string
-      minLength: 1
-      maxLength: 64
     DescribeActivityTypeInput:
       type: object
       required:
@@ -308,7 +306,48 @@ components:
           allOf:
           - $ref: '#/components/schemas/ActivityType'
           - description: The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ActivityTypeDetail:
+      type: object
+      required:
+      - typeInfo
+      - configuration
+      properties:
+        typeInfo:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTypeInfo'
+          - description: <p>General information about the activity type.</p> <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> <li> <p> <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> </ul>
+        configuration:
+          allOf:
+          - $ref: '#/components/schemas/ActivityTypeConfiguration'
+          - description: The configuration settings registered with the activity type.
+      description: Detailed information about an activity type.
+    DurationInSecondsOptional:
+      type: string
+      maxLength: 8
+    Version:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Timestamp:
+      type: string
+      format: date-time
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -321,14 +360,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -339,14 +372,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

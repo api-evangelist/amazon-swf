@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListDomains #X Amz Target=SimpleWorkflowService.ListDomains API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,28 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListDomains
-      description: <p>Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p> </note> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>, where <i>AccountID</i> is the account ID, with no dashes.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      description: 'Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.
+
+
+        This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains. The element must be set to arn:aws:swf::AccountID:domain/*, where AccountID is the account ID, with no dashes.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        You cannot use an IAM policy to constrain this action''s parameters.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -174,29 +198,50 @@ paths:
       tags:
       - '#X Amz Target=SimpleWorkflowService.ListDomains'
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    PageToken:
-      type: string
-      maxLength: 2048
-    Arn:
-      type: string
-      minLength: 1
-      maxLength: 1600
-    OperationNotPermittedFault: {}
-    Description:
-      type: string
-      maxLength: 1024
-    DomainName:
-      type: string
-      minLength: 1
-      maxLength: 256
-    RegistrationStatus:
-      type: string
-      enum:
-      - REGISTERED
-      - DEPRECATED
-    ReverseOrder:
-      type: boolean
     DomainInfos:
       type: object
       required:
@@ -211,32 +256,19 @@ components:
           - $ref: '#/components/schemas/PageToken'
           - description: <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
       description: Contains a paginated collection of DomainInfo structures.
-    ListDomainsInput:
-      type: object
-      required:
-      - registrationStatus
-      title: ListDomainsInput
-      properties:
-        nextPageToken:
-          allOf:
-          - $ref: '#/components/schemas/PageToken'
-          - description: '<p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>'
-        registrationStatus:
-          allOf:
-          - $ref: '#/components/schemas/RegistrationStatus'
-          - description: Specifies the registration status of the domains to list.
-        maximumPageSize:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: 'The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. '
-        reverseOrder:
-          allOf:
-          - $ref: '#/components/schemas/ReverseOrder'
-          - description: When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.
-    PageSize:
-      type: integer
-      minimum: 0
-      maximum: 1000
+    OperationNotPermittedFault: {}
+    Arn:
+      type: string
+      minLength: 1
+      maxLength: 1600
+    Description:
+      type: string
+      maxLength: 1024
+    RegistrationStatus:
+      type: string
+      enum:
+      - REGISTERED
+      - DEPRECATED
     DomainInfo:
       type: object
       required:
@@ -260,53 +292,45 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The ARN of the domain.
       description: Contains general information about a domain.
+    PageSize:
+      type: integer
+      minimum: 0
+      maximum: 1000
+    PageToken:
+      type: string
+      maxLength: 2048
     DomainInfoList:
       type: array
       items:
         $ref: '#/components/schemas/DomainInfo'
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    DomainName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ReverseOrder:
+      type: boolean
+    ListDomainsInput:
+      type: object
+      required:
+      - registrationStatus
+      title: ListDomainsInput
+      properties:
+        nextPageToken:
+          allOf:
+          - $ref: '#/components/schemas/PageToken'
+          - description: '<p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>'
+        registrationStatus:
+          allOf:
+          - $ref: '#/components/schemas/RegistrationStatus'
+          - description: Specifies the registration status of the domains to list.
+        maximumPageSize:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: 'The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. '
+        reverseOrder:
+          allOf:
+          - $ref: '#/components/schemas/ReverseOrder'
+          - description: When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.
   securitySchemes:
     hmac:
       type: apiKey

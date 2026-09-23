@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2012-01-25'
   x-release: v4
-  title: 'Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution API'
-  description: <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a <i>task</i> represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.</p> <p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.</p> <p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i> <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.</p>
+  title: 'Amazon Simple Workflow Service #X Amz…'
+  description: 'Amazon Simple Workflow Service
+
+    The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon''s cloud to coordinate work across distributed components.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/swf-2012-01-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,28 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DescribeWorkflowExecution
-      description: <p>Returns information about the specified workflow execution including its type and some statistics.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p> </note> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+      description: 'Returns information about the specified workflow execution including its type and some statistics.
+
+
+        This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
+
+
+        Access Control
+
+
+        You can use IAM policies to control this action''s access to Amazon SWF resources as follows:
+
+
+        Use a Resource element with the domain name to limit the action to only specified domains.
+
+
+        Use an Action element to allow or deny permission to call this action.
+
+
+        You cannot use an IAM policy to constrain this action''s parameters.
+
+
+        If the caller doesn''t have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute''s cause parameter is set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see Using IAM to Manage Access to Amazon SWF Workflows in the Amazon SWF Developer Guide.'
       responses:
         '200':
           description: Success
@@ -167,37 +191,168 @@ paths:
       - '#X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution'
 components:
   schemas:
-    Arn:
-      type: string
-      minLength: 1
-      maxLength: 1600
-    OperationNotPermittedFault: {}
-    Count:
-      type: integer
-      minimum: 0
+    UnknownResourceFault: {}
     ExecutionStatus:
       type: string
       enum:
       - OPEN
       - CLOSED
+    OperationNotPermittedFault: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      maxItems: 5
+    TaskPriority:
+      type: string
+    Arn:
+      type: string
+      minLength: 1
+      maxLength: 1600
+    DurationInSeconds:
+      type: string
+      minLength: 1
+      maxLength: 8
+    CloseStatus:
+      type: string
+      enum:
+      - COMPLETED
+      - FAILED
+      - CANCELED
+      - TERMINATED
+      - CONTINUED_AS_NEW
+      - TIMED_OUT
+    WorkflowType:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
+      description: Represents a workflow type.
+    WorkflowExecutionDetail:
+      type: object
+      required:
+      - executionInfo
+      - executionConfiguration
+      - openCounts
+      properties:
+        executionInfo:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionInfo'
+          - description: Information about the workflow execution.
+        executionConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionConfiguration'
+          - description: The configuration settings for this workflow execution including timeout values, tasklist etc.
+        openCounts:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecutionOpenCounts'
+          - description: The number of tasks for this workflow execution. This includes open and closed tasks of all types.
+        latestActivityTaskTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.
+        latestExecutionContext:
+          allOf:
+          - $ref: '#/components/schemas/Data'
+          - description: The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
+      description: Contains details about a workflow execution.
     ChildPolicy:
       type: string
       enum:
       - TERMINATE
       - REQUEST_CANCEL
       - ABANDON
-    DomainName:
+    Name:
       type: string
       minLength: 1
       maxLength: 256
+    Count:
+      type: integer
+      minimum: 0
+    TaskList:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the task list.
+      description: Represents a task list.
+    Canceled:
+      type: boolean
+    Data:
+      type: string
+      maxLength: 32768
     OpenDecisionTasksCount:
       type: integer
       minimum: 0
       maximum: 1
+    DescribeWorkflowExecutionInput:
+      type: object
+      required:
+      - domain
+      - execution
+      title: DescribeWorkflowExecutionInput
+      properties:
+        domain:
+          allOf:
+          - $ref: '#/components/schemas/DomainName'
+          - description: The name of the domain containing the workflow execution.
+        execution:
+          allOf:
+          - $ref: '#/components/schemas/WorkflowExecution'
+          - description: The workflow execution to describe.
+    WorkflowRunId:
+      type: string
+      minLength: 1
+      maxLength: 64
     Tag:
       type: string
       minLength: 0
       maxLength: 256
+    WorkflowId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    WorkflowExecutionOpenCounts:
+      type: object
+      required:
+      - openActivityTasks
+      - openDecisionTasks
+      - openTimers
+      - openChildWorkflowExecutions
+      properties:
+        openActivityTasks:
+          allOf:
+          - $ref: '#/components/schemas/Count'
+          - description: The count of activity tasks whose status is <code>OPEN</code>.
+        openDecisionTasks:
+          allOf:
+          - $ref: '#/components/schemas/OpenDecisionTasksCount'
+          - description: The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.
+        openTimers:
+          allOf:
+          - $ref: '#/components/schemas/Count'
+          - description: The count of timers started by this workflow execution that have not fired yet.
+        openChildWorkflowExecutions:
+          allOf:
+          - $ref: '#/components/schemas/Count'
+          - description: The count of child workflow executions whose status is <code>OPEN</code>.
+        openLambdaFunctions:
+          allOf:
+          - $ref: '#/components/schemas/Count'
+          - description: The count of Lambda tasks whose status is <code>OPEN</code>.
+      description: Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
     WorkflowExecutionInfo:
       type: object
       required:
@@ -243,79 +398,6 @@ components:
           - $ref: '#/components/schemas/Canceled'
           - description: Set to true if a cancellation is requested for this workflow execution.
       description: Contains information about a workflow execution.
-    WorkflowType:
-      type: object
-      required:
-      - name
-      - version
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: <p> The name of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p> The version of the workflow type.</p> <note> <p>The combination of workflow type name and version must be unique with in a domain.</p> </note>
-      description: Represents a workflow type.
-    WorkflowExecutionOpenCounts:
-      type: object
-      required:
-      - openActivityTasks
-      - openDecisionTasks
-      - openTimers
-      - openChildWorkflowExecutions
-      properties:
-        openActivityTasks:
-          allOf:
-          - $ref: '#/components/schemas/Count'
-          - description: The count of activity tasks whose status is <code>OPEN</code>.
-        openDecisionTasks:
-          allOf:
-          - $ref: '#/components/schemas/OpenDecisionTasksCount'
-          - description: The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.
-        openTimers:
-          allOf:
-          - $ref: '#/components/schemas/Count'
-          - description: The count of timers started by this workflow execution that have not fired yet.
-        openChildWorkflowExecutions:
-          allOf:
-          - $ref: '#/components/schemas/Count'
-          - description: The count of child workflow executions whose status is <code>OPEN</code>.
-        openLambdaFunctions:
-          allOf:
-          - $ref: '#/components/schemas/Count'
-          - description: The count of Lambda tasks whose status is <code>OPEN</code>.
-      description: Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
-    UnknownResourceFault: {}
-    WorkflowExecutionDetail:
-      type: object
-      required:
-      - executionInfo
-      - executionConfiguration
-      - openCounts
-      properties:
-        executionInfo:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowExecutionInfo'
-          - description: Information about the workflow execution.
-        executionConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowExecutionConfiguration'
-          - description: The configuration settings for this workflow execution including timeout values, tasklist etc.
-        openCounts:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowExecutionOpenCounts'
-          - description: The number of tasks for this workflow execution. This includes open and closed tasks of all types.
-        latestActivityTaskTimestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.
-        latestExecutionContext:
-          allOf:
-          - $ref: '#/components/schemas/Data'
-          - description: The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <a>RespondDecisionTaskCompleted</a>.
-      description: Contains details about a workflow execution.
     WorkflowExecution:
       type: object
       required:
@@ -331,48 +413,17 @@ components:
           - $ref: '#/components/schemas/WorkflowRunId'
           - description: A system-generated unique identifier for the workflow execution.
       description: Represents a workflow execution.
-    CloseStatus:
-      type: string
-      enum:
-      - COMPLETED
-      - FAILED
-      - CANCELED
-      - TERMINATED
-      - CONTINUED_AS_NEW
-      - TIMED_OUT
-    WorkflowId:
+    DomainName:
       type: string
       minLength: 1
       maxLength: 256
-    DescribeWorkflowExecutionInput:
-      type: object
-      required:
-      - domain
-      - execution
-      title: DescribeWorkflowExecutionInput
-      properties:
-        domain:
-          allOf:
-          - $ref: '#/components/schemas/DomainName'
-          - description: The name of the domain containing the workflow execution.
-        execution:
-          allOf:
-          - $ref: '#/components/schemas/WorkflowExecution'
-          - description: The workflow execution to describe.
-    Name:
+    Timestamp:
       type: string
-      minLength: 1
-      maxLength: 256
-    WorkflowRunId:
+      format: date-time
+    Version:
       type: string
       minLength: 1
       maxLength: 64
-    DurationInSeconds:
-      type: string
-      minLength: 1
-      maxLength: 8
-    Canceled:
-      type: boolean
     WorkflowExecutionConfiguration:
       type: object
       required:
@@ -406,34 +457,19 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The IAM role attached to the child workflow execution.
       description: The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.
-    Data:
-      type: string
-      maxLength: 32768
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      maxItems: 5
-    Timestamp:
-      type: string
-      format: date-time
-    TaskPriority:
-      type: string
-    TaskList:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the task list.
-      description: Represents a task list.
-    Version:
-      type: string
-      minLength: 1
-      maxLength: 64
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -446,14 +482,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -464,14 +494,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
