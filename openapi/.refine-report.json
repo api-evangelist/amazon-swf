@@ -6,9 +6,7 @@
   "outputs": [
     "amazon-swf-amazon-simple-workflow-service-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 37 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -52,46 +50,9 @@
     "amazon-swf-openapi-original.yml: tagged paths POST /#X-Amz-Target=SimpleWorkflowService.UndeprecateWorkflowType -> Amazon Simple Workflow Service",
     "amazon-swf-openapi-original.yml: tagged paths POST /#X-Amz-Target=SimpleWorkflowService.UntagResource -> Amazon Simple Workflow Service",
     "amazon-swf-openapi-original.yml: declared missing tag: Amazon Simple Workflow Service",
-    "superseded outputs removed: amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api-openapi.yml, amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api-openapi.yml, amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api-openapi.yml, amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api-openapi.yml, amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api-openapi.yml \u2026",
-    "apis.yml register: written (+1 apis, 1 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
-    "amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcanceled-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcompleted-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskfailed-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-responddecisiontaskcompleted-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-signalworkflowexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-startworkflowexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-tagresource-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-terminateworkflowexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-undeprecateactivitytype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-undeprecatedomain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-undeprecateworkflowtype-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "amazon-swf-amazon-simple-workflow-service-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }
