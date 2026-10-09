@@ -1,82 +1,88 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-swf-openapi-original.yml
+source: openapi/amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcanceled-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskcompleted-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-respondactivitytaskfailed-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-responddecisiontaskcompleted-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-signalworkflowexecution-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-startworkflowexecution-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-tagresource-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-terminateworkflowexecution-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecateactivitytype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecatedomain-api-openapi.yml, openapi/amazon-swf-x-amz-target-simpleworkflowservice-undeprecateworkflowtype-api-openapi.yml,
+  openapi/amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 37
   by_action_class:
-    acting: 37
+    connected: 11
+    acting: 26
   by_consequence:
-    write: 35
-    safety-critical: 2
-  human_in_the_loop_required: 2
+    read: 11
+    write: 25
+    safety-critical: 1
+  human_in_the_loop_required: 1
 operations:
 - path: /#X-Amz-Target=SimpleWorkflowService.CountClosedWorkflowExecutions
   method: post
   operationId: CountClosedWorkflowExecutions
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.CountOpenWorkflowExecutions
   method: post
   operationId: CountOpenWorkflowExecutions
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.CountPendingActivityTasks
   method: post
   operationId: CountPendingActivityTasks
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.CountPendingDecisionTasks
   method: post
   operationId: CountPendingDecisionTasks
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.DeprecateActivityType
   method: post
   operationId: DeprecateActivityType
@@ -193,114 +199,72 @@ operations:
   method: post
   operationId: GetWorkflowExecutionHistory
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListActivityTypes
   method: post
   operationId: ListActivityTypes
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListClosedWorkflowExecutions
   method: post
   operationId: ListClosedWorkflowExecutions
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListDomains
   method: post
   operationId: ListDomains
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListOpenWorkflowExecutions
   method: post
   operationId: ListOpenWorkflowExecutions
   x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListTagsForResource
   method: post
   operationId: ListTagsForResource
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.ListWorkflowTypes
   method: post
   operationId: ListWorkflowTypes
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=SimpleWorkflowService.PollForActivityTask
   method: post
   operationId: PollForActivityTask
