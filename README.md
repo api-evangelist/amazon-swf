@@ -66,75 +66,237 @@
 
 Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and scale background jobs that have parallel or sequential steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask dependencies, scheduling, and concurrency for application workflows.
 
-## APIs
+**Areas:** Automation · AWS · Task Coordination · Workflows
 
-### Amazon Simple Workflow Service API
+## Amazon Simple Workflow Service on APIs.io
 
-The Amazon SWF API provides programmatic access to manage workflows, activity tasks, decision tasks, and workflow execution history. It enables developers to coordinate distributed application components using asynchronous task processing and state tracking.
+Everything profiled for Amazon Simple Workflow Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-swf/](https://apis.io/providers/amazon-swf/)** — or go straight to one of the APIs or properties below.
 
-**Properties:**
+### APIs (2)
 
-- **Documentation**: [https://docs.aws.amazon.com/amazonswf/latest/developerguide/](https://docs.aws.amazon.com/amazonswf/latest/developerguide/)
-- **APIReference**: [https://docs.aws.amazon.com/amazonswf/latest/apireference/](https://docs.aws.amazon.com/amazonswf/latest/apireference/)
-- **GettingStarted**: [https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html)
-- **Pricing**: [https://aws.amazon.com/swf/pricing/](https://aws.amazon.com/swf/pricing/)
-- **FAQ**: [https://aws.amazon.com/swf/faqs/](https://aws.amazon.com/swf/faqs/)
-- **OpenAPI**: [https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/openapi/amazon-swf-openapi-original.yml](https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/openapi/amazon-swf-openapi-original.yml)
+- [Amazon Simple Workflow Service Amazon Simple Workflow Service API](https://apis.io/apis/amazon-swf/amazon-swf-amazon-simple-workflow-service-api/) — The Amazon Simple Workflow Service API from Amazon Simple Workflow Service — 37 operation(s) for amazon simple workflow service.
+- [Amazon Simple Workflow Service Swf Operations API](https://apis.io/apis/amazon-swf/amazon-swf-operations-api/) — The Swf Operations API from Amazon Simple Workflow Service — 2 operation(s) for swf operations.
 
-## Common Properties
+### Published properties
 
-- **Portal**: [https://aws.amazon.com/](https://aws.amazon.com/)
-- **Website**: [https://aws.amazon.com/swf/](https://aws.amazon.com/swf/)
-- **Documentation**: [https://docs.aws.amazon.com/amazonswf/latest/developerguide/](https://docs.aws.amazon.com/amazonswf/latest/developerguide/)
-- **Console**: [https://console.aws.amazon.com/swf/](https://console.aws.amazon.com/swf/)
-- **TermsOfService**: [https://aws.amazon.com/service-terms/](https://aws.amazon.com/service-terms/)
-- **PrivacyPolicy**: [https://aws.amazon.com/privacy/](https://aws.amazon.com/privacy/)
-- **Support**: [https://aws.amazon.com/premiumsupport/](https://aws.amazon.com/premiumsupport/)
-- **SignUp**: [https://signin.aws.amazon.com/signup?request_type=register](https://signin.aws.amazon.com/signup?request_type=register)
-- **Login**: [https://aws.amazon.com/console/](https://aws.amazon.com/console/)
-- **StatusPage**: [https://health.aws.amazon.com/health/status](https://health.aws.amazon.com/health/status)
-- **GitHubOrganization**: [https://github.com/aws](https://github.com/aws)
-- **Features**: 5 items
-- **UseCases**: 4 items
-- **SpectralRules**: [https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/rules/amazon-swf-spectral-rules.yml](https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/rules/amazon-swf-spectral-rules.yml)
-- **Vocabulary**: [https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml](https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml)
-- **NaftikoCapability**: [https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/capabilities/amazon-swf-workflow-management.yaml](https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/capabilities/amazon-swf-workflow-management.yaml)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Artifacts
+#### Agentic access (1)
 
-### Openapi
-- `openapi/amazon-swf-openapi-original.yml`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Json Schema
-- `json-schema/amazon-swf-activityid-schema.json`
-- `json-schema/amazon-swf-activitytask-schema.json`
-- `json-schema/amazon-swf-activitytaskcanceledeventattributes-schema.json`
-- `json-schema/amazon-swf-activitytaskcancelrequestedeventattributes-schema.json`
-- `json-schema/amazon-swf-activitytaskcompletedeventattributes-schema.json`
-- ... and 221 more
+- [Amazon Swf Agentic Access](https://apis.io/agentic-access/amazon-swf/amazon-swf-agentic-access/)
 
-### Json Structure
-- `json-structure/amazon-swf-activityid-structure.json`
-- `json-structure/amazon-swf-activitytask-structure.json`
-- `json-structure/amazon-swf-activitytaskcanceledeventattributes-structure.json`
-- `json-structure/amazon-swf-activitytaskcancelrequestedeventattributes-structure.json`
-- `json-structure/amazon-swf-activitytaskcompletedeventattributes-structure.json`
-- ... and 221 more
+#### JSON Schema (226)
 
-### Json Ld
-- `json-ld/amazon-swf-context.jsonld`
+The data models the API reads and writes.
 
-### Examples
-- `examples/amazon-swf-poll-activity-task-example.json`
-- `examples/amazon-swf-register-domain-example.json`
-- `examples/amazon-swf-start-workflow-execution-example.json`
+- [ActivityId](https://apis.io/schemas/amazon-swf/amazon-swf-activityid/)
+- [ActivityTask](https://apis.io/schemas/amazon-swf/amazon-swf-activitytask/)
+- [ActivityTaskCanceledEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskcanceledeventattributes/)
+- [ActivityTaskCancelRequestedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskcancelrequestedeventattributes/)
+- [ActivityTaskCompletedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskcompletedeventattributes/)
+- [ActivityTaskFailedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskfailedeventattributes/)
+- [ActivityTaskScheduledEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskscheduledeventattributes/)
+- [ActivityTaskStartedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskstartedeventattributes/)
+- [ActivityTaskStatus](https://apis.io/schemas/amazon-swf/amazon-swf-activitytaskstatus/)
+- [ActivityTaskTimedOutEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-activitytasktimedouteventattributes/)
+- [ActivityTaskTimeoutType](https://apis.io/schemas/amazon-swf/amazon-swf-activitytasktimeouttype/)
+- [ActivityType](https://apis.io/schemas/amazon-swf/amazon-swf-activitytype/)
+- [ActivityTypeConfiguration](https://apis.io/schemas/amazon-swf/amazon-swf-activitytypeconfiguration/)
+- [ActivityTypeDetail](https://apis.io/schemas/amazon-swf/amazon-swf-activitytypedetail/)
+- [ActivityTypeInfo](https://apis.io/schemas/amazon-swf/amazon-swf-activitytypeinfo/)
+- [ActivityTypeInfoList](https://apis.io/schemas/amazon-swf/amazon-swf-activitytypeinfolist/)
+- [ActivityTypeInfos](https://apis.io/schemas/amazon-swf/amazon-swf-activitytypeinfos/)
+- [Arn](https://apis.io/schemas/amazon-swf/amazon-swf-arn/)
+- [Canceled](https://apis.io/schemas/amazon-swf/amazon-swf-canceled/)
+- [CancelTimerDecisionAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-canceltimerdecisionattributes/)
+- [CancelTimerFailedCause](https://apis.io/schemas/amazon-swf/amazon-swf-canceltimerfailedcause/)
+- [CancelTimerFailedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-canceltimerfailedeventattributes/)
+- [CancelWorkflowExecutionDecisionAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-cancelworkflowexecutiondecisionattributes/)
+- [CancelWorkflowExecutionFailedCause](https://apis.io/schemas/amazon-swf/amazon-swf-cancelworkflowexecutionfailedcause/)
+- [CancelWorkflowExecutionFailedEventAttributes](https://apis.io/schemas/amazon-swf/amazon-swf-cancelworkflowexecutionfailedeventattributes/)
+- …and 201 more published on APIs.io
 
-### Rules
-- `rules/amazon-swf-spectral-rules.yml`
+#### JSON Structure (226)
 
-### Vocabulary
-- `vocabulary/amazon-swf-vocabulary.yaml`
+Data models expressed in JSON Structure.
 
-### Capabilities
-- `capabilities/amazon-swf-workflow-management.yaml`
-- `capabilities/shared/amazon-swf-shared.yaml`
+- [Amazon Swf Activityid Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activityid-structure/)
+- [Amazon Swf Activitytask Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytask-structure/)
+- [Amazon Swf Activitytaskcanceledeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskcanceledeventattributes-structure/)
+- [Amazon Swf Activitytaskcancelrequestedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskcancelrequestedeventattributes-structure/)
+- [Amazon Swf Activitytaskcompletedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskcompletedeventattributes-structure/)
+- [Amazon Swf Activitytaskfailedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskfailedeventattributes-structure/)
+- [Amazon Swf Activitytaskscheduledeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskscheduledeventattributes-structure/)
+- [Amazon Swf Activitytaskstartedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskstartedeventattributes-structure/)
+- [Amazon Swf Activitytaskstatus Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytaskstatus-structure/)
+- [Amazon Swf Activitytasktimedouteventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytasktimedouteventattributes-structure/)
+- [Amazon Swf Activitytasktimeouttype Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytasktimeouttype-structure/)
+- [Amazon Swf Activitytype Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytype-structure/)
+- [Amazon Swf Activitytypeconfiguration Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytypeconfiguration-structure/)
+- [Amazon Swf Activitytypedetail Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytypedetail-structure/)
+- [Amazon Swf Activitytypeinfo Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytypeinfo-structure/)
+- [Amazon Swf Activitytypeinfolist Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytypeinfolist-structure/)
+- [Amazon Swf Activitytypeinfos Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-activitytypeinfos-structure/)
+- [Amazon Swf Arn Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-arn-structure/)
+- [Amazon Swf Canceled Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-canceled-structure/)
+- [Amazon Swf Canceltimerdecisionattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-canceltimerdecisionattributes-structure/)
+- [Amazon Swf Canceltimerfailedcause Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-canceltimerfailedcause-structure/)
+- [Amazon Swf Canceltimerfailedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-canceltimerfailedeventattributes-structure/)
+- [Amazon Swf Cancelworkflowexecutiondecisionattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-cancelworkflowexecutiondecisionattributes-structure/)
+- [Amazon Swf Cancelworkflowexecutionfailedcause Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-cancelworkflowexecutionfailedcause-structure/)
+- [Amazon Swf Cancelworkflowexecutionfailedeventattributes Structure](https://apis.io/json-structure/amazon-swf/amazon-swf-cancelworkflowexecutionfailedeventattributes-structure/)
+- …and 201 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Swf Context](https://apis.io/jsonld/amazon-swf/amazon-swf-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Simple Workflow Service Vocabulary](https://apis.io/vocabularies/amazon-swf/amazon-swf-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Amazon Swf Poll Activity Task Example](https://apis.io/examples/amazon-swf/amazon-swf-poll-activity-task-example/)
+- [Amazon Swf Register Domain Example](https://apis.io/examples/amazon-swf/amazon-swf-register-domain-example/)
+- [Amazon Swf Start Workflow Execution Example](https://apis.io/examples/amazon-swf/amazon-swf-start-workflow-execution-example/)
+
+#### Collections (74)
+
+Postman and Open Collection request collections.
+
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountOpenWorkflowExecutions API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-countopenworkflowexecutions-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountPendingActivityTasks API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-countpendingactivitytasks-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountPendingDecisionTasks API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-countpendingdecisiontasks-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DeprecateActivityType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-deprecateactivitytype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DeprecateDomain API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-deprecatedomain-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DeprecateWorkflowType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-deprecateworkflowtype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeActivityType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-describeactivitytype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeDomain API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-describedomain-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeWorkflowExecution API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowexecution-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.DescribeWorkflowType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-describeworkflowtype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.GetWorkflowExecutionHistory API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-getworkflowexecutionhistory-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListActivityTypes API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listactivitytypes-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListClosedWorkflowExecutions API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listclosedworkflowexecutions-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListDomains API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listdomains-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListOpenWorkflowExecutions API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listopenworkflowexecutions-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListTagsForResource API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listtagsforresource-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.ListWorkflowTypes API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-listworkflowtypes-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.PollForActivityTask API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-pollforactivitytask-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.PollForDecisionTask API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-pollfordecisiontask-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RecordActivityTaskHeartbeat API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-recordactivitytaskheartbeat-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RegisterActivityType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-registeractivitytype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RegisterDomain API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-registerdomain-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RegisterWorkflowType API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-registerworkflowtype-api/)
+- [Amazon Simple Workflow Service #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.CountClosedWorkflowExecutions #X Amz Target=SimpleWorkflowService.RequestCancelWorkflowExecution API](https://apis.io/collections/amazon-swf/open-amazon-swf-x-amz-target-simpleworkflowservice-requestcancelworkflowexecution-api/)
+- …and 49 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Simple Workflow Service — jsonschema rules](https://apis.io/rules/amazon-swf/amazon-swf-jsonschema-spectral-rules/)
+- [Amazon Simple Workflow Service API Rules](https://apis.io/rules/amazon-swf/amazon-swf-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Swf Authentication](https://apis.io/security/amazon-swf/amazon-swf-authentication/)
+- [Amazon Swf Domain Security](https://apis.io/security/amazon-swf/amazon-swf-domain-security/)
+- [Amazon Swf Trust Center](https://apis.io/security/amazon-swf/amazon-swf-trust-center/)
+- [Amazon Swf Vulnerability Disclosure](https://apis.io/security/amazon-swf/amazon-swf-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Swf Plans Pricing](https://apis.io/plans/amazon-swf/amazon-swf-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Swf Rate Limits](https://apis.io/rate-limits/amazon-swf/amazon-swf-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Swf Finops](https://apis.io/finops/amazon-swf/amazon-swf-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/swf/)
+- [Documentation](https://docs.aws.amazon.com/amazonswf/latest/developerguide/)
+- [Support](https://aws.amazon.com/premiumsupport/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
+
+## API Evangelist rating
+
+**Kin Score 53.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 59.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 59.0 |
+| Access clarity | 53.9 |
+
+**Agent readiness 31.9** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-swf/](https://apis.io/providers/amazon-swf/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Simple Workflow Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-swf/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
