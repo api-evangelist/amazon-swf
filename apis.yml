@@ -1,0 +1,164 @@
+aid: amazon-swf
+name: Amazon Simple Workflow Service
+description: Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and scale background jobs that have
+  parallel or sequential steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask
+  dependencies, scheduling, and concurrency for application workflows.
+type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-swf.png
+tags:
+- Automation
+- Amazon Web Services
+- Task Coordination
+- Workflows
+tags_raw:
+- Automation
+- AWS
+- Task Coordination
+- Workflow
+url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-05-19'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-swf:amazon-swf-amazon-simple-workflow-service-api
+  name: Amazon Simple Workflow Service Amazon Simple Workflow Service API
+  description: >-
+    The Amazon Simple Workflow Service API from Amazon Simple Workflow Service — 37 operation(s) for amazon
+    simple workflow service.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - Amazon Simple Workflow Service
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-amazon-simple-workflow-service-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+- aid: amazon-swf:amazon-swf-operations-api
+  name: Amazon Simple Workflow Service Swf Operations API
+  description: >-
+    The Swf Operations API from Amazon Simple Workflow Service — 2 operation(s) for swf operations.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - Swf Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-operations-api-openapi.yml
+common:
+- type: Plans
+  url: plans/amazon-swf-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-swf-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-swf-finops.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-simple-workflow-service/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-swf-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-swf-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-swf-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-swf-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-swf-authentication.yml
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Website
+  url: https://aws.amazon.com/swf/
+- type: Documentation
+  url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+- type: Console
+  url: https://console.aws.amazon.com/swf/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: Signup
+  url: https://signin.aws.amazon.com/signup?request_type=register
+- type: Login
+  url: https://aws.amazon.com/console/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Features
+  data:
+  - name: Task Coordination
+    description: Manages inter-task dependencies, scheduling, and concurrency for distributed workflows.
+  - name: State Tracking
+    description: Durably maintains application execution state throughout workflow lifecycle.
+  - name: Long-Running Workflows
+    description: Supports workflows that run for up to 1 year with activity timeouts and retries.
+  - name: Decider and Activity Workers
+    description: Separates orchestration logic (deciders) from execution logic (activity workers).
+  - name: Workflow Versioning
+    description: Supports multiple versions of workflow and activity types for safe deployments.
+- type: UseCases
+  data:
+  - name: Media Processing Pipelines
+    description: Coordinate multi-step media encoding, transcoding, and publishing workflows.
+  - name: Order Processing
+    description: Orchestrate e-commerce order fulfillment with parallel and sequential steps.
+  - name: Data Analytics Workflows
+    description: Manage ETL pipelines and data processing jobs across distributed systems.
+  - name: Human Task Orchestration
+    description: Coordinate workflows that require human review or approval steps.
+- type: SpectralRules
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/rules/amazon-swf-spectral-rules.yml
+- type: Vocabulary
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml
+- type: Integrations
+  url: https://aws.amazon.com/partners/
+integrations:
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
