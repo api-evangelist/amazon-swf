@@ -5,8 +5,20 @@ artifacts:
   agentic-access/amazon-swf-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-swf-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-swf-authentication.yml:
     method: derived
+    evidence: declared in the artifact
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-swf-cli.yml:
+    method: searched
     evidence: declared in the artifact
   collections/amazon-swf-x-amz-target-simpleworkflowservice-countclosedworkflowexecutions-api.opencollection.json:
     method: unknown
@@ -230,6 +242,24 @@ artifacts:
   collections/amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  compliance/amazon-swf-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-swf-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-swf-conventions.yml:
+    method: searched
+    evidence: declared in the artifact
+  data-model/amazon-swf-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-swf-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-swf-problem-types.yml:
+    method: searched
+    evidence: declared in the artifact
   examples/amazon-swf-poll-activity-task-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -245,6 +275,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-swf-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -252,6 +285,9 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-ld/amazon-swf-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-activity-task-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-activityid-schema.json:
@@ -396,6 +432,9 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-decision-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-decision-task-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-decisionlist-schema.json:
@@ -560,6 +599,9 @@ artifacts:
   json-schema/amazon-swf-limitexceededfault-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-swf-list-closed-workflow-executions-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-swf-listactivitytypesinput-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -605,6 +647,9 @@ artifacts:
   json-schema/amazon-swf-pendingtaskcount-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-swf-poll-for-decision-task-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-swf-pollforactivitytaskinput-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -621,6 +666,12 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-recordmarkerfailedeventattributes-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-register-activity-type-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-register-workflow-type-input-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-registeractivitytypeinput-schema.json:
@@ -674,6 +725,9 @@ artifacts:
   json-schema/amazon-swf-resourcetagvalue-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-swf-respond-decision-task-completed-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-swf-respondactivitytaskcanceledinput-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -710,6 +764,9 @@ artifacts:
   json-schema/amazon-swf-schedulelambdafunctionfailedeventattributes-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-swf-signal-workflow-execution-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-swf-signalexternalworkflowexecutiondecisionattributes-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -726,6 +783,9 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-signalworkflowexecutioninput-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-start-workflow-execution-input-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-startatpreviousstartedevent-schema.json:
@@ -780,6 +840,9 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-tasktoken-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-swf-terminate-workflow-execution-input-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-swf-terminatereason-schema.json:
@@ -1613,7 +1676,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -1682,16 +1745,33 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-swf-openapi-original.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-swf-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-swf-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-swf-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-swf-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-swf-amazon-simple-workflow-service-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-swf-operations-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  packages/amazon-swf-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-swf-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-swf-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -1809,10 +1889,16 @@ artifacts:
   postman/amazon-swf-x-amz-target-simpleworkflowservice-untagresource-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  privacy/amazon-swf-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-swf-rate-limits.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rules/amazon-swf-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-swf-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-swf-spectral-rules.yml:
@@ -1831,8 +1917,27 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/swf-2012-01-25.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/swf/service/2012-01-25/swf-2012-01-25.json
+      (sha256 d2ab02e22a0f, fetched 2026-11-11T21:15:44+00:00)
+  terms/amazon-swf-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-swf-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-swf-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-swf-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-swf-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-swf-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-swf-well-known.yml:
     method: unknown
     evidence: no authorship recorded

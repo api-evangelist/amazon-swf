@@ -1,9 +1,13 @@
 aid: amazon-swf
+
 name: Amazon Simple Workflow Service
-description: Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and scale background jobs that have
-  parallel or sequential steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask
-  dependencies, scheduling, and concurrency for application workflows.
+
+description: Amazon Simple Workflow Service (Amazon SWF) helps developers build, run, and scale background jobs that have parallel or sequential
+  steps. It is a fully managed state tracker and task coordinator in the cloud that manages intertask dependencies, scheduling, and concurrency
+  for application workflows.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +20,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -26,14 +31,16 @@ accessModel:
   gated_source:
   - onboarding
   label: Freemium · Self-serve signup
-  confidence: medium
+  confidence: high
   source:
   - plans
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-swf.png
+
 tags:
 - Automation
 - Amazon Web Services
@@ -43,46 +50,77 @@ tags_raw:
 - Automation
 - AWS
 - Task Coordination
+- Workflows
+
+tags_raw:
+- Automation
+- AWS
+- Task Coordination
 - Workflow
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-05-19'
+
 specificationVersion: '0.23'
-apis:
-- aid: amazon-swf:amazon-swf-amazon-simple-workflow-service-api
-  name: Amazon Simple Workflow Service Amazon Simple Workflow Service API
-  description: >-
-    The Amazon Simple Workflow Service API from Amazon Simple Workflow Service — 37 operation(s) for amazon
-    simple workflow service.
-  humanURL: https://aws.amazon.com/swf/
-  baseURL: https://swf.amazonaws.com
-  tags:
-  - Amazon Simple Workflow Service
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-swf-amazon-simple-workflow-service-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
-  - type: Pricing
-    url: https://aws.amazon.com/swf/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/swf/faqs/
-- aid: amazon-swf:amazon-swf-operations-api
-  name: Amazon Simple Workflow Service Swf Operations API
-  description: >-
-    The Swf Operations API from Amazon Simple Workflow Service — 2 operation(s) for swf operations.
-  humanURL: https://aws.amazon.com/swf/
-  baseURL: https://swf.amazonaws.com
-  tags:
-  - Swf Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-swf-operations-api-openapi.yml
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Sandbox
+  url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin
+- type: Spectral
+  url: rules/amazon-swf-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-swf-rules.yml
+- type: Spectral
+  url: rules/amazon-swf-jsonschema-spectral-rules.yml
+- type: JSONLD
+  url: json-ld/amazon-swf-context.jsonld
+- type: Vocabulary
+  url: vocabulary/amazon-swf-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-swf-data-model.yml
+- type: CLI
+  url: cli/amazon-swf-cli.yml
+- type: Idempotency
+  url: conventions/amazon-swf-conventions.yml
+- type: Conventions
+  url: conventions/amazon-swf-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Deprecation
+  url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-adv-versioning.html
+- type: Lifecycle
+  url: lifecycle/amazon-swf-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-swf-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-swf-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-swf-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-swf-security.txt
+- type: WellKnown
+  url: well-known/amazon-swf-well-known.yml
+- type: Hosts
+  url: hosts/amazon-swf-hosts.yml
+- type: Vendors
+  url: vendors/amazon-swf-vendors.yml
+- type: SDKs
+  url: packages/amazon-swf-packages.yml
+- type: Packages
+  url: packages/amazon-swf-packages.yml
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Plans
   url: plans/amazon-swf-plans-pricing.yml
 - type: RateLimits
@@ -107,8 +145,6 @@ common:
   url: https://aws.amazon.com/swf/
 - type: Documentation
   url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
-- type: Console
-  url: https://console.aws.amazon.com/swf/
 - type: TermsOfService
   url: https://aws.amazon.com/service-terms/
 - type: PrivacyPolicy
@@ -145,12 +181,75 @@ common:
     description: Manage ETL pipelines and data processing jobs across distributed systems.
   - name: Human Task Orchestration
     description: Coordinate workflows that require human review or approval steps.
-- type: SpectralRules
-  url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/rules/amazon-swf-spectral-rules.yml
-- type: Vocabulary
-  url: https://raw.githubusercontent.com/api-evangelist/amazon-swf/refs/heads/main/vocabulary/amazon-swf-vocabulary.yaml
 - type: Integrations
   url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-swf-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-swf-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-swf-compliance.yml
+- type: Eligibility
+  url: eligibility/amazon-swf-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-swf-ai-preferences.yml
+
+apis:
+- aid: amazon-swf:amazon-swf-amazon-simple-workflow-service-api
+  name: Amazon Simple Workflow Service Amazon Simple Workflow Service API
+  description: The Amazon Simple Workflow Service API from Amazon Simple Workflow Service — 37 operation(s) for amazon simple workflow service.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - Amazon Simple Workflow Service
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-amazon-simple-workflow-service-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/amazonswf/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro-to-swf.html
+  - type: Pricing
+    url: https://aws.amazon.com/swf/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/swf/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-swf-start-workflow-execution-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-register-workflow-type-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-register-activity-type-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-poll-for-decision-task-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-list-closed-workflow-executions-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-decision-task-schema.json
+- aid: amazon-swf:amazon-swf-operations-api
+  name: Amazon Simple Workflow Service Swf Operations API
+  description: The Swf Operations API from Amazon Simple Workflow Service — 2 operation(s) for swf operations.
+  humanURL: https://aws.amazon.com/swf/
+  baseURL: https://swf.amazonaws.com
+  tags:
+  - Swf Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-swf-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-swf-poll-for-decision-task-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-decision-task-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-respond-decision-task-completed-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-terminate-workflow-execution-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-activity-task-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-swf-signal-workflow-execution-input-schema.json
+
 integrations:
 - name: Partner Programs
 - name: Resources
@@ -160,8 +259,12 @@ integrations:
 - name: AWS Partner Central
 - name: Partner Paths
 - name: co-sell with AWS
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v6
